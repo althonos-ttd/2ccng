@@ -1,7 +1,13 @@
 //disable original rail vehicles
 disable_item(FEAT_TRAINS, 0, 115);
 
-//disable some 2ccNML revival items
+//disable duplicate items provided by 2ccNG
+disable_item(FEAT_TRAINS, item_electric_Costa_Rica_AEG_Pacific_A1A_A1A);
+disable_item(FEAT_TRAINS, item_diesel_Ghana_Railway_Corporation_TT12);
+disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_coach);
+disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_mail_coach);
+
+//disable some 2ccNML revival items for aesthetic or balancing
 disable_item(FEAT_TRAINS, item_rbs_Germany_Hessian_Ludwig_Thomas);		// Hessian Ludwig Thomas (duplicate sprite)
 disable_item(FEAT_TRAINS, item_rbs_Austria_NOLB_30_33);		            // NOLB 30-39 (duplicate sprite)
 disable_item(FEAT_TRAINS, item_steam_Egypt_Stephenson_Class_192);		// Stephenson 192 (duplicated sprite)
@@ -22,5 +28,6 @@ disable_item(FEAT_TRAINS, item_diesel_Australia_NSW_PTC_73); 		    // PTC 73 (to
 disable_item(FEAT_TRAINS, item_diesel_Australia_NSW_82);		        // NSWGR 82 (too close to NSWGR 80)
 disable_item(FEAT_TRAINS, item_diesel_Australia_EMD_NR_Class); 		    // EMD NR (graphics)
 disable_item(FEAT_TRAINS, item_electric_China_China_Railways_HXD2B);	// CR HXD2B (duplicated graphics)
-disable_item(FEAT_TRAINS, item_emu_Australia_Melbourne_Xtrapolis_100); // Australia X'trapolis 100 (already Chile)
+disable_item(FEAT_TRAINS, item_emu_Australia_Melbourne_Xtrapolis_100);  // Australia X'trapolis 100 (already Chile)
+disable_item(FEAT_TRAINS, item_mtro_USA_Brooklyn_Union_Gate_Car);       // Brooklyn Union Gate Car (duplicate sprite)
 disable_item(FEAT_TRAINS, item_coach_Gen1_American_style_NZAUS_coach, item_coach_Gen1_NSW_ka_tram_car);  // Narrow-gauge coaches

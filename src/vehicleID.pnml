@@ -270,7 +270,7 @@ item(FEAT_TRAINS, item_steam_Australia_Queensland_Railways_A10, 4804) {}
 item(FEAT_TRAINS, item_steam_USA_D_RGW_K_27_Mudhen, 4805) {}
 item(FEAT_TRAINS, item_steam_Barbados_Barbados_2_6_0T, 4806) {}
 item(FEAT_TRAINS, item_steam_Sweden_NJ_Forstlingen, 4807) {}
-item(FEAT_TRAINS, item_steam_Sweden_Gotland_1_3, 4808) {}
+// 4808 free
 item(FEAT_TRAINS, item_steam_Myanmar_Burma_Railways_C, 4809) {}
 item(FEAT_TRAINS, item_steam_Australia_Tasmanian_Government_M, 4810) {}
 
@@ -287,7 +287,7 @@ item(FEAT_TRAINS, item_diesel_USA_AT_SF_EMD_F3, 5007) {}
 item(FEAT_TRAINS, item_diesel_USA_UP_EMD_E8, 5008) {}
 item(FEAT_TRAINS, item_diesel_Brazil_EFCB_ALCO_RS_3, 5009) {}
 item(FEAT_TRAINS, item_diesel_Netherlands_NS_600, 5010) {}
-// 5011 feee
+// 5011 free
 item(FEAT_TRAINS, item_diesel_Uruguay_AFE_1500, 5012) {}
 item(FEAT_TRAINS, item_diesel_Canada_CPR_Trainmaster, 5013) {}
 item(FEAT_TRAINS, item_diesel_Liberia_Liberia_Railways_Class_08, 5014) {}
@@ -412,7 +412,7 @@ item(FEAT_TRAINS, item_diesel_South_Africa_PRASA_Afro_4000, 5132) {}
 item(FEAT_TRAINS, item_diesel_USA_Amtrak_Charger, 5133) {}
 // Revival
 item(FEAT_TRAINS, item_diesel_Gabon_Alsthom_AD30B, 5134) {}
-item(FEAT_TRAINS, item_diesel_Ghana_Ghana_Railways_1400_EMD_TT12, 5135) {}
+item(FEAT_TRAINS, item_diesel_Ghana_Railway_Corporation_TT12, 5135) {}
 item(FEAT_TRAINS, item_diesel_Sierra_Leone_LAMCO_301_Series, 5136) {}
 item(FEAT_TRAINS, item_diesel_Congo_Congo_Ocean_BB_BB_300, 5137) {}
 item(FEAT_TRAINS, item_diesel_Zimbabwe_Sorefame_DE8, 5138) {}
@@ -484,6 +484,7 @@ item(FEAT_TRAINS, item_dual_Spain_FGC_257, 5810) {}
 item(FEAT_TRAINS, item_diesel_Ecuador_ENFE_BBB_151, 5811) {}
 item(FEAT_TRAINS, item_diesel_Bolivia_FCMU_Nr_20_22, 5812) {}
 item(FEAT_TRAINS, item_diesel_Botswana_Botswana_Railways_BD5, 5813) {}
+item(FEAT_TRAINS, item_diesel_Ghana_Ghana_Railways_1400_EMD_TT12, 5814) {}
 
 //Electric, available ID range: 6000-6999 (hex 0x1770..0x1B57)
 #define ID_RANGE_ELECTRIC 0x1770..0x1B57
@@ -633,7 +634,7 @@ item(FEAT_TRAINS, item_electric_Australia_SRA_8650, 6141) {}
 item(FEAT_TRAINS, item_electric_Australia_NSW_46, 6142) {}
 item(FEAT_TRAINS, item_electric_Brazil_SLM_Winterthur_BBC_1D1, 6143) {}
 item(FEAT_TRAINS, item_electric_Brazil_GE_2CC2, 6144) {}
-item(FEAT_TRAINS, item_electric_Costa_Rica_Ferrocarril_Al_Pacifico_127, 6145) {}
+item(FEAT_TRAINS, item_electric_Costa_Rica_AEG_Pacific_A1A_A1A, 6145) {}
 item(FEAT_TRAINS, item_electric_Australia_NSW_86, 6146) {}
 item(FEAT_TRAINS, item_electric_China_China_Railways_HXD2, 6147) {}
 item(FEAT_TRAINS, item_electric_China_China_Railways_SS8, 6148) {}
@@ -651,6 +652,7 @@ item(FEAT_TRAINS, item_electric_Switzerland_MOB_Ge_4_4_8000, 6802) {}
 item(FEAT_TRAINS, item_electric_Chile_SQM_600_GE_289A, 6803) {}
 item(FEAT_TRAINS, item_electric_Venezuela_La_Guaira_Caracas_19_23, 6804) {}
 item(FEAT_TRAINS, item_electric_Chile_FCTC_E_100, 6805) {}
+item(FEAT_TRAINS, item_electric_Costa_Rica_Ferrocarril_Al_Pacifico_127, 6806) {}
 
 //DMU, available ID range: 7000-7999 (hex 0x1B58..0x1F3F)
 #define ID_RANGE_DMU 0x1B58..0x1F3F
