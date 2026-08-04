@@ -24,7 +24,7 @@
     "builder/fv_del_bajio"
 
 #define INTRODUCTION_YEAR 2018
-#define MODEL_LIFE 45
+#define MODEL_LIFE VEHICLE_NEVER_EXPIRES
 #define RETIRE_EARLY DEFAULT_RETIRE_EARLY
 #define VEHICLE_LIFE 15
 

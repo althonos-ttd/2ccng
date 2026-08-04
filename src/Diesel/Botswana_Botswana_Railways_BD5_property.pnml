@@ -22,7 +22,7 @@
     "builder/emd"
     
 #define INTRODUCTION_YEAR 2017
-#define MODEL_LIFE 45
+#define MODEL_LIFE VEHICLE_NEVER_EXPIRES
 #define VEHICLE_LIFE 40
 
 // References: (1) https://www.progressrail.com/fr/Segments/Locomotive/Locomotives/FreightLocomotives/GT42AC.html
