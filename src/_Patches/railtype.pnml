@@ -168,3 +168,7 @@ TRAIN_TRACK(item_wagon_Gen5_livestock_van, RAIL)
 TRAIN_TRACK(item_wagon_Gen6_livestock_van, RAIL)
 
 //Special
+TRAIN_TRACK(item_mu_wagon_unpowered, RAIL)
+TRAIN_TRACK(item_mu_wagon_powered, RAIL)
+TRAIN_TRACK(item_mu_cargo_wagon_unpowered, RAIL)
+TRAIN_TRACK(item_mu_cargo_wagon_powered, RAIL)
