@@ -26,6 +26,9 @@
 #undef POWER_ELECTRIC
 #undef WEIGHT 
 #undef TE_COEFFICIENT 
+#ifdef TE
+#undef TE
+#endif
 #undef AIR_DRAG_COEFFICIENT 
 #undef LENGTH 
 #undef ACTUAL_LENGTH 

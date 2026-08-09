@@ -69,3 +69,9 @@
 #ifndef SPRITE_ID
 #define SPRITE_ID DEFAULT_SPRITE_ID
 #endif
+
+#ifndef TE_COEFFICIENT
+#if defined(TE) && defined(WEIGHT)
+#define TE_COEFFICIENT ((TE) / (9.81 * WEIGHT))
+#endif
+#endif
