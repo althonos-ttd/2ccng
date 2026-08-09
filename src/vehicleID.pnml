@@ -485,6 +485,7 @@ item(FEAT_TRAINS, item_diesel_Ecuador_ENFE_BBB_151, 5811) {}
 item(FEAT_TRAINS, item_diesel_Bolivia_FCMU_Nr_20_22, 5812) {}
 item(FEAT_TRAINS, item_diesel_Botswana_Botswana_Railways_BD5, 5813) {}
 item(FEAT_TRAINS, item_diesel_Ghana_Ghana_Railways_1400_EMD_TT12, 5814) {}
+item(FEAT_TRAINS, item_diesel_Canada_CNR_900_GMD_NF110, 5815) {}
 
 //Electric, available ID range: 6000-6999 (hex 0x1770..0x1B57)
 #define ID_RANGE_ELECTRIC 0x1770..0x1B57

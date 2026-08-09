@@ -141,6 +141,7 @@ STR_BADGE_BUILDER_FUJI                      :Fuji Heavy Industries
 STR_BADGE_BUILDER_GANZ_MAVAG                :Ganz-MAVAG
 STR_BADGE_BUILDER_GE                        :General Electric 'GE'
 STR_BADGE_BUILDER_GM                        :General Motors 'GM'
+STR_BADGE_BUILDER_GMD                       :General Motors Diesel 'GMD'
 STR_BADGE_BUILDER_GONINAN                   :A. Goninan & Co.
 STR_BADGE_BUILDER_HAIPHONG                  :Haiphong Carriage Company
 STR_BADGE_BUILDER_HENSCHEL                  :Henschel & Son
@@ -568,6 +569,7 @@ str_diesel_Bolivia_Ferroviaria_Andina_2500_SALi :Ferroviaria Andina 2500 'SALi' 
 str_diesel_Ecuador_ENFE_BBB_151     :ENFE BBB151-157 (Diesel)
 str_diesel_Bolivia_FCMU_Nr_20_22    :FCMU No. 20 & 22 (Diesel)
 str_diesel_Botswana_Botswana_Railways_BD5    :Botswana Railways BD5 (Diesel)
+str_diesel_Canada_CNR_900_GMD_NF110 :CNR 900 GMD NF110 (Diesel)
 
 #Electric
 str_electric_Switzerland_RhB_DE_2_2 			:RhB De 2/2 (Electric)
