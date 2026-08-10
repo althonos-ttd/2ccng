@@ -59,7 +59,7 @@ MAIN_SRC_FILE       ?= $(BASE_FILENAME).pnml
 # grf file: the above defined grf file, usualls $(GRF_FILE)
 # Add any additional, not usual files here, too, including
 # their relative path to the root of the repository
-BUNDLE_FILES           ?= $(GRF_FILE) $(DOC_FILES) $(GFX_FILES)
+BUNDLE_FILES           ?= $(GRF_FILE) $(DOC_FILES)
 
 # Replacement strings in the source and in the documentation
 # You may only change the values, not add new definitions
@@ -381,7 +381,7 @@ GRFID_FLAGS    ?= -m
 
 # Common to all filenames
 FILE_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo "$(REPO_TAGS)$(REPO_MODIFIED)" || echo "$(REPO_BRANCH_STRING)$(NEWGRF_VERSION)$(REPO_MODIFIED)")
-DIR_NAME           := $(BUILD_DIR)/$(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(FILE_VERSION_STRING) || echo $(BASE_FILENAME))
+DIR_NAME           := $(BUILD_DIR)/bundle/$(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(FILE_VERSION_STRING) || echo $(BASE_FILENAME))
 VERSIONED_FILENAME := $(BASE_FILENAME)-$(FILE_VERSION_STRING)
 DIR_NAME_SRC       := $(BUILD_DIR)/$(VERSIONED_FILENAME)-source
 
