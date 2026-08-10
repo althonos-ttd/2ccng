@@ -1007,7 +1007,8 @@ item_wagon_Narrow_Gen3_Boxcar, /*Year: 1930*/ \
 item_wagon_Narrow_Gen3_Flat_Wagon, /*Year: 1930*/ \
 item_wagon_Narrow_Gen3_Open_Wagon, /*Year: 1930*/ \
 item_wagon_Narrow_Gen3_Lidded_Wagon, /*Year: 1930*/ \
-item_wagon_Narrow_Gen3_Tanker, /*Year: 1930*/
+item_wagon_Narrow_Gen3_Tanker, /*Year: 1930*/ \
+item_wagon_Narrow_Gen4_Container_Carrier, /*Year: 1965*/
 
 #define SORTING_WAGONS_MGLV \
 item_mglv_wagon_Gen7m_container_doublestack, /*Year: 2000*/ \

@@ -624,6 +624,9 @@
 #include "src/Wagons/Gen3/Gen3_Tanker_property.pnml"
 #include "src/Wagons/Gen3/Gen3_Tanker_graphics.pnml"
 #include "src/Wagons/Gen3/Gen3_Tanker_item.pnml"
+#include "src/Wagons/Gen4/Gen4_Container_Carrier_property.pnml"
+#include "src/Wagons/Gen4/Gen4_Container_Carrier_graphics.pnml"
+#include "src/Wagons/Gen4/Gen4_Container_Carrier_item.pnml"
 
 //obsolete vehicles
 

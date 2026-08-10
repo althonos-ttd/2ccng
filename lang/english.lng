@@ -991,6 +991,8 @@ str_wagon_Narrow_Gen3_Open_Wagon        :3rd Gen Open Wagon (Narrow)
 str_wagon_Narrow_Gen3_Lidded_Wagon 		:3rd Gen Lidded Wagon (Narrow)
 str_wagon_Narrow_Gen3_Boxcar            :3rd Gen Boxcar (Narrow)
 
+str_wagon_Narrow_Gen4_Container_Carrier :4th Gen Container Carrier (Narrow)
+
 
 #coaches
 str_coach_Gen1_Wooden_2_axle_Compartment_Coach 			:Wooden 2-axle Compartment Coach
