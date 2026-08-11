@@ -303,15 +303,20 @@ $(BUILD_DIR)/gfx/Gen3_Tanker_%.png: gfx/Wagons/Gen3/Tanker/Layer1.png gfx/Wagons
 # --- Gen4 Container Carrier ---------------------------------------------------
 
 GEN4_CONTAINER_FILES = \
-	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Container.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Container_1.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Container_2.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Container_3.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Refrigerated_1.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Refrigerated_2.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Refrigerated_3.png \
 
 $(BUILD_DIR)/gfx/Gen4/Container_Carrier_1x4.png: gfx/Wagons/Gen4/Container_Carrier/Layer1.png
 	@echo [GFX] $@
 	@$(PYTHON) tools/concat.py --output $@ --axis 1 $< $< $< $<
 
-$(BUILD_DIR)/gfx/Gen4_Container_Carrier_%.png: $(BUILD_DIR)/gfx/Gen4/Container_Carrier_1x4.png gfx/Wagons/Gen4/Container_Carrier/Cargo/%.png
+$(BUILD_DIR)/gfx/Gen4_Container_Carrier_%.png: $(BUILD_DIR)/gfx/Gen4/Container_Carrier_1x4.png gfx/Wagons/Gen4/Container_Carrier/Cargo/%.xpm
 	@echo [GFX] $@
-	@$(PYTHON) tools/stack.py --output $@ $^
+	@$(PYTHON) tools/stack.py --alpha 0 --output $@ $^
 
 
 # --- GFX ----------------------------------------------------------------------

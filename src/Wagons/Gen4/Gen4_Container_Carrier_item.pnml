@@ -43,11 +43,11 @@ item(FEAT_TRAINS, ITEM ) {
 		bitmask_vehicle_info: BITMASK_VEHICLE_INFO;
 	}
 	graphics {
-		purchase: spriteset_wagon_Gen4_Container_Carrier_purchase;
+		purchase: spriteset_wagon_Narrow_Gen4_Container_Carrier_purchase;
 		//Add calls to defined switches below
 		ENGINECAPACITYSWITCHCALL(VEHIDCODE)
 		RUNNINGCOSTENGINESWITCHCALL
 		PURCHASETEXTSWITCHCALL
-		default: switch_wagon_Gen4_Container_Carrier_cargo_selection;
+		default: switch_wagon_Narrow_Gen4_Container_Carrier_cargo_selection;
 	}
 }
