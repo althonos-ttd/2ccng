@@ -198,21 +198,9 @@ STR_BADGE_BUILDER_WALKERS                   :Walkers Limited
 STR_BADGE_BUILDER_WISMAR                    :Waggonfabrik Wismar
 STR_BADGE_BUILDER_WERKSPOOR                 :Werkspoor
 
-#EXTRA PURCHASE TEXTDARKGREEN
-#track gauges
-STR_EXTRA_GAUGE_UNKNOWN                 :Track Gauge: {GRAY}Unknown{BLACK}{}{STRING}
-STR_EXTRA_GAUGE_600MM                   :Track Gauge: {CREAM}600mm{BLACK}{}{STRING}
-STR_EXTRA_GAUGE_2FT                     :Track Gauge: {CREAM}2 ft (610mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_2FT6IN                  :Track Gauge: {YELLOW}2 ft 6 in (762mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_750MM                   :Track Gauge: {YELLOW}750mm{BLACK}{}{STRING}
-STR_EXTRA_GAUGE_760MM                   :Track Gauge: {YELLOW}Bosnian (760mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_950MM                   :Track Gauge: {LTBROWN}Italian metre (950mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_900MM                   :Track Gauge: {BROWN}900mm{BLACK}{}{STRING}
-STR_EXTRA_GAUGE_SWEDISH                 :Track Gauge: {BROWN}Swedish 3 ft (891mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_3FT                     :Track Gauge: {BROWN}3 ft (914mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_METRIC                  :Track Gauge: {DKGREEN}Metric (1,000mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_CAPE                    :Track Gauge: {PURPLE}Cape (1,067mm){BLACK}{}{STRING}
-STR_EXTRA_GAUGE_4FT                     :Track Gauge: {BLUE}4 ft (1,219mm){BLACK}{}{STRING}
+#EXTRA PURCHASE TEXT
+#dual info
+STR_DUAL_INFO      :{BLACK}Power: {GOLD}{POWER}{BLACK} (Diesel) / {GOLD}{POWER}{BLACK} (Electric){}{BLACK}Speed: {GOLD}{VELOCITY}{BLACK} (Diesel) / {GOLD}{VELOCITY}{BLACK} (Electric)
 
 #VEHICLE NAMES
 #Railbus-steam
