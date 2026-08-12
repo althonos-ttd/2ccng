@@ -1,0 +1,37 @@
+/*
+ *  Copyright (C) 2026 Martin Larralde
+ *  This file is part of the 2cc Narrow Gauge in NML, and is based on the 2cc Trains In NML by Transportman
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+#include "../undefine_properties.pnml"
+
+#define VEHIDCODE diesel_Taiwan_TR_R200_AsiaLight
+
+#define VEHICLE_REGION REGION(ASIA,NOREGION,NOCONCEPT)
+
+#define VEHICLE_BADGES \
+    "flag/TW", \
+    "region/asia/eastern", \
+    "power/diesel", \
+    "railgauge/narrow/cape", \
+    "builder/stadler"
+
+#define INTRODUCTION_YEAR 2023
+#define MODEL_LIFE VEHICLE_NEVER_EXPIRES
+#define VEHICLE_LIFE 40
+
+#define SPEED 120
+#define POWER 2304
+#define WEIGHT 96
+#define TE 430
+
+#define LENGTH 8
+#define ACTUAL_LENGTH 8
+
+#define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
+#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 0, DISABLE_WAGON_POWER)
+
+#include "../_CodeSupport/item_defaults.pnml"

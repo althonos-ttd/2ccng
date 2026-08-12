@@ -461,7 +461,8 @@ item_diesel_South_Africa_PRASA_Afro_4000, /*Year: 2014*/ \
 item_diesel_USA_Amtrak_Charger, /*Year: 2015*/ \
 item_diesel_Botswana_Botswana_Railways_BD5, /*Year: 2017*/ \
 item_diesel_Bolivia_Ferroviaria_Andina_2500_SALi, /*Year: 2019*/ \
-item_dual_Spain_FGC_257, /*Year: 2022*/
+item_dual_Spain_FGC_257, /*Year: 2022*/ \
+item_diesel_Taiwan_TR_R200_AsiaLight, /*Year: 2023*/ \
 
 #define SORTING_ELECTRIC \
 item_electric_UK_NER_ES1, /*Year: 1903*/ \
