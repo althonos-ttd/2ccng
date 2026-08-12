@@ -28,12 +28,12 @@
 
 #define GEN4_CONTAINER(NAME) \
 	GEN4_CONTAINER_LIVERY(NAME, L1, 1) \
-	/*GEN4_CONTAINER_LIVERY(NAME, L2, 179)*/ \
+	GEN4_CONTAINER_LIVERY(NAME, L2, 179) \
 	/*GEN4_CONTAINER_LIVERY(NAME, L3, 357)*/ \
 	/*GEN4_CONTAINER_LIVERY(NAME, L4, 535)*/ \
 	random_switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_ ## NAME ## _livery) { \
 		7: spritegroup_wagon_Narrow_Gen4_Container_Carrier_ ## NAME ## _L1; \
-		/*1: spritegroup_wagon_Narrow_Gen4_Container_Carrier_ ## NAME ## _L2;*/ \
+		1: spritegroup_wagon_Narrow_Gen4_Container_Carrier_ ## NAME ## _L2; \
 		/*1: spritegroup_wagon_Narrow_Gen4_Container_Carrier_ ## NAME ## _L3;*/ \
 		/*1: spritegroup_wagon_Narrow_Gen4_Container_Carrier_ ## NAME ## _L4;*/ \
 	}
@@ -43,7 +43,7 @@
 * PURCHASE
 */
 
-PURCHASE_SPRITESET_WAGON(wagon_Narrow_Gen4_Container_Carrier, "gfx/Wagons/Gen4/Container_Carrier/Purchase.png", 1, 1)
+PURCHASE_SPRITESET_WAGON(wagon_Narrow_Gen4_Container_Carrier, "gfx/Wagons/Gen4/Container_Carrier/Purchase.xpm", 1, 1)
 
 /*
 * CARGO VARIATIONS
