@@ -26,9 +26,7 @@
 #undef POWER_ELECTRIC
 #undef WEIGHT 
 #undef TE_COEFFICIENT 
-#ifdef TE
 #undef TE
-#endif
 #undef AIR_DRAG_COEFFICIENT 
 #undef LENGTH 
 #undef ACTUAL_LENGTH 
@@ -48,3 +46,4 @@
 #undef POWER_PER_WAGON 
 #undef BITMASK_VEHICLE_INFO 
 #undef SPRITE_ID
+#undef REVERSE_BUILD_PROBABILITY

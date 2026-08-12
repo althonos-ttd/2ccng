@@ -44,6 +44,7 @@ item(FEAT_TRAINS, ITEM ) {
 	}
 	graphics {
 		purchase: spriteset_wagon_Narrow_Gen4_Container_Carrier_purchase;
+		reverse_build_probability: REVERSE_BUILD_PROBABILITY;
 		//Add calls to defined switches below
 		ENGINECAPACITYSWITCHCALL(VEHIDCODE)
 		RUNNINGCOSTENGINESWITCHCALL

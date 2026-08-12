@@ -75,3 +75,7 @@
 #define TE_COEFFICIENT ((TE) / (9.81 * WEIGHT))
 #endif
 #endif
+
+#ifndef REVERSE_BUILD_PROBABILITY
+#define REVERSE_BUILD_PROBABILITY 0
+#endif
