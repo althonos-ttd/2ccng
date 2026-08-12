@@ -310,6 +310,8 @@ GEN4_CONTAINER_FILES = \
 	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Refrigerated_2.png \
 	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Refrigerated_3.png \
 	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Tanktainer_1.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Tanktainer_2.png \
+	$(BUILD_DIR)/gfx/Gen4_Container_Carrier_Tanktainer_3.png \
 
 $(BUILD_DIR)/gfx/Gen4/Container_Carrier_1x4.png: gfx/Wagons/Gen4/Container_Carrier/Layer1.png
 	@echo [GFX] $@

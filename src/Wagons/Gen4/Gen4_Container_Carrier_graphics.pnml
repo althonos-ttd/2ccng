@@ -70,9 +70,13 @@ random_switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_Refr
 }
 
 GEN4_CONTAINER(Tanktainer_1)
+GEN4_CONTAINER(Tanktainer_2)
+GEN4_CONTAINER(Tanktainer_3)
 
 random_switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery) {
 	1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_1_livery;
+	1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_2_livery;
+	1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_3_livery;
 }
 
 //Goods have multiple liveries
