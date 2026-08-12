@@ -69,23 +69,24 @@ random_switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_Refr
 	1: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_3_livery;
 }
 
+GEN4_CONTAINER(Tanktainer_1)
+
+random_switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery) {
+	1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_1_livery;
+}
+
 //Goods have multiple liveries
 random_switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_Goods_livery) {
 	7: switch_wagon_Narrow_Gen4_Container_Carrier_Container_livery;
 	2: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
-	// 1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
+	1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
 }
 
-// Liquids use tanktainers
-switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_is_liquid, hasbit(cargo_type_in_veh, CC_LIQUID)) {
-	// 1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
+switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_Default_livery, hasbit(cargo_type_in_veh, CC_LIQUID) | hasbit(cargo_type_in_veh, CC_REFRIGERATED) << 1) {
+	3: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
+	2: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
+	1: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
 	switch_wagon_Narrow_Gen4_Container_Carrier_Container_livery;
-}
-
-// Refrigerated cargoes use reefer
-switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_is_refrigerated, hasbit(cargo_type_in_veh, CC_REFRIGERATED)) {
-	1: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
-	switch_wagon_Narrow_Gen4_Container_Carrier_is_liquid;
 }
 
 switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_cargo_selection, cargo_type_in_veh) {
@@ -96,22 +97,38 @@ switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_cargo_selec
 	FZDR: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
 	FISH: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
 
+	/* Oil & Fuel */
+	OIL_: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Oil
+	OILI: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Oil (imported)
+	OILD: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Oil (domestic)
+	PETR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Petrol / Fuel
+	RFPR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Refined Petrol
+
+	/* Chemicals */
+	ACID: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Acid
+	CHEM: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Acid
+	SULP: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Sulphur
+	NH3_: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Ammonia
+	LYE_: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Sodium hydroxide
+	O2__: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Oxygen
+
+	/* Plastic */
+	PLST: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Plastic
+	PLAS: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Plastic
+
 	/* Liquid */
-	// RUBR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// WATR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// COLA: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// PLST: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// BEER: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// DYES: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// PETR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// PLAS: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
-	// RFPR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
+	RUBR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Rubber
+	WATR: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Water
+	COLA: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Cola
+	BEER: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Beer / Alcohol
+	DYES: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
+	OIL_: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;
 
 	/* Goods */
-	// GOOD: switch_wagon_Narrow_Gen4_Container_Carrier_Goods_livery;
+	GOOD: switch_wagon_Narrow_Gen4_Container_Carrier_Goods_livery;
 
 	/* Fallback by FRAX class */
-	switch_wagon_Narrow_Gen4_Container_Carrier_is_refrigerated;
+	switch_wagon_Narrow_Gen4_Container_Carrier_Default_livery;
 }
 
 //Add defined switches 
