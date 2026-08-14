@@ -1,0 +1,53 @@
+/*
+ *  Copyright (C) 2024 Martin Larralde
+ *  This file is part of the 2cc Narrow Gauge in NML, and is based on the 2cc Trains In NML by Transportman
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+/*
+* PURCHASE
+*/
+
+PURCHASE_SPRITESET(VEHIDCODE, "gfx/Dual/Slovakia_ZSSK_HGem_2_2.xpm", 1, 64)
+
+/*
+* VEHICLE
+*/
+
+//Engine
+spriteset(spriteset_dual_Slovakia_ZSSK_HGem_2_2_pantograph_up, "gfx/Dual/Slovakia_ZSSK_HGem_2_2.xpm") {
+	template_2cc_engines_general(1, 1)
+}
+
+spriteset(spriteset_dual_Slovakia_ZSSK_HGem_2_2_pantograph_down, "gfx/Dual/Slovakia_ZSSK_HGem_2_2.xpm") {
+	//template_2cc_engines_general(1, 32)
+	template_2cc_engines_general(1, 1)
+}
+
+/*
+* Visual effect
+*/
+
+switch(FEAT_TRAINS, SELF, DEFAULT_SPRITESET_NAME(VEHIDCODE), tile_powers_railtype("ELNR")) {
+	0: spriteset_dual_Slovakia_ZSSK_HGem_2_2_pantograph_down;
+	1: spriteset_dual_Slovakia_ZSSK_HGem_2_2_pantograph_up;
+}
+
+switch(FEAT_TRAINS, SELF, switch_dual_Slovakia_ZSSK_HGem_2_2_visual_effect, tile_powers_railtype("ELNR")) {
+	0: return visual_effect_and_powered(VISUAL_EFFECT_DIESEL,  -3, DISABLE_WAGON_POWER);
+	1: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+}
+
+//Add defined switches
+
+// RUNNINGCOSTENGINESWITCH
+
+EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+DUALPOWERSWITCH(VEHIDCODE)
+
+DUALSPEEDSWITCH(VEHIDCODE)
+
+DUALRUNNINGCOSTSWITCH(VEHIDCODE)

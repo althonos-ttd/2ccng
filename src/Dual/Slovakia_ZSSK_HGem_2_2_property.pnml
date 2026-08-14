@@ -8,16 +8,16 @@
 
 #include "../undefine_properties.pnml"
 
-#define VEHIDCODE electric_Slovakia_ZSSK_HGem_2_2
+#define VEHIDCODE dual_Slovakia_ZSSK_HGem_2_2
+#define ITEM item_dual_Slovakia_ZSSK_HGem_2_2
+#define NAME string(str_dual_Slovakia_ZSSK_HGem_2_2)
 
 #define VEHICLE_REGION REGION(EASTERNEUROPE,NOREGION,NOCONCEPT)
-#define VEHICLE_GAUGE GAUGE_METRIC
-#define VEHICLE_MAKER MAKER_STADLER
 
 #define VEHICLE_BADGES \
     "flag/SK", \
     "region/europe/eastern", \
-    "power/electric/dc", \
+    "power/dual", \
     "railgauge/narrow/metre", \
     "builder/stadler"
 
@@ -25,10 +25,17 @@
 #define MODEL_LIFE VEHICLE_NEVER_EXPIRES
 #define VEHICLE_LIFE 25
 
-#define SPEED 60
-#define POWER 938
-#define WEIGHT 28
-#define TE_COEFFICIENT 0.27
+#define POWER_DIESEL 536
+#define POWER_ELECTRIC 938
+
+#define SPEED_DIESEL 60
+#define SPEED_ELECTRIC 60
+
+#define SPEED min(SPEED_DIESEL, SPEED_ELECTRIC)
+#define POWER max(POWER_ELECTRIC, POWER_DIESEL)
+
+#define WEIGHT 29
+#define TE 75
 
 #define LENGTH 4
 #define ACTUAL_LENGTH 4

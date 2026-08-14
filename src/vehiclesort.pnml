@@ -459,6 +459,7 @@ item_diesel_Argentina_SOFSE_CNR_CKD8, /*Year: 2013*/ \
 item_diesel_UK_BR_68, /*Year: 2014*/ \
 item_diesel_South_Africa_PRASA_Afro_4000, /*Year: 2014*/ \
 item_diesel_USA_Amtrak_Charger, /*Year: 2015*/ \
+item_dual_Slovakia_ZSSK_HGem_2_2, /*Year: 2016*/ \
 item_diesel_Botswana_Botswana_Railways_BD5, /*Year: 2017*/ \
 item_diesel_Bolivia_Ferroviaria_Andina_2500_SALi, /*Year: 2019*/ \
 item_dual_Spain_FGC_257, /*Year: 2022*/ \
@@ -616,7 +617,6 @@ item_electric_Switzerland_SBB_Eem_923, /*Year: 2012*/ \
 item_electric_South_Africa_TFR_20E, /*Year: 2013*/ \
 item_electric_Kazakhstan_KTZ_KZ8A, /*Year: 2014*/ \
 item_electric_Poland_PKP_PESA_111E, /*Year: 2016*/ \
-item_electric_Slovakia_ZSSK_HGem_2_2, /*Year: 2016*/ \
 item_electric_Tanzania_TRC_E6800, /*Year: 2024*/
 
 #define SORTING_MAGLEV \

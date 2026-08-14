@@ -689,7 +689,6 @@ str_electric_USA_Amtrak_HHP_8 :Amtrak HHP-8 (Electric)
 str_electric_Russia_RZD_VL11 :RZD VL11 (Electric)
 str_electric_Germany_Prussian_ES_6 :K.P.St.E. ES 6 (Electric)
 str_electric_China_China_Railways_6K :China Railways 6K (Electric)
-str_electric_Slovakia_ZSSK_HGem_2_2 :ZSSK HGem 2/2 (Electric)
 str_electric_Georgia_BBR_ChS11 :Borjomi-Bakuriani ChS11 (Electric)
 str_electric_Costa_Rica_Ferrocarril_Al_Pacifico_127 :Ferrocarril al Pacifico No. 127 (Electric)
 str_electric_Switzerland_MOB_Ge_4_4_8000    :MOB Ge 4/4 8000 (Electric)
@@ -698,8 +697,9 @@ str_electric_Venezuela_La_Guaira_Caracas_19_23  :La Guaira & Caracas 19-23 (Elec
 str_electric_Chile_FCTC_E_100   :FCTC E-100 (Electric)
 
 #Dual Mode
-str_dual_Ecuador_FEEP_TD2000   :FEEP TD2000 (Dual Mode)
-str_dual_Spain_FGC_257         :FGC 257 (Dual Mode)
+str_dual_Ecuador_FEEP_TD2000    :FEEP TD2000 (Dual Mode)
+str_dual_Spain_FGC_257          :FGC 257 (Dual Mode)
+str_dual_Slovakia_ZSSK_HGem_2_2 :ZSSK 485.9 (Dual Mode)
 
 #DMU
 str_dmu_Germany_DB_VT_040_Flying_Hamburger 	:DB VT 04.0 'Flying Hamburger' (DMU)

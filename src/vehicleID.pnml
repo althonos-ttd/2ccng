@@ -487,6 +487,7 @@ item(FEAT_TRAINS, item_diesel_Botswana_Botswana_Railways_BD5, 5813) {}
 item(FEAT_TRAINS, item_diesel_Ghana_Ghana_Railways_1400_EMD_TT12, 5814) {}
 item(FEAT_TRAINS, item_diesel_Canada_CNR_900_GMD_NF110, 5815) {}
 item(FEAT_TRAINS, item_diesel_Taiwan_TR_R200_AsiaLight, 5816) {}
+item(FEAT_TRAINS, item_dual_Slovakia_ZSSK_HGem_2_2, 5817) {}
 
 //Electric, available ID range: 6000-6999 (hex 0x1770..0x1B57)
 #define ID_RANGE_ELECTRIC 0x1770..0x1B57
@@ -648,7 +649,7 @@ item(FEAT_TRAINS, item_electric_Poland_PKP_PESA_111E, 6153) {}
 item(FEAT_TRAINS, item_electric_Russia_RZD_VL19, 6154) {}
 item(FEAT_TRAINS, item_electric_Germany_DRG_E18, 6155) {}
 // Narrow
-item(FEAT_TRAINS, item_electric_Slovakia_ZSSK_HGem_2_2, 6800) {}
+// 6800 free
 item(FEAT_TRAINS, item_electric_Georgia_BBR_ChS11, 6801) {}
 item(FEAT_TRAINS, item_electric_Switzerland_MOB_Ge_4_4_8000, 6802) {}
 item(FEAT_TRAINS, item_electric_Chile_SQM_600_GE_289A, 6803) {}
