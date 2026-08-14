@@ -21,6 +21,8 @@
 #undef LOADINGSPEED 
 #undef CARGODEF 
 #undef SPEED 
+#undef SPEED_DIESEL
+#undef SPEED_ELECTRIC
 #undef POWER 
 #undef POWER_DIESEL
 #undef POWER_ELECTRIC
