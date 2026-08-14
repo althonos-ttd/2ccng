@@ -22,8 +22,7 @@ spriteset(spriteset_dual_Slovakia_ZSSK_HGem_2_2_pantograph_up, "gfx/Dual/Slovaki
 }
 
 spriteset(spriteset_dual_Slovakia_ZSSK_HGem_2_2_pantograph_down, "gfx/Dual/Slovakia_ZSSK_HGem_2_2.xpm") {
-	//template_2cc_engines_general(1, 32)
-	template_2cc_engines_general(1, 1)
+	template_2cc_engines_general(1, 32)
 }
 
 /*
@@ -36,8 +35,8 @@ switch(FEAT_TRAINS, SELF, DEFAULT_SPRITESET_NAME(VEHIDCODE), tile_powers_railtyp
 }
 
 switch(FEAT_TRAINS, SELF, switch_dual_Slovakia_ZSSK_HGem_2_2_visual_effect, tile_powers_railtype("ELNR")) {
-	0: return visual_effect_and_powered(VISUAL_EFFECT_DIESEL,  -3, DISABLE_WAGON_POWER);
-	1: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+	0: return visual_effect_and_powered(VISUAL_EFFECT_DIESEL,    2, DISABLE_WAGON_POWER);
+	1: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -2, DISABLE_WAGON_POWER);
 }
 
 //Add defined switches
