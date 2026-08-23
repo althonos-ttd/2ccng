@@ -25,6 +25,7 @@ switch(FEAT_TRAINS, PARENT, switch_can_attach_wagon, [STORE_TEMP(position_in_con
 	ID_RANGE_RBE: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Electric Railbus, allow
 	ID_RANGE_STEAM: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Steam, allow
 	ID_RANGE_DIESEL: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Diesel, allow
+	ID_RANGE_DUAL: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Dual, allow
 	ID_RANGE_ELECTRIC: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Electric, allow
 	ID_RANGE_DMU: string(str_cannot_attach_wagon_to_MU); //DMU, disallow
 	ID_RANGE_EMU: string(str_cannot_attach_wagon_to_MU); //EMU, disallow
@@ -54,6 +55,7 @@ switch(FEAT_TRAINS, PARENT, switch_can_attach_unit_rail, [STORE_TEMP(position_in
 	ID_RANGE_RBE: string(str_cannot_attach_Unit_wagon_to_engine); //Electric Railbus, disallow
 	ID_RANGE_STEAM: string(str_cannot_attach_Unit_wagon_to_engine); //Steam, disallow
 	ID_RANGE_DIESEL: string(str_cannot_attach_Unit_wagon_to_engine); //Diesel, disallow
+	ID_RANGE_DUAL: string(str_cannot_attach_Unit_wagon_to_engine); //Dual, disallow
 	ID_RANGE_ELECTRIC: string(str_cannot_attach_Unit_wagon_to_engine); //Electric, disallow
 	ID_RANGE_DMU: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //DMU, allow
 	ID_RANGE_EMU: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //EMU, allow
@@ -83,6 +85,7 @@ switch(FEAT_TRAINS, PARENT, switch_can_attach_unit_mtro, [STORE_TEMP(position_in
 	ID_RANGE_RBE: string(str_cannot_attach_Unit_wagon_to_engine); //Electric Railbus, disallow
 	ID_RANGE_STEAM: string(str_cannot_attach_Unit_wagon_to_engine); //Steam, disallow
 	ID_RANGE_DIESEL: string(str_cannot_attach_Unit_wagon_to_engine); //Diesel, disallow
+	ID_RANGE_DUAL: string(str_cannot_attach_Unit_wagon_to_engine); //Dual, disallow
 	ID_RANGE_ELECTRIC: string(str_cannot_attach_Unit_wagon_to_engine); //Electric, disallow
 	ID_RANGE_DMU: CB_RESULT_ATTACH_DISALLOW; //DMU, disallow
 	ID_RANGE_EMU: CB_RESULT_ATTACH_DISALLOW; //EMU, disallow
@@ -112,6 +115,7 @@ switch(FEAT_TRAINS, PARENT, switch_can_attach_unit_mglv, [STORE_TEMP(position_in
 	ID_RANGE_RBE: string(str_cannot_attach_Unit_wagon_to_engine); //Electric Railbus, disallow
 	ID_RANGE_STEAM: string(str_cannot_attach_Unit_wagon_to_engine); //Steam, disallow
 	ID_RANGE_DIESEL: string(str_cannot_attach_Unit_wagon_to_engine); //Diesel, disallow
+	ID_RANGE_DUAL: string(str_cannot_attach_Unit_wagon_to_engine); //Dual, disallow
 	ID_RANGE_ELECTRIC: string(str_cannot_attach_Unit_wagon_to_engine); //Electric, disallow
 	ID_RANGE_DMU: CB_RESULT_ATTACH_DISALLOW; //DMU, disallow
 	ID_RANGE_EMU: CB_RESULT_ATTACH_DISALLOW; //EMU, disallow
@@ -141,6 +145,7 @@ switch(FEAT_TRAINS, PARENT, switch_can_attach_unit_narr, [STORE_TEMP(position_in
 	ID_RANGE_RBE: string(str_cannot_attach_Unit_wagon_to_engine); //Electric Railbus, disallow
 	ID_RANGE_STEAM: string(str_cannot_attach_Unit_wagon_to_engine); //Steam, disallow
 	ID_RANGE_DIESEL: string(str_cannot_attach_Unit_wagon_to_engine); //Diesel, disallow
+	ID_RANGE_DUAL: string(str_cannot_attach_Unit_wagon_to_engine); //Dual, disallow
 	ID_RANGE_ELECTRIC: string(str_cannot_attach_Unit_wagon_to_engine); //Electric, disallow
 	ID_RANGE_DMU: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //DMU, allow
 	ID_RANGE_EMU: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //EMU, allow
@@ -170,6 +175,7 @@ switch(FEAT_TRAINS, PARENT, switch_can_attach_unit_rail_cargo, [STORE_TEMP(posit
 	ID_RANGE_RBE: string(str_cannot_attach_Unit_wagon_to_engine); //Electric Railbus, disallow
 	ID_RANGE_STEAM: string(str_cannot_attach_Unit_wagon_to_engine); //Steam, disallow
 	ID_RANGE_DIESEL: string(str_cannot_attach_Unit_wagon_to_engine); //Diesel, disallow
+	ID_RANGE_DUAL: string(str_cannot_attach_Unit_wagon_to_engine); //Dual, disallow
 	ID_RANGE_ELECTRIC: string(str_cannot_attach_Unit_wagon_to_engine); //Electric, disallow
 	ID_RANGE_DMU: string(str_cannot_attach_Unit_wagon_cargo_to_passenger); //DMU, disallow
 	ID_RANGE_EMU: string(str_cannot_attach_Unit_wagon_cargo_to_passenger); //EMU, disallow
@@ -201,6 +207,7 @@ switch(FEAT_TRAINS, SELF, switch_can_attach_vehicle, vehicle_type_id) {
 	ID_RANGE_RBE: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Electric Railbus, always allow
 	ID_RANGE_STEAM: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Steam, always allow
 	ID_RANGE_DIESEL: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Diesel, always allow
+	ID_RANGE_DUAL: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Dual, always allow
 	ID_RANGE_ELECTRIC: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //Electric, always allow
 	ID_RANGE_DMU: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //DMU, always allow
 	ID_RANGE_EMU: CB_RESULT_ATTACH_ALLOW_IF_RAILTYPES; //EMU, always allow

@@ -448,7 +448,6 @@ item_diesel_Norway_CargoNet_312, /*Year: 2006*/ \
 item_diesel_Australia_IRA_DSB_MZ_III, /*Year: 2006*/ \
 item_diesel_Australia_Pacific_National_92, /*Year: 2008*/ \
 item_diesel_China_China_Railways_HXN5, /*Year: 2008*/ \
-item_dual_Ecuador_FEEP_TD2000, /*Year: 2008*/ \
 item_diesel_Egypt_ENR_2400_GE_ES40ACi, /*Year: 2009*/ \
 item_diesel_Germany_DB_261_Gravita_10BB, /*Year: 2010*/ \
 item_diesel_Germany_HVLE_V490, /*Year: 2010*/ \
@@ -459,11 +458,14 @@ item_diesel_Argentina_SOFSE_CNR_CKD8, /*Year: 2013*/ \
 item_diesel_UK_BR_68, /*Year: 2014*/ \
 item_diesel_South_Africa_PRASA_Afro_4000, /*Year: 2014*/ \
 item_diesel_USA_Amtrak_Charger, /*Year: 2015*/ \
-item_dual_Slovakia_ZSSK_HGem_2_2, /*Year: 2016*/ \
 item_diesel_Botswana_Botswana_Railways_BD5, /*Year: 2017*/ \
 item_diesel_Bolivia_Ferroviaria_Andina_2500_SALi, /*Year: 2019*/ \
-item_dual_Spain_FGC_257, /*Year: 2022*/ \
 item_diesel_Taiwan_TR_R200_AsiaLight, /*Year: 2023*/ \
+
+#define SORTING_DUAL \
+item_dual_Ecuador_FEEP_TD2000, /*Year: 2008*/ \
+item_dual_Slovakia_ZSSK_HGem_2_2, /*Year: 2016*/ \
+item_dual_Spain_FGC_257, /*Year: 2022*/ \
 
 #define SORTING_ELECTRIC \
 item_electric_UK_NER_ES1, /*Year: 1903*/ \
@@ -1047,6 +1049,7 @@ sort(FEAT_TRAINS, [
 	SORTING_RBM
 	SORTING_STEAM 
 	SORTING_DIESEL
+	SORTING_DUAL
 	SORTING_ELECTRIC
 	SORTING_MAGLEV
 	SORTING_DMU
