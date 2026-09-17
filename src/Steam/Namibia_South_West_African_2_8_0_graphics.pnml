@@ -55,13 +55,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_Namibia_South_West_African_2_8_0_length, 
 	4;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_Namibia_South_West_African_2_8_0_articulated, extra_callback_info1) {
-	1: return item_steam_Namibia_South_West_African_2_8_0;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

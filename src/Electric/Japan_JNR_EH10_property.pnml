@@ -33,6 +33,7 @@
 
 #define LENGTH 7
 #define ACTUAL_LENGTH 14
+#define ARTICULATED 1
 
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
 #define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 0, DISABLE_WAGON_POWER)

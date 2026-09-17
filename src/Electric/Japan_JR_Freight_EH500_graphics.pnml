@@ -44,13 +44,10 @@ switch(FEAT_TRAINS, SELF, switch_electric_Japan_JR_Freight_EH500_length, positio
 	8;
 }
 
-switch(FEAT_TRAINS, SELF, switch_electric_Japan_JR_Freight_EH500_articulated, extra_callback_info1) {
-	1: return item_electric_Japan_JR_Freight_EH500;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

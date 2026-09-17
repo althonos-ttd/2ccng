@@ -55,13 +55,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_USA_D_H_Stourbridge_Lion_length, position
 	2;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_USA_D_H_Stourbridge_Lion_articulated, extra_callback_info1) {
-	1: return item_steam_USA_D_H_Stourbridge_Lion;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

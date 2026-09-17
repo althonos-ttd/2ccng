@@ -36,6 +36,7 @@
 #undef WAGON_LENGTH 
 #undef HEAD_CAPACITY 
 #undef WAGON_CAPACITY 
+#undef ARTICULATED
 #undef DUAL_HEADED 
 #undef PASSENGER 
 #undef MISC_FLAGS 

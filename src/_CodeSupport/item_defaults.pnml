@@ -83,3 +83,7 @@
 #ifndef EXTRA_BADGES
 #define EXTRA_BADGES
 #endif
+
+#ifndef ARTICULATED
+#define ARTICULATED 0
+#endif

@@ -45,13 +45,10 @@ switch(FEAT_TRAINS, SELF, switch_electric_Japan_JNR_EH10_length, position_in_veh
 	7;
 }
 
-switch(FEAT_TRAINS, SELF, switch_electric_Japan_JNR_EH10_articulated, extra_callback_info1) {
-	1: return item_electric_Japan_JNR_EH10;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

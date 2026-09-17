@@ -55,13 +55,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_UK_Padarn_Railway_Fire_Queen_length, posi
 	3;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_UK_Padarn_Railway_Fire_Queen_articulated, extra_callback_info1) {
-	1: return item_steam_UK_Padarn_Railway_Fire_Queen;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

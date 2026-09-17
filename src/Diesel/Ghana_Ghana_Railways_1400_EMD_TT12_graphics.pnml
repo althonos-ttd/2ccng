@@ -40,17 +40,10 @@ switch(FEAT_TRAINS, SELF, switch_diesel_Ghana_Ghana_Railways_1400_EMD_TT12_lengt
 	1;
 }
 
-/*
-* Articulated part
-*/
-
-switch(FEAT_TRAINS, SELF, switch_diesel_Ghana_Ghana_Railways_1400_EMD_TT12_articulated, extra_callback_info1) {
-	1: return item_diesel_Ghana_Ghana_Railways_1400_EMD_TT12;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

@@ -44,17 +44,10 @@ switch(FEAT_TRAINS, SELF, switch_diesel_Ecuador_ENFE_BBB_151_length, position_in
 	5;
 }
 
-/*
-* Articulated part
-*/
-
-switch(FEAT_TRAINS, SELF, switch_diesel_Ecuador_ENFE_BBB_151_articulated, extra_callback_info1) {
-	1: return item_diesel_Ecuador_ENFE_BBB_151;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

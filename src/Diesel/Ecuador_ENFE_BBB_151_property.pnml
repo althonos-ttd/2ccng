@@ -29,6 +29,7 @@
 #define MODEL_LIFE 45
 #define VEHICLE_LIFE 40
 
+#define ARTICULATED 1
 #define SPEED 70
 #define POWER 1220
 #define WEIGHT 84

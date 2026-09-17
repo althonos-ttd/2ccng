@@ -55,13 +55,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_Kenya_East_African_Railway_23_length, pos
 	3;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_Kenya_East_African_Railway_23_articulated, extra_callback_info1) {
-	1: return item_steam_Kenya_East_African_Railway_23;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

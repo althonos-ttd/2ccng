@@ -70,13 +70,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_South_Africa_SAR_GMA_4_8_2_2_8_4_length, 
 	4;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_South_Africa_SAR_GMA_4_8_2_2_8_4_articulated, extra_callback_info1) {
-	1..2: return item_steam_South_Africa_SAR_GMA_4_8_2_2_8_4;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

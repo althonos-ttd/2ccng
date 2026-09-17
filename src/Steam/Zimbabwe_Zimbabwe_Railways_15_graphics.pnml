@@ -70,13 +70,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_Zimbabwe_Zimbabwe_Railways_15_length, pos
 	4;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_Zimbabwe_Zimbabwe_Railways_15_articulated, extra_callback_info1) {
-	1..2: return item_steam_Zimbabwe_Zimbabwe_Railways_15;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

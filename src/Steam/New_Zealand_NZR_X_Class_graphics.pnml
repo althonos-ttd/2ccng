@@ -55,13 +55,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_New_Zealand_NZR_X_Class_length, position_
 	6;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_New_Zealand_NZR_X_Class_articulated, extra_callback_info1) {
-	1: return item_steam_New_Zealand_NZR_X_Class;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

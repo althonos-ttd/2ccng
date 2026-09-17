@@ -55,13 +55,10 @@ switch(FEAT_TRAINS, SELF, switch_steam_Japan_JGR_9600_length, position_in_vehid_
 	4;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_Japan_JGR_9600_articulated, extra_callback_info1) {
-	1: return item_steam_Japan_JGR_9600;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

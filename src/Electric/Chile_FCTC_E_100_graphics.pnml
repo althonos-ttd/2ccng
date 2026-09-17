@@ -49,31 +49,15 @@ switch(FEAT_TRAINS, PARENT, switch_electric_Chile_FCTC_E_100_back_animation, mot
 	1: spriteset_electric_Chile_FCTC_E_100_back_S2;
 }
 
-switch(FEAT_TRAINS, SELF, switch_electric_Chile_FCTC_E_100_position, position_in_vehid_chain % 2) {
+switch(FEAT_TRAINS, SELF, DEFAULT_SPRITESET_NAME(VEHIDCODE), position_in_vehid_chain % 2) {
 	0: switch_electric_Chile_FCTC_E_100_front_animation;
 	1: switch_electric_Chile_FCTC_E_100_back_animation;
 }
 
-/*
-* Visual effect
-*/
-
-switch(FEAT_TRAINS, SELF, switch_electric_Chile_FCTC_E_100_visual_effect, position_in_vehid_chain % 2) {
-	0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 0, DISABLE_WAGON_POWER);
-	return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 0, DISABLE_WAGON_POWER);
-}
-
-switch(FEAT_TRAINS, SELF, switch_electric_Chile_FCTC_E_100_length, position_in_vehid_chain % 2) {
-	0: 5;
-	5;
-}
-
-switch(FEAT_TRAINS, SELF, switch_electric_Chile_FCTC_E_100_articulated, extra_callback_info1) {
-	1: return item_electric_Chile_FCTC_E_100;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
 
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+ARTICULATEDSWITCH(VEHIDCODE)

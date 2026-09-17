@@ -42,7 +42,7 @@
 
 #define HEAD_CAPACITY 0
 
-
+#define ARTICULATED 0
 #define DUAL_HEADED 0
 #define PASSENGER 0
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
