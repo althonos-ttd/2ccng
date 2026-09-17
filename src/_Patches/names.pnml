@@ -1,8 +1,0 @@
-#define TRAIN_NAME(VEHIDCODE, NAME)    \
-    item(FEAT_TRAINS, VEHIDCODE) {     \
-        property {                     \
-            name: string(NAME);        \
-        }                              \
-    }
-
-TRAIN_NAME(item_steam_Germany_Prussian_S10, str_steam_Germany_Prussian_S10)

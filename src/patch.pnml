@@ -1,0 +1,20 @@
+/*
+ *  Copyright (C) 2026 Martin Larralde
+ *  This file is part of the 2cc Narrow Gauge in NML, and is based on the 2cc Trains In NML by Transportman
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+//disable original rail vehicles
+disable_item(FEAT_TRAINS, 0, 115);
+
+//disable duplicate items provided by 2ccNG
+disable_item(FEAT_TRAINS, item_electric_Costa_Rica_AEG_Pacific_A1A_A1A); // Replaced by 6806
+disable_item(FEAT_TRAINS, item_diesel_Ghana_Railway_Corporation_TT12);   // Replaced by 5814
+disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_coach);               // Replaced by 11808-11809
+disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_mail_coach);          // Replaced by 11810
+disable_item(FEAT_TRAINS, item_diesel_Euskotren_TD2000);                 // Replaced by 5901
+
+//disable some 2ccNML revival items
+disable_item(FEAT_TRAINS, 11073, 11106);  // Narrow-gauge coaches (we provide our own)

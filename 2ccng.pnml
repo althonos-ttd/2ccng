@@ -16,6 +16,8 @@
 #include "src/gauges.pnml"
 //define grf
 #include "src/header.pnml"
+//patch other grfs
+#include "src/patch.pnml"
 //check for valid settings
 #include "src/checks.pnml"
 //include sprite templates
@@ -32,9 +34,9 @@
 #include "src/railtypetable.pnml"
 //give unique IDs to vehicles
 #include "src/vehicleID.pnml"
-// badges
-#include "src/badges.pnml"
-//Can attach vehcile
+// badge table
+#include "src/badgetable.pnml"
+//Can attach vehicle
 #include "src/wagon_attach.pnml"
 //Default properties that are for all vehicles
 #include "src/_CodeSupport/default_properties.pnml"
@@ -48,12 +50,6 @@
 #include "src/_CodeSupport/muwagoncalculations.pnml"
 // Cleanup
 #include "src/undefine_properties.pnml"
-
-//Patches for compatibility & consistency
-#include "src/_Patches/disable.pnml"
-#include "src/_Patches/badges.pnml"
-#include "src/_Patches/railtype.pnml"
-#include "src/_Patches/names.pnml"
 
 /*
 * VEHICLES
