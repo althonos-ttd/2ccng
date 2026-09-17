@@ -1,3 +1,21 @@
+#define BADGE_GAUGE_STD         "railgauge/standard"
+#define BADGE_GAUGE_NAR         "railgauge/narrow"
+#define BADGE_GAUGE_NAR_2FT     "railgauge/narrow/2ft",           "railgauge/narrow"
+#define BADGE_GAUGE_NAR_3FT     "railgauge/narrow/3ft",           "railgauge/narrow"
+#define BADGE_GAUGE_NAR_750MM   "railgauge/narrow/750mm",         "railgauge/narrow"
+#define BADGE_GAUGE_NAR_BOSNIAN "railgauge/narrow/bosnian",       "railgauge/narrow"
+#define BADGE_GAUGE_NAR_CAPE    "railgauge/narrow/cape",          "railgauge/narrow"
+#define BADGE_GAUGE_NAR_ITMETRE "railgauge/narrow/italian_metre", "railgauge/narrow"
+#define BADGE_GAUGE_NAR_METRE   "railgauge/narrow/metre",         "railgauge/narrow"
+#define BADGE_GAUGE_NAR_SE3FT   "railgauge/narrow/swedish_3ft",   "railgauge/narrow"
+#define BADGE_GAUGE_BRD         "railgauge/broad"
+#define BADGE_GAUGE_BRD_BRUNEL  "railgauge/broad/brunel",         "railgauge/broad"
+#define BADGE_GAUGE_BRD_DUTCH   "railgauge/broad/dutch",          "railgauge/broad"
+#define BADGE_GAUGE_BRD_IBERIAN "railgauge/broad/iberian",        "railgauge/broad"
+#define BADGE_GAUGE_BRD_INDIAN  "railgauge/broad/indian",         "railgauge/broad"
+#define BADGE_GAUGE_BRD_IRISH   "railgauge/broad/irish",          "railgauge/broad"
+#define BADGE_GAUGE_BRD_RUSSIAN "railgauge/broad/russian",        "railgauge/broad"
+
 item(FEAT_BADGES, badge_railgauge) {
     property {
         label: "railgauge";

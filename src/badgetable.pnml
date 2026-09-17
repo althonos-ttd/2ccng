@@ -228,9 +228,10 @@ badgetable {
 #define BADGESPROPERTY badges: [VEHICLE_BADGES];
 
 #include "_Badges/builder.pnml"
-#include "_Badges/flags.pnml"
-#include "_Badges/gauge.pnml"
+#include "_Badges/flag.pnml"
 #include "_Badges/power.pnml"
+#include "_Badges/railgauge.pnml"
+#include "_Badges/region.pnml"
 
 #else
 #define BADGESPROPERTY
