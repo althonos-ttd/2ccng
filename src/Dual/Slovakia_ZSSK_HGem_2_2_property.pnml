@@ -13,6 +13,7 @@
 #define NAME string(str_dual_Slovakia_ZSSK_HGem_2_2)
 
 #define VEHICLE_REGION REGION(EASTERNEUROPE,NOREGION,NOCONCEPT)
+#define VEHICLE_COUNTRY SK
 
 #define VEHICLE_BADGES \
     "flag/SK", \

@@ -40,6 +40,8 @@
 #include "src/wagon_attach.pnml"
 //Default properties that are for all vehicles
 #include "src/_CodeSupport/default_properties.pnml"
+//Macro for item definition
+#include "src/_CodeSupport/item_definition.pnml"
 //Costs
 #include "src/costs.pnml"
 //Capacities

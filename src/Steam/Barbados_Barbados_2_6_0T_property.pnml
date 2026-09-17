@@ -9,12 +9,11 @@
 #include "../undefine_properties.pnml"
 
 #define VEHIDCODE steam_Barbados_Barbados_2_6_0T
-#define ITEM item_steam_Barbados_Barbados_2_6_0T
-#define NAME string(str_steam_Barbados_Barbados_2_6_0T)
 
-#define VEHICLE_REGION REGION(NORTHAMERICA,SOUTHAMERICA,NOCONCEPT)
-#define VEHICLE_GAUGE GAUGE_2FT6IN
-#define VEHICLE_MAKER MAKER_BALDWIN
+#define VEHICLE_REGION  REGION(NORTHAMERICA,SOUTHAMERICA,NOCONCEPT)
+#define VEHICLE_GAUGE   GAUGE_2FT6IN
+#define VEHICLE_MAKER   MAKER_BALDWIN
+#define VEHICLE_COUNTRY BB
 
 #define VEHICLE_BADGES \
     "flag/BB", \

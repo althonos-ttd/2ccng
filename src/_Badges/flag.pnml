@@ -8,7 +8,9 @@
 #define BADGE_FLAG_BD "flag/BD"
 #define BADGE_FLAG_BE "flag/BE"
 #define BADGE_FLAG_BG "flag/BG"
+#define BADGE_FLAG_BO "flag/BO"
 #define BADGE_FLAG_BR "flag/BR"
+#define BADGE_FLAG_BW "flag/BW"
 #define BADGE_FLAG_BY "flag/BY"
 #define BADGE_FLAG_CA "flag/CA"
 #define BADGE_FLAG_CD "flag/CD"
@@ -94,6 +96,7 @@
 #define BADGE_FLAG_UA "flag/UA"
 #define BADGE_FLAG_US "flag/US"
 #define BADGE_FLAG_UY "flag/UY"
+#define BADGE_FLAG_VE "flag/VE"
 #define BADGE_FLAG_ZA "flag/ZA"
 #define BADGE_FLAG_ZW "flag/ZW"
 

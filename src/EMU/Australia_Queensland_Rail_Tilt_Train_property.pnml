@@ -15,6 +15,8 @@
 #define VEHICLE_REGION REGION(OCEANIA,NOREGION,NOCONCEPT)
 #define VEHICLE_GAUGE GAUGE_CAPE
 #define VEHICLE_MAKER MAKER_WALKERS
+#define VEHICLE_COUNTRY AU
+
 #define VEHICLE_BADGES \
     "flag/AU", \
     "region/oceania/australia_and_new_zealand", \

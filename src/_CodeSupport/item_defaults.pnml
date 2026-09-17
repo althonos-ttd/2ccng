@@ -79,3 +79,7 @@
 #ifndef REVERSE_BUILD_PROBABILITY
 #define REVERSE_BUILD_PROBABILITY 0
 #endif
+
+#ifndef EXTRA_BADGES
+#define EXTRA_BADGES
+#endif

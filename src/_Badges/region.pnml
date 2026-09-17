@@ -8,7 +8,9 @@
 #define BADGE_REGION_BD "region/asia",    "region/asia/southern"
 #define BADGE_REGION_BE "region/europe",  "region/europe/western"
 #define BADGE_REGION_BG "region/europe",  "region/europe/eastern"
+#define BADGE_REGION_BO "region/america", "region/america/south"
 #define BADGE_REGION_BR "region/america", "region/america/south"
+#define BADGE_REGION_BW "region/africa",  "region/africa/southern"
 #define BADGE_REGION_BY "region/europe",  "region/europe/eastern"
 #define BADGE_REGION_CA "region/america", "region/america/northern"
 #define BADGE_REGION_CD "region/africa",  "region/africa/middle"
@@ -95,6 +97,7 @@
 #define BADGE_REGION_UA "region/europe",  "region/europe/eastern"
 #define BADGE_REGION_US "region/america", "region/america/northern"
 #define BADGE_REGION_UY "region/america", "region/america/south"
+#define BADGE_REGION_VE "region/america", "region/america/south"
 #define BADGE_REGION_ZA "region/africa",  "region/africa/southern"
 #define BADGE_REGION_ZW "region/africa",  "region/africa/eastern"
 
