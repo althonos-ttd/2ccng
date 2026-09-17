@@ -100,6 +100,7 @@ switch(FEAT_TRAINS, SELF, switch_wagon_Narrow_Gen4_Container_Carrier_cargo_selec
 	FRUT: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
 	FZDR: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
 	FISH: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
+	MILK: switch_wagon_Narrow_Gen4_Container_Carrier_Refrigerated_livery;
 
 	/* Oil & Fuel */
 	OIL_: switch_wagon_Narrow_Gen4_Container_Carrier_Tanktainer_livery;	// Oil

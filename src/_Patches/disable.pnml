@@ -2,32 +2,11 @@
 disable_item(FEAT_TRAINS, 0, 115);
 
 //disable duplicate items provided by 2ccNG
-disable_item(FEAT_TRAINS, item_electric_Costa_Rica_AEG_Pacific_A1A_A1A);
-disable_item(FEAT_TRAINS, item_diesel_Ghana_Railway_Corporation_TT12);
-disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_coach);
-disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_mail_coach);
+disable_item(FEAT_TRAINS, item_electric_Costa_Rica_AEG_Pacific_A1A_A1A); // Replaced by 6806
+disable_item(FEAT_TRAINS, item_diesel_Ghana_Railway_Corporation_TT12);   // Replaced by 5814
+disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_coach);               // Replaced by 11808-11809
+disable_item(FEAT_TRAINS, item_coach_Gen3_NZR_56ft_mail_coach);          // Replaced by 11810
+disable_item(FEAT_TRAINS, item_diesel_Euskotren_TD2000);                 // Replaced by 5901
 
-//disable some 2ccNML revival items for aesthetic or balancing
-disable_item(FEAT_TRAINS, item_rbs_Germany_Hessian_Ludwig_Thomas);		// Hessian Ludwig Thomas (duplicate sprite)
-disable_item(FEAT_TRAINS, item_rbs_Austria_NOLB_30_33);		            // NOLB 30-39 (duplicate sprite)
-disable_item(FEAT_TRAINS, item_steam_Egypt_Stephenson_Class_192);		// Stephenson 192 (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Brazil_Baroneza);		            // Baroneza (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Argentina_La_Portena);		        // La Portena (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Brazil_Sao_Paulo_Railway_13);		// Sao Paulo 13-14 (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Australia_NSW_Z19);		        // NSWGR Z19 (duplicate sprite)
-disable_item(FEAT_TRAINS, item_steam_Australia_NSW_D50);		        // NSWGR D50 (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Peru_No8_Monsefu);		            // No8 Monsefu (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Chile_La_Copiapo);                 // Chile La Copiapo (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Egypt_Kitson_2_2_2);		        // Egypt Kitson 2-2-2 (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Egypt_Class_7_2_6_0);		        // Egypt Kitson 7-2-6-0 (duplicated sprite)
-disable_item(FEAT_TRAINS, item_steam_Egypt_class_4_0_6_0);		        // Egypt Kitson 4-0-6-0 (duplicated sprite)
-disable_item(FEAT_TRAINS, item_diesel_Egypt_ENR_G22W);		            // Egypt ENR G22W (duplicated sprite)
-disable_item(FEAT_TRAINS, item_diesel_Australia_BHP_6071_GE_AC6000CW);	// AC6000CW (duplicate item)
-disable_item(FEAT_TRAINS, item_diesel_Australia_NSW_49); 		        // NSWGR 49 (too close to NSWGR 48) 
-disable_item(FEAT_TRAINS, item_diesel_Australia_NSW_PTC_73); 		    // PTC 73 (too close to NSWGR 80) 
-disable_item(FEAT_TRAINS, item_diesel_Australia_NSW_82);		        // NSWGR 82 (too close to NSWGR 80)
-disable_item(FEAT_TRAINS, item_diesel_Australia_EMD_NR_Class); 		    // EMD NR (graphics)
-disable_item(FEAT_TRAINS, item_electric_China_China_Railways_HXD2B);	// CR HXD2B (duplicated graphics)
-disable_item(FEAT_TRAINS, item_emu_Australia_Melbourne_Xtrapolis_100);  // Australia X'trapolis 100 (already Chile)
-disable_item(FEAT_TRAINS, item_mtro_USA_Brooklyn_Union_Gate_Car);       // Brooklyn Union Gate Car (duplicate sprite)
-disable_item(FEAT_TRAINS, item_coach_Gen1_American_style_NZAUS_coach, item_coach_Gen1_NSW_ka_tram_car);  // Narrow-gauge coaches
+//disable some 2ccNML revival items
+disable_item(FEAT_TRAINS, 11073, 11106);  // Narrow-gauge coaches (we provide our own)

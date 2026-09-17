@@ -469,6 +469,29 @@ item(FEAT_TRAINS, item_diesel_USA_EMD_FT, 5188) {}
 item(FEAT_TRAINS, item_diesel_Germany_DR_132_DBAG_234, 5189) {}
 item(FEAT_TRAINS, item_diesel_Yugoslavia_JZ_D66, 5190) {}
 item(FEAT_TRAINS, item_diesel_Ireland_CIE_071, 5191) {}
+// item(FEAT_TRAINS, item_diesel_pesa_111d, 5186) {}
+// item(FEAT_TRAINS, item_diesel_emc_e3, 5187) {}
+// item(FEAT_TRAINS, item_diesel_emd_ft, 5188) {}
+// item(FEAT_TRAINS, item_diesel_ltz_te109, 5189) {}
+// item(FEAT_TRAINS, item_diesel_krauss_maffei_ml_2200, 5190) {}
+// item(FEAT_TRAINS, item_diesel_emd_jt22cw, 5191) {}
+// item(FEAT_TRAINS, item_diesel_veb_lkm_v180, 5192) {}
+// item(FEAT_TRAINS, item_diesel_nohab_aa16, 5193) {}
+// item(FEAT_TRAINS, item_diesel_lew_v100, 5194) {}
+// item(FEAT_TRAINS, item_diesel_fablok_6d, 5195) {}
+// item(FEAT_TRAINS, item_diesel_hcp_301d, 5196) {}
+// item(FEAT_TRAINS, item_diesel_baldwin_lima_hamilton_rf_615_e, 5197) {}
+// item(FEAT_TRAINS, item_diesel_ee_dick__kerr___co_vulcan_foundry_de2, 5198) {}
+item(FEAT_TRAINS, item_diesel_Euskotren_TD2000, 5199) {}
+// item(FEAT_TRAINS, item_diesel_tulloch_0_6_0dm_w_class, 5200) {}
+// item(FEAT_TRAINS, item_diesel_ge_es58aci, 5201) {}
+// item(FEAT_TRAINS, item_diesel_ltz_te10m, 5202) {}
+// item(FEAT_TRAINS, item_diesel_ltz_te126, 5203) {}
+// item(FEAT_TRAINS, item_diesel_ltz_te10ut, 5204) {}
+// item(FEAT_TRAINS, item_diesel_faur_a20dp, 5205) {}
+// item(FEAT_TRAINS, item_diesel_faur_l45h, 5206) {}
+// item(FEAT_TRAINS, item_diesel_kmz_tu7_tgm40, 5207) {}
+// item(FEAT_TRAINS, item_diesel_siemens_vectron_de, 5208) {}
 // Narrow-Gauge
 item(FEAT_TRAINS, item_diesel_Chile_SQM_SW1200, 5800) {}
 item(FEAT_TRAINS, item_diesel_Indonesia_KAI_CC203, 5801) {}
