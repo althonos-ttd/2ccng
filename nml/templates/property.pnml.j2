@@ -1,0 +1,60 @@
+/*
+ *  Copyright (C) 2026 Martin Larralde
+ *  This file is part of the 2cc Narrow Gauge in NML, and is based on the 2cc Trains In NML by Transportman
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+#include "../undefine_properties.pnml"
+
+#define VEHIDCODE {{ item.id }}
+#define ITEM item_{{ item.id }}
+#define NAME string(str_{{ item.id }})
+
+#define VEHICLE_REGION  REGION(SOUTHAMERICA,NOREGION,NOCONCEPT)
+#define VEHICLE_GAUGE   NAR_{{ item.gauge | upper }}
+#define VEHICLE_MAKER   MAKER_{{ item.builders[0] | upper }}
+#define VEHICLE_POWER   {{ item.propulsion | upper }}
+#define VEHICLE_COUNTRY {{ item.country }}
+
+{%- set region = REGIONS[item.country] %}
+
+#define VEHICLE_BADGES \
+    "flag/{{ item.country }}", \
+    {%- if region is defined %}
+    "region/{{ region[0] }}", \
+    {% if region | length == 2 %}"region/{{ region[0] }}/{{ region[1] }}", \{% endif %}
+    {% endif -%}
+    "power/{{ item.propulsion }}", \
+    "railgauge/narrow/{{ item.gauge }}", \
+    {% for builder in item.builders -%}
+    "builder/{{ builder }}"{% if not loop.last %}, \{% endif %}
+    {%- endfor %}
+
+#define INTRODUCTION_YEAR {{ item.life.start }}
+#define MODEL_LIFE 45
+#define VEHICLE_LIFE 40
+
+#define SPEED {{ item.speed }}
+#define POWER {{ item.power }}
+#define WEIGHT {{ item.weight }}
+#define TE_COEFFICIENT {{ item.te_coefficient }}
+
+{% if units is defined -%}
+#define ARTICULATED {{ units | length }}
+#define LENGTH {{ units[0].length }}
+#define ACTUAL_LENGTH {{ units | map(attribute="length") | sum }}
+{% elif gfx.length > 8 %}
+#define ARTICULATED {{ gfx.length % 8 }}
+#define LENGTH {{ 8 if gfx.length > 8 else gfx.length }}
+#define ACTUAL_LENGTH {{ gfx.length }}
+{% else %}
+#define LENGTH {{ 8 if gfx.length > 8 else gfx.length }}
+#define ACTUAL_LENGTH {{ gfx.length }}
+{%- endif %}
+
+#define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
+#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 0, DISABLE_WAGON_POWER)
+
+#include "../_CodeSupport/item_defaults.pnml"
