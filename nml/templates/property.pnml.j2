@@ -39,7 +39,11 @@
 #define SPEED {{ item.speed }}
 #define POWER {{ item.power }}
 #define WEIGHT {{ item.weight }}
+{% if item.te_coefficient is defined -%}
 #define TE_COEFFICIENT {{ item.te_coefficient }}
+{%- else %}
+#define TE_COEFFICIENT {{ item.te / (item.weight * 9.81) }}
+{%- endif %}
 
 {% if units is defined -%}
 #define ARTICULATED {{ units | length }}
