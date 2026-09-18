@@ -48,7 +48,7 @@ item(FEAT_TRAINS, ITEM ) {
         EXTRAPROPERTIES
     }
     graphics {
-        purchase: PURCHASE_SPRITESET_NAME(VEHIDCODE);
+        purchase: spriteset_{{ item.id }}_purchase;
         can_attach_wagon: switch_can_attach_vehicle;
        
         RUNNINGCOSTENGINESWITCHCALL
