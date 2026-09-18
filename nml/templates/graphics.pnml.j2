@@ -35,6 +35,7 @@ spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}, {{ spriteset.filename|tojs
 {% endif %}
 {% endfor %}
 
+{% if gfx.animations is defined %}
 {% for animation in gfx.animations %}
 switch(FEAT_TRAINS, PARENT, {{ "spriteset_%s_%s" | format(item.id, animation.id) }}, motion_counter % {{ animation.steps | length }}) {
     {% for step in animation.steps %}
@@ -42,6 +43,7 @@ switch(FEAT_TRAINS, PARENT, {{ "spriteset_%s_%s" | format(item.id, animation.id)
     {% endfor %}
 }
 {% endfor %}
+{% endif %}
 
 {# Add special definitions for articulated engines #}
 {% if units is defined %}
@@ -69,7 +71,7 @@ switch(FEAT_TRAINS, SELF, {{ "switch_%s_visual_effect" | format(item.id) }}, pos
 {% endif %}
 
 {# Add special definitions for longer vehicles #}
-{% if gfx.length > 8 %}
+{% if gfx.length is defined and gfx.length > 8 %}
 {% set n_units = (gfx.length + 7) // 8 %}
 switch(FEAT_TRAINS, SELF, {{ "switch_%s_length" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
     {% for i in range(gfx.length // 8) %}
@@ -89,6 +91,10 @@ switch(FEAT_TRAINS, SELF, {{ "switch_%s_visual_effect" | format(item.id) }}, pos
     0: return visual_effect_and_powered({{ gfx.vfx.type if gfx.vfx.type is defined else "VISUAL_EFFECT_DISABLE" }}, {{ gfx.vfx.offset if gfx.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
 }
+{% endif %}
+
+{% if gfx.extra is defined %}
+{{ gfx.extra }}
 {% endif %}
 
 //Add defined switches

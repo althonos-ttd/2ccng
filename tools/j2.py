@@ -17,8 +17,7 @@ def loader(filename):
     with open(os.path.join(template_dir, filename)) as f:
         return f.read()
 
-env = Environment(loader=loader)
-env.reload_before_render = True
+env = Environment(loader=loader, undefined_behavior="strict", reload_before_render=True)
 
 dat = {}
 for filename in args.data:
