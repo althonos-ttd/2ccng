@@ -1,0 +1,749 @@
+REGIONS:
+  AD:
+    region: europe
+    subregion: southern
+  AE:
+    region: asia
+    subregion: western
+  AF:
+    region: asia
+    subregion: southern
+  AG:
+    region: america
+    subregion: caribbean
+  AI:
+    region: america
+    subregion: caribbean
+  AL:
+    region: europe
+    subregion: southern
+  AM:
+    region: asia
+    subregion: western
+  AO:
+    region: africa
+    subregion: middle
+  AR:
+    region: america
+    subregion: south
+  AS:
+    region: oceania
+    subregion: polynesia
+  AT:
+    region: europe
+    subregion: western
+  AU:
+    region: oceania
+    subregion: australia_and_new_zealand
+  AW:
+    region: america
+    subregion: caribbean
+  AX:
+    region: europe
+    subregion: northern
+  AZ:
+    region: asia
+    subregion: western
+  BA:
+    region: europe
+    subregion: southern
+  BB:
+    region: america
+    subregion: caribbean
+  BD:
+    region: asia
+    subregion: southern
+  BE:
+    region: europe
+    subregion: western
+  BF:
+    region: africa
+    subregion: western
+  BG:
+    region: europe
+    subregion: eastern
+  BH:
+    region: asia
+    subregion: western
+  BI:
+    region: africa
+    subregion: eastern
+  BJ:
+    region: africa
+    subregion: western
+  BL:
+    region: america
+    subregion: caribbean
+  BM:
+    region: america
+    subregion: northern
+  BN:
+    region: asia
+    subregion: southeastern
+  BO:
+    region: america
+    subregion: south
+  BQ:
+    region: america
+    subregion: caribbean
+  BR:
+    region: america
+    subregion: south
+  BS:
+    region: america
+    subregion: caribbean
+  BT:
+    region: asia
+    subregion: southern
+  BV:
+    region: america
+    subregion: south
+  BW:
+    region: africa
+    subregion: southern
+  BY:
+    region: europe
+    subregion: eastern
+  BZ:
+    region: america
+    subregion: central
+  CA:
+    region: america
+    subregion: northern
+  CC:
+    region: oceania
+    subregion: australia_and_new_zealand
+  CD:
+    region: africa
+    subregion: middle
+  CF:
+    region: africa
+    subregion: middle
+  CG:
+    region: africa
+    subregion: middle
+  CH:
+    region: europe
+    subregion: western
+  CI:
+    region: africa
+    subregion: western
+  CK:
+    region: oceania
+    subregion: polynesia
+  CL:
+    region: america
+    subregion: south
+  CM:
+    region: africa
+    subregion: middle
+  CN:
+    region: asia
+    subregion: eastern
+  CO:
+    region: america
+    subregion: south
+  CR:
+    region: america
+    subregion: central
+  CU:
+    region: america
+    subregion: caribbean
+  CV:
+    region: africa
+    subregion: western
+  CW:
+    region: america
+    subregion: caribbean
+  CX:
+    region: oceania
+    subregion: australia_and_new_zealand
+  CY:
+    region: asia
+    subregion: western
+  CZ:
+    region: europe
+    subregion: eastern
+  DE:
+    region: europe
+    subregion: western
+  DJ:
+    region: africa
+    subregion: eastern
+  DK:
+    region: europe
+    subregion: northern
+  DM:
+    region: america
+    subregion: caribbean
+  DO:
+    region: america
+    subregion: caribbean
+  DZ:
+    region: africa
+    subregion: northern
+  EC:
+    region: america
+    subregion: south
+  EE:
+    region: europe
+    subregion: northern
+  EG:
+    region: africa
+    subregion: northern
+  EH:
+    region: africa
+    subregion: northern
+  ER:
+    region: africa
+    subregion: eastern
+  ES:
+    region: europe
+    subregion: southern
+  ET:
+    region: africa
+    subregion: eastern
+  FI:
+    region: europe
+    subregion: northern
+  FJ:
+    region: oceania
+    subregion: melanesia
+  FK:
+    region: america
+    subregion: south
+  FM:
+    region: oceania
+    subregion: micronesia
+  FO:
+    region: europe
+    subregion: northern
+  FR:
+    region: europe
+    subregion: western
+  GA:
+    region: africa
+    subregion: middle
+  GB:
+    region: europe
+    subregion: northern
+  GD:
+    region: america
+    subregion: caribbean
+  GE:
+    region: asia
+    subregion: western
+  GF:
+    region: america
+    subregion: south
+  GG:
+    region: europe
+    subregion: northern
+  GH:
+    region: africa
+    subregion: western
+  GI:
+    region: europe
+    subregion: southern
+  GL:
+    region: america
+    subregion: northern
+  GM:
+    region: africa
+    subregion: western
+  GN:
+    region: africa
+    subregion: western
+  GP:
+    region: america
+    subregion: caribbean
+  GQ:
+    region: africa
+    subregion: middle
+  GR:
+    region: europe
+    subregion: southern
+  GS:
+    region: america
+    subregion: south
+  GT:
+    region: america
+    subregion: central
+  GU:
+    region: oceania
+    subregion: micronesia
+  GW:
+    region: africa
+    subregion: western
+  GY:
+    region: america
+    subregion: south
+  HK:
+    region: asia
+    subregion: eastern
+  HM:
+    region: oceania
+    subregion: australia_and_new_zealand
+  HN:
+    region: america
+    subregion: central
+  HR:
+    region: europe
+    subregion: southern
+  HT:
+    region: america
+    subregion: caribbean
+  HU:
+    region: europe
+    subregion: eastern
+  ID:
+    region: asia
+    subregion: southeastern
+  IE:
+    region: europe
+    subregion: northern
+  IL:
+    region: asia
+    subregion: western
+  IM:
+    region: europe
+    subregion: northern
+  IN:
+    region: asia
+    subregion: southern
+  IO:
+    region: africa
+    subregion: eastern
+  IQ:
+    region: asia
+    subregion: western
+  IR:
+    region: asia
+    subregion: southern
+  IS:
+    region: europe
+    subregion: northern
+  IT:
+    region: europe
+    subregion: southern
+  JE:
+    region: europe
+    subregion: northern
+  JM:
+    region: america
+    subregion: caribbean
+  JO:
+    region: asia
+    subregion: western
+  JP:
+    region: asia
+    subregion: eastern
+  KE:
+    region: africa
+    subregion: eastern
+  KG:
+    region: asia
+    subregion: central
+  KH:
+    region: asia
+    subregion: southeastern
+  KI:
+    region: oceania
+    subregion: micronesia
+  KM:
+    region: africa
+    subregion: eastern
+  KN:
+    region: america
+    subregion: caribbean
+  KP:
+    region: asia
+    subregion: eastern
+  KR:
+    region: asia
+    subregion: eastern
+  KW:
+    region: asia
+    subregion: western
+  KY:
+    region: america
+    subregion: caribbean
+  KZ:
+    region: asia
+    subregion: central
+  LA:
+    region: asia
+    subregion: southeastern
+  LB:
+    region: asia
+    subregion: western
+  LC:
+    region: america
+    subregion: caribbean
+  LI:
+    region: europe
+    subregion: western
+  LK:
+    region: asia
+    subregion: southern
+  LR:
+    region: africa
+    subregion: western
+  LS:
+    region: africa
+    subregion: southern
+  LT:
+    region: europe
+    subregion: northern
+  LU:
+    region: europe
+    subregion: western
+  LV:
+    region: europe
+    subregion: northern
+  LY:
+    region: africa
+    subregion: northern
+  MA:
+    region: africa
+    subregion: northern
+  MC:
+    region: europe
+    subregion: western
+  MD:
+    region: europe
+    subregion: eastern
+  ME:
+    region: europe
+    subregion: southern
+  MF:
+    region: america
+    subregion: caribbean
+  MG:
+    region: africa
+    subregion: eastern
+  MH:
+    region: oceania
+    subregion: micronesia
+  MK:
+    region: europe
+    subregion: southern
+  ML:
+    region: africa
+    subregion: western
+  MM:
+    region: asia
+    subregion: southeastern
+  MN:
+    region: asia
+    subregion: eastern
+  MO:
+    region: asia
+    subregion: eastern
+  MP:
+    region: oceania
+    subregion: micronesia
+  MQ:
+    region: america
+    subregion: caribbean
+  MR:
+    region: africa
+    subregion: western
+  MS:
+    region: america
+    subregion: caribbean
+  MT:
+    region: europe
+    subregion: southern
+  MU:
+    region: africa
+    subregion: eastern
+  MV:
+    region: asia
+    subregion: southern
+  MW:
+    region: africa
+    subregion: eastern
+  MX:
+    region: america
+    subregion: central
+  MY:
+    region: asia
+    subregion: southeastern
+  MZ:
+    region: africa
+    subregion: eastern
+  NA:
+    region: africa
+    subregion: southern
+  NC:
+    region: oceania
+    subregion: melanesia
+  NE:
+    region: africa
+    subregion: western
+  NF:
+    region: oceania
+    subregion: australia_and_new_zealand
+  NG:
+    region: africa
+    subregion: western
+  NI:
+    region: america
+    subregion: central
+  NL:
+    region: europe
+    subregion: western
+  NO:
+    region: europe
+    subregion: northern
+  NP:
+    region: asia
+    subregion: southern
+  NR:
+    region: oceania
+    subregion: micronesia
+  NU:
+    region: oceania
+    subregion: polynesia
+  NZ:
+    region: oceania
+    subregion: australia_and_new_zealand
+  OM:
+    region: asia
+    subregion: western
+  PA:
+    region: america
+    subregion: central
+  PE:
+    region: america
+    subregion: south
+  PF:
+    region: oceania
+    subregion: polynesia
+  PG:
+    region: oceania
+    subregion: melanesia
+  PH:
+    region: asia
+    subregion: southeastern
+  PK:
+    region: asia
+    subregion: southern
+  PL:
+    region: europe
+    subregion: eastern
+  PM:
+    region: america
+    subregion: northern
+  PN:
+    region: oceania
+    subregion: polynesia
+  PR:
+    region: america
+    subregion: caribbean
+  PS:
+    region: asia
+    subregion: western
+  PT:
+    region: europe
+    subregion: southern
+  PW:
+    region: oceania
+    subregion: micronesia
+  PY:
+    region: america
+    subregion: south
+  QA:
+    region: asia
+    subregion: western
+  RE:
+    region: africa
+    subregion: eastern
+  RO:
+    region: europe
+    subregion: eastern
+  RS:
+    region: europe
+    subregion: southern
+  RU:
+    region: europe
+    subregion: eastern
+  RW:
+    region: africa
+    subregion: eastern
+  SA:
+    region: asia
+    subregion: western
+  SB:
+    region: oceania
+    subregion: melanesia
+  SC:
+    region: africa
+    subregion: eastern
+  SD:
+    region: africa
+    subregion: northern
+  SE:
+    region: europe
+    subregion: northern
+  SG:
+    region: asia
+    subregion: southeastern
+  SH:
+    region: africa
+    subregion: western
+  SI:
+    region: europe
+    subregion: southern
+  SJ:
+    region: europe
+    subregion: northern
+  SK:
+    region: europe
+    subregion: eastern
+  SL:
+    region: africa
+    subregion: western
+  SM:
+    region: europe
+    subregion: southern
+  SN:
+    region: africa
+    subregion: western
+  SO:
+    region: africa
+    subregion: eastern
+  SR:
+    region: america
+    subregion: south
+  SS:
+    region: africa
+    subregion: eastern
+  ST:
+    region: africa
+    subregion: middle
+  SV:
+    region: america
+    subregion: central
+  SX:
+    region: america
+    subregion: caribbean
+  SY:
+    region: asia
+    subregion: western
+  SZ:
+    region: africa
+    subregion: southern
+  TC:
+    region: america
+    subregion: caribbean
+  TD:
+    region: africa
+    subregion: middle
+  TF:
+    region: africa
+    subregion: eastern
+  TG:
+    region: africa
+    subregion: western
+  TH:
+    region: asia
+    subregion: southeastern
+  TJ:
+    region: asia
+    subregion: central
+  TK:
+    region: oceania
+    subregion: polynesia
+  TL:
+    region: asia
+    subregion: southeastern
+  TM:
+    region: asia
+    subregion: central
+  TN:
+    region: africa
+    subregion: northern
+  TO:
+    region: oceania
+    subregion: polynesia
+  TR:
+    region: asia
+    subregion: western
+  TT:
+    region: america
+    subregion: caribbean
+  TV:
+    region: oceania
+    subregion: polynesia
+  TW:
+    region: asia
+    subregion: eastern
+  TZ:
+    region: africa
+    subregion: eastern
+  UA:
+    region: europe
+    subregion: eastern
+  UG:
+    region: africa
+    subregion: eastern
+  UM:
+    region: oceania
+    subregion: micronesia
+  US:
+    region: america
+    subregion: northern
+  UY:
+    region: america
+    subregion: south
+  UZ:
+    region: asia
+    subregion: central
+  VA:
+    region: europe
+    subregion: southern
+  VC:
+    region: america
+    subregion: caribbean
+  VE:
+    region: america
+    subregion: south
+  VG:
+    region: america
+    subregion: caribbean
+  VI:
+    region: america
+    subregion: caribbean
+  VN:
+    region: asia
+    subregion: southeastern
+  VU:
+    region: oceania
+    subregion: melanesia
+  WF:
+    region: oceania
+    subregion: polynesia
+  WS:
+    region: oceania
+    subregion: polynesia
+  YE:
+    region: asia
+    subregion: western
+  YT:
+    region: africa
+    subregion: eastern
+  ZA:
+    region: africa
+    subregion: southern
+  ZM:
+    region: africa
+    subregion: eastern
+  ZW:
+    region: africa
+    subregion: eastern
+
+  # non-ISO
+  europe:
+    region: europe
