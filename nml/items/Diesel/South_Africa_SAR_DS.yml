@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/South_Africa_SAR_DS.png"
+
+item:
+  id: diesel_South_Africa_SAR_DS
+  num: 0
+
+  speed: 60
+  power: 410
+  weight: 68
+  te_coefficient: 0.23
+  
+  gauge: cape
+  propulsion: diesel
+  country: ZA
+  builders:
+    - aeg
+
+  life:
+    start: 1939
+    end: 1966
+  
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

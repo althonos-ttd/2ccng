@@ -1,0 +1,35 @@
+.file: &file
+  filename: "gfx/Diesel/Tunisia_SNCFT_040_DF.png"
+
+item:
+  id: diesel_Tunisia_SNCFT_040_DF
+  num: 0
+
+  speed: 100
+  power: 875
+  weight: 62
+  te_coefficient: 0.25
+  
+  gauge: metre
+  propulsion: diesel
+  country: TN
+  builders:
+    - emd
+
+  life:
+    start: 1960
+  
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

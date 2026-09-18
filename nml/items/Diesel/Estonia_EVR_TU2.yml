@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Estonia_EVR_TU2.xpm"
+
+item:
+  id: diesel_Estonia_EVR_TU2
+  num: 0
+
+  speed: 76
+  power: 300
+  weight: 32
+  te_coefficient: 0.26
+  
+  gauge: 750mm
+  propulsion: diesel
+  country: EE
+  builders:
+    - kaluga
+
+  life:
+    start: 1955
+    end: 2005
+  
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

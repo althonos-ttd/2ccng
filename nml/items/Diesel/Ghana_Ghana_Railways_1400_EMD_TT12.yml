@@ -1,0 +1,33 @@
+item:
+  id: diesel_Ghana_Ghana_Railways_1400_EMD_TT12
+  speed: 100
+  power: 1425
+  weight: 83
+  te_coefficient: 0.295
+  
+  gauge: cape
+  propulsion: diesel
+  country: GH
+  builders:
+    - henschel
+
+  life:
+    start: 1959
+    end: 2004
+
+gfx:
+  length: 9
+  vfx:
+    type: VISUAL_EFFECT_DIESEL
+    offset: -1
+  purchase:
+    filename: "gfx/Diesel/Ghana_Ghana_Railways_1400_EMD_TT12.xpm"
+    x: 1
+    y: 128
+  
+  spritesets:
+    - id: default
+      filename:  "gfx/Diesel/Ghana_Ghana_Railways_1400_EMD_TT12.xpm"
+      template: template_2cc_L12
+      x: 1
+      y: 1

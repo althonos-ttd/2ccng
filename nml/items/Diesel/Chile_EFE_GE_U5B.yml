@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Chile_EFE_GE_U5B.png"
+
+item:
+  id: diesel_Chile_EFE_GE_U5B
+  num: 0
+
+  speed: 64
+  power: 600
+  weight: 50
+  te_coefficient: 0.18
+  
+  gauge: metre
+  propulsion: diesel
+  country: CL
+  builders:
+    - ge
+
+  life:
+    start: 1961
+    end: 2016
+  
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

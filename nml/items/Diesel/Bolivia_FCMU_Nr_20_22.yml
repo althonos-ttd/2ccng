@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Diesel/Bolivia_FCMU_Nr_20_22.xpm"
+
+item:
+  id: diesel_Bolivia_FCMU_Nr_20_22
+  num: 0
+
+  speed: 60
+  power: 650
+  weight: 70
+  te_coefficient: 0.212
+
+  gauge: metre
+  propulsion: diesel
+  country: BO
+  builders:
+    - sulzer
+
+  life:
+    start: 1939
+    end: 1989
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: engine1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [engine1, engine2]

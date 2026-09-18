@@ -1,0 +1,47 @@
+.file: &file
+  filename: "gfx/Diesel/Brazil_BF_EMD_GL8.png"
+
+item:
+  id: diesel_Brazil_BF_EMD_GL8
+  num: 0
+
+  speed: 124
+  power: 875
+  weight: 64
+  te_coefficient: 0.13
+
+  gauge: metre
+  propulsion: diesel
+  country: BR
+  builders:
+    - emd
+
+  life:
+    start: 1960
+    end: 2000
+
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: engine
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: B
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+
+  extra: >
+    switch(FEAT_TRAINS, SELF, spriteset_diesel_Brazil_BF_EMD_GL8_default, position_in_vehid_chain % 2) {
+      1: spriteset_diesel_Brazil_BF_EMD_GL8_B;
+      spriteset_diesel_Brazil_BF_EMD_GL8_engine;
+    }

@@ -1,0 +1,37 @@
+.file: &file
+  filename: "gfx/Diesel/Brazil_EE_VFFLB.png"
+
+item:
+  id: diesel_Brazil_EE_VFFLB
+  num: 0
+
+  speed: 76
+  power: 450
+  weight: 39
+  te_coefficient: 0.22
+
+  gauge: metre
+  propulsion: diesel
+  country: BR
+  builders:
+    - ee
+
+  life:
+    start: 1938
+    end: 1968
+
+gfx:
+  length: 4
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    

@@ -1,0 +1,40 @@
+.file: &file
+  filename: "gfx/Diesel/Botwsana_Botswana_Railways_BD5.xpm"
+
+item:
+  id: diesel_Botswana_Botswana_Railways_BD5
+  num: 0
+
+  speed: 100
+  power: 3000
+  weight: 120
+  te_coefficient: 0.40
+
+  gauge: cape
+  propulsion: diesel
+  country: BW
+  builders:
+    - emd
+
+  life:
+    start: 2017
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
+    

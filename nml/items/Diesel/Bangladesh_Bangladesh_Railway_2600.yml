@@ -1,0 +1,35 @@
+.file: &file
+  filename: "gfx/Diesel/Bangladesh_Bangladesh_Railway_2600.xpm"
+
+item:
+  id: diesel_Bangladesh_Bangladesh_Railway_2600
+  num: 5805
+
+  speed: 107
+  power: 1500
+  weight: 72
+  te_coefficient: 0.62
+  
+  gauge: metre
+  propulsion: diesel
+  country: BD
+  builders:
+    - emd
+
+  life:
+    start: 2008
+
+gfx:
+  length: 8
+  vfx:
+    offset: 3
+  purchase: 
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

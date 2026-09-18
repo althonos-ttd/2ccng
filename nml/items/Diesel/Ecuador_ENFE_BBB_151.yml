@@ -1,0 +1,50 @@
+.file: &file
+  filename: "gfx/Diesel/Ecuador_ENFE_BBB_151.xpm"
+
+item:
+  id: diesel_Ecuador_ENFE_BBB_151
+  num: 0
+
+  speed: 70
+  power: 1220
+  weight: 84
+  te_coefficient: 0.26
+  
+  gauge: cape
+  propulsion: diesel
+  country: EC
+  builders:
+    - alsthom
+
+  life:
+    start: 1956
+    end: 2001
+  
+units:
+  - length: 5
+    sprite: front
+    vfx:
+      type: VISUAL_EFFECT_DIESEL
+      offset: 4
+  - length: 5
+    sprite: back
+    vfx:
+      type: VISUAL_EFFECT_DIESEL
+      offset: -4
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - <<: *file
+      id: front
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - <<: *file
+      id: back
+      template: template_2cc_engines_general
+      x: 1
+      y: 32

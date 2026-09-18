@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Madagascar_Madagascar_Railways_BBB100.xpm"
+
+item:
+  id: diesel_Madagascar_Madagascar_Railways_BBB100
+  num: 0
+
+  speed: 60
+  power: 625
+  weight: 62
+  te_coefficient: 0.19
+  
+  gauge: metre
+  propulsion: diesel
+  country: MG
+  builders:
+    - alsthom
+
+  life:
+    start: 1943
+    end: 1971
+  
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

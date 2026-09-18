@@ -1,0 +1,35 @@
+.file: &file
+  filename: "gfx/Diesel/Tunisia_SNCFT_040_DJ.png"
+
+item:
+  id: diesel_Tunisia_SNCFT_040_DJ
+  num: 0
+
+  speed: 100
+  power: 700
+  weight: 53
+  te_coefficient: 0.28
+  
+  gauge: metre
+  propulsion: diesel
+  country: TN
+  builders:
+    - ge
+
+  life:
+    start: 1977
+  
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

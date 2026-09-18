@@ -1,0 +1,35 @@
+.file: &file
+  filename: "gfx/Diesel/Australia_Westrail_P_Class.png"
+
+item:
+  id: diesel_Australia_Westrail_P_Class
+  num: 0
+
+  speed: 90
+  power: 2450
+  weight: 99
+  te_coefficient: 0.38
+
+  gauge: cape
+  propulsion: diesel
+  country: AU
+  builders:
+    - goninan
+
+  life:
+    start: 1989
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

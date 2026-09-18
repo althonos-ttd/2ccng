@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Bolivia_Ferroviaria_Andina_2500_SALi.xpm"
+
+item:
+  id: diesel_Bolivia_Ferroviaria_Andina_2500_SALi
+  num: 0
+
+  speed: 100
+  power: 2501
+  weight: 96
+  te_coefficient: 0.441
+
+  gauge: metre
+  propulsion: diesel
+  country: BO
+  builders:
+    - stadler
+
+  life:
+    start: 2019
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    

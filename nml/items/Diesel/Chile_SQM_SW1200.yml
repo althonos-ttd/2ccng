@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Chile_SQM_SW1200.png"
+
+item:
+  id: diesel_Chile_SQM_SW1200
+  num: 0
+
+  speed: 104
+  power: 1200
+  weight: 111
+  te_coefficient: 0.14
+  
+  gauge: metre
+  propulsion: diesel
+  country: CL
+  builders:
+    - ge
+
+  life:
+    start: 1961
+    end: 2016
+  
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

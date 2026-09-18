@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Ireland_Bord_na_Mona_LM200.png"
+
+item:
+  id: diesel_Ireland_Bord_na_Mona_LM200
+  num: 0
+
+  speed: 25
+  power: 96
+  weight: 9
+  te_coefficient: 0.31
+  
+  gauge: 3ft
+  propulsion: diesel
+  country: IE
+  builders:
+    - hunslet
+
+  life:
+    start: 1962
+    end: 2021
+  
+gfx:
+  length: 3
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

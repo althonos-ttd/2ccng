@@ -1,0 +1,35 @@
+.file: &file
+  filename: "gfx/Diesel/Indonesia_KAI_CC203.xpm"
+
+item:
+  id: diesel_Indonesia_KAI_CC203
+  num: 0
+
+  speed: 120
+  power: 2150
+  weight: 89
+  te_coefficient: 0.30
+  
+  gauge: cape
+  propulsion: diesel
+  country: ID
+  builders:
+    - inka
+
+  life:
+    start: 1995
+  
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

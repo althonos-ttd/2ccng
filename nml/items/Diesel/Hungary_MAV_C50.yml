@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Hungary_MAV_C50.xpm"
+
+item:
+  id: diesel_Hungary_MAV_C50
+  num: 0
+
+  speed: 30
+  power: 49
+  weight: 7
+  te_coefficient: 0.61
+  
+  gauge: bosnian
+  propulsion: diesel
+  country: HU
+  builders:
+    - mav
+
+  life:
+    start: 1952
+    end: 1990
+  
+gfx:
+  length: 3
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

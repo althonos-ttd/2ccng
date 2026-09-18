@@ -1,0 +1,37 @@
+.file: &file
+  filename: "gfx/Diesel/Brazil_EFVM_EMD_DDM45.png"
+
+item:
+  id: diesel_Brazil_EFVM_EMD_DDM45
+  num: 0
+
+  speed: 85
+  power: 3600
+  weight: 162
+  te_coefficient: 0.24
+
+  gauge: metre
+  propulsion: diesel
+  country: BR
+  builders:
+    - emd
+
+  life:
+    start: 1970
+    end: 2015
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    

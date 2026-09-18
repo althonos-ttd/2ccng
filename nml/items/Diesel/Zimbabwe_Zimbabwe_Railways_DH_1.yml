@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Diesel/Zimbabwe_Zimbabwe_Railways_DH_1.png"
+
+item:
+  id: diesel_Zimbabwe_Zimbabwe_Railways_DH_1
+  num: 0
+
+  speed: 89
+  power: 1316
+  weight: 76
+  te_coefficient: 0.26
+  
+  gauge: cape
+  propulsion: diesel
+  country: ZW
+  builders:
+    - henschel
+
+  life:
+    start: 1959
+    end: 2001
+  
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

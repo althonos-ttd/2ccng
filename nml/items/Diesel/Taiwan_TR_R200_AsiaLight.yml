@@ -1,0 +1,35 @@
+.file: &file
+  filename: "gfx/Diesel/Taiwan_TR_R200_AsiaLight.xpm"
+
+item:
+  id: diesel_Taiwan_TR_R200_AsiaLight
+  num: 0
+
+  speed: 120
+  power: 2304
+  weight: 96
+  te: 430
+  
+  gauge: cape
+  propulsion: diesel
+  country: TW
+  builders:
+    - stadler
+
+  life:
+    start: 2023
+  
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

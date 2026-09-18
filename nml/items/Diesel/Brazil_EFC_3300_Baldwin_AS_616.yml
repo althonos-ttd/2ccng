@@ -1,0 +1,37 @@
+.file: &file
+  filename: "gfx/Diesel/Brazil_EFC_3300_Baldwin_AS_616.png"
+
+item:
+  id: diesel_Brazil_EFC_3300_Baldwin_AS_616
+  num: 0
+
+  speed: 100
+  power: 1600
+  weight: 148
+  te_coefficient: 0.24
+
+  gauge: metre
+  propulsion: diesel
+  country: BR
+  builders:
+    - blh
+
+  life:
+    start: 1950
+    end: 1985
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    
