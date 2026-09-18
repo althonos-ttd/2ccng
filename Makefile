@@ -177,8 +177,10 @@ distclean::
 # Pre-processing and generation of $(NML_FILE)
 ################################################################
 
+-include Makefile.pnml
+
 # ifdef $(MAIN_SRC_FILE)
-pnml:
+pnml: $(PNML_FILES)
 
 nml: $(NML_FILE)
 
@@ -193,6 +195,7 @@ clean::
 # else
 # nml:
 # endif
+
 
 # target 'gfx' which builds all needed sprites
 # Only a special gfx target for gimp exists so far
