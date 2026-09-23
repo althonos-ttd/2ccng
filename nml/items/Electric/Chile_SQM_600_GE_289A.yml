@@ -1,0 +1,40 @@
+.file: &file
+  filename: "gfx/Electric/Chile_SQM_600_GE_289A.xpm"
+
+item:
+  id: electric_Chile_SQM_600_GE_289A
+  num: 0
+
+  speed: 40                 # ??
+  power: 970                # https://en.wikipedia.org/wiki/Tocopilla_railway
+  weight: 60                # https://ferrocarriltocopilla.blogspot.com/2010/09/locomotoras-electricas.html
+  te_coefficient: 0.261     # computed from similar GE Boxcab: https://en.wikipedia.org/wiki/Great_Northern_boxcab_(3_phase)
+
+  gauge: cape
+  propulsion: electric_dc
+  country: CL
+  builders:
+    - ge
+
+  life:
+    start: 1927
+    end: 2015
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1

@@ -1,0 +1,41 @@
+.file: &file
+  filename: "gfx/Electric/Indonesia_ESS_3200.png"
+
+item:
+  id: electric_Indonesia_ESS_3200
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/ESS_3200_class
+  #                 (2) https://id.wikipedia.org/wiki/Lokomotif_listrik_ESS_3200
+  #                 (3) https://archive.wikiwix.com/cache/?url=https%3A%2F%2Fkeretapi.tripod.com%2Felectricroster.html
+
+  speed: 100                # ?
+  power: 1200               # (2) and (3) disagree
+  weight: 69                # ?
+  te_coefficient: 0.23      # ?
+
+  gauge: cape
+  propulsion: electric_dc
+  country: ID
+  builders:
+    - werkspoor
+    - baldwin
+
+  life:
+    start: 1925             # (1, 2)
+    end: 1976               # (1)
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

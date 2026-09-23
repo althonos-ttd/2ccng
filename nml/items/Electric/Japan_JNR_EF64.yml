@@ -1,0 +1,40 @@
+.file: &file
+  filename: "gfx/Electric/Japan_JNR_EF64.png"
+
+item:
+  id: electric_Japan_JNR_EF64
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84EF64%E5%BD%A2%E9%9B%BB%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 100                # (1)
+  power: 3420               # (1) 2550 kW
+  weight: 96                # (1)
+  te: 199.6                 # (1) 20350 kgf
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - kawasaki
+    - fuji
+    - toyo_denki
+
+  life:
+    start: 1964
+    end: 2021               # (1) discarded
+
+gfx:
+  length: 8
+  vfx:
+    offset: -3
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

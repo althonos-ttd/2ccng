@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Electric/Costa_Rica_Ferrocarril_Al_Pacifico_127.xpm"
+
+item:
+  id: electric_Costa_Rica_Ferrocarril_Al_Pacifico_127
+  num: 0
+
+  speed: 50
+  power: 650
+  weight: 57
+  te_coefficient: 0.106
+
+  gauge: cape
+  propulsion: electric_ac
+  country: CR
+  builders:
+    - aeg
+
+  life:
+    start: 1926
+    end: 1995
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

@@ -1,0 +1,35 @@
+.file: &file
+  filename: "gfx/Electric/Australia_Aurizon_E40_AG_V1.png"
+
+item:
+  id: electric_Australia_Aurizon_E40_AG_V1
+  num: 0
+
+  speed: 80
+  power: 5360
+  weight: 109
+  te_coefficient: 0.41
+
+  gauge: cape
+  propulsion: electric_ac
+  country: AU
+  builders:
+    - siemens
+
+  life:
+    start: 2008
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

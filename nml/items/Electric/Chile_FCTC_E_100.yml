@@ -1,0 +1,88 @@
+.file: &file
+  filename: "gfx/Electric/Chile_FCTC_E_100.xpm"
+
+item:
+  id: electric_Chile_FCTC_E_100
+  num: 0
+
+  # Some info from: (1) https://de.wikipedia.org/wiki/FCTC-Baureihe_E-100
+  #                 (2) https://library.e.abb.com/public/e08909aef17f437d871ca873c6a2a9aa/bbc_mitteilungen_1929_e_04.pdf
+
+  speed: 40                 # (1, 2)
+  power: 1260               # (2) 235 kW * 4 adhesion motors
+  weight: 86                # (1, 2)
+  te: 209                   # (2) Tractive effort of 21 tons ~= 209 kN
+
+  gauge: metre
+  propulsion: electric_dc
+  country: CL
+  builders:
+    - slm
+    - bbc
+
+  life:
+    start: 1925             # (1)
+    end: 1985               # (1)
+
+units:
+  - length: 5
+    sprite: front
+    vfx:
+      type: VISUAL_EFFECT_ELECTRIC
+      offset: 2
+  - length: 5
+    sprite: back
+    vfx:
+      type: VISUAL_EFFECT_ELECTRIC
+      offset: -2
+
+gfx:
+  length: 6
+  purchase:
+    <<: *file
+    x: 1
+    y: 136
+  spritesets:
+    - id: front_s1
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
+    - id: back_s1
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 179
+        y: 32
+    - id: front_s2
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 64
+      backward:
+        x: 179
+        y: 64
+    - id: back_s2
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 96
+      backward:
+        x: 179
+        y: 96
+  animations:
+    - id: front
+      steps: [front_s1, front_s2]
+    - id: back
+      steps: [back_s1, back_s2]
+  
+  

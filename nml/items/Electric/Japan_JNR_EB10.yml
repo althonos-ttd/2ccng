@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/Japan_JNR_EB10.png"
+
+item:
+  id: electric_Japan_JNR_EB10
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84EB10%E5%BD%A2%E9%9B%BB%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 40                 # (1)
+  power: 168                # (1)
+  weight: 22                # (1)
+  te: 26.5                  # (1) 2700 kgf
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - kisha_seizo
+
+  life:
+    start: 1931
+    end: 1971               # (1), refurbished
+
+gfx:
+  length: 5
+  vfx:
+    offset: -3
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

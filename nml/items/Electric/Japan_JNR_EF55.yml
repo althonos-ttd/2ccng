@@ -1,0 +1,41 @@
+.file: &file
+  filename: "gfx/Electric/Japan_JNR_EF55.png"
+
+item:
+  id: electric_Japan_JNR_EF55
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84EF55%E5%BD%A2%E9%9B%BB%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 78                 # (1)
+  power: 1810               # (1) 1350 kW
+  weight: 100               # (1)
+  te: 61.8                  # (1) 6300 kgf
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - hitachi
+    - nippon_sharyo
+    - toyo_denki
+    - kawasaki
+
+  life:
+    start: 1936
+    end: 1964               # (1), dismantled
+
+gfx:
+  length: 8
+  vfx:
+    offset: -3
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

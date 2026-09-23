@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/Georgia_BBR_ChS11.xpm"
+
+item:
+  id: electric_Georgia_BBR_ChS11
+  num: 0
+
+  # Some info from: (1) https://de.wikipedia.org/wiki/S%C5%BDD-Baureihe_%D0%A7%D0%A111
+
+  speed: 45                 # (1)
+  power: 670                # (1)
+  weight: 57                # (1)
+  te_coefficient: 0.106     # Unknown
+
+  gauge: 900mm
+  propulsion: electric_dc
+  country: GE
+  builders:
+    - smz
+
+  life:
+    start: 1926
+    end: 1995
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
