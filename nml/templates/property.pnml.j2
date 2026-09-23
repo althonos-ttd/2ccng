@@ -44,7 +44,11 @@
     {%- endfor %}
 
 #define INTRODUCTION_YEAR {{ item.life.start }}
-#define MODEL_LIFE 45
+{%- if item.life.end is defined %}
+#define MODEL_LIFE {{ item.life.end - item.life.start }}
+{%- else %}
+#define MODEL_LIFE VEHICLE_NEVER_EXPIRES
+{%- endif %}
 #define VEHICLE_LIFE 40
 
 #define SPEED {{ item.speed }}
@@ -70,6 +74,20 @@
 {%- endif %}
 
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 0, DISABLE_WAGON_POWER)
+
+{%- if gfx.vfx is defined %}
+{%- set vxf_offset = gfx.vfx.offset if gfx.vfx.offset is defined else 0 %}
+{%- if item.propulsion == "diesel" %}
+#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DIESEL, {{ vxf_offset }}, DISABLE_WAGON_POWER)
+{%- elif item.propulsion == "electric_ac" or item.propulsion == "electric_dc" %}
+#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ vxf_offset }}, DISABLE_WAGON_POWER)
+{%- elif item.propulsion == "steam" %}
+#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ vxf_offset }}, DISABLE_WAGON_POWER)
+{%- else %}
+#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
+{%- endif %}
+{%- else %}
+#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
+{%- endif %}
 
 #include "../_CodeSupport/item_defaults.pnml"
