@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/South_Africa_SAR_ES_Class.png"
+
+item:
+  id: electric_South_Africa_SAR_ES_Class
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_ES
+
+  speed: 40                 # (1)
+  power: 1200               # (1) 4x 300hp
+  weight: 68                # (1)
+  te: 176                   # (1)
+
+  gauge: cape
+  propulsion: electric_dc
+  country: ZA
+  builders:
+    - werkspoor
+
+  life:
+    start: 1936     
+    end: 1983               # (1) replaced
+
+gfx:
+  length: 8
+  vfx:
+    offset: -3
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

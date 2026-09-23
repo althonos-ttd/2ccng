@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/South_Africa_SAR_7E.png"
+
+item:
+  id: electric_South_Africa_SAR_7E
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_7E
+
+  speed: 100                # (1)
+  power: 4000               # (1) 
+  weight: 124               # (1)
+  te: 450                   # (1)
+
+  gauge: cape
+  propulsion: electric_ac
+  country: ZA
+  builders:
+    - ucw
+
+  life:
+    start: 1978     
+    end: 2018               # (1) withdrawn
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

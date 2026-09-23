@@ -1,0 +1,40 @@
+.file: &file
+  filename: "gfx/Electric/Switzerland_RhB_Ge_4_4_I.png"
+
+item:
+  id: electric_Switzerland_RhB_Ge_4_4_I
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Rhaetian_Railway_Ge_4/4_I
+
+  speed: 75                 # (1)
+  power: 1580               # (1)
+  weight: 47                # (1)
+  te: 142                   # (1)
+
+  gauge: metre
+  propulsion: electric_ac
+  country: CH
+  builders:
+    - slm
+    - bbc
+    - mfo
+
+  life:
+    start: 1947
+    end: 1987               # (1) modernisation
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

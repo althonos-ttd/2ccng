@@ -1,0 +1,37 @@
+.file: &file
+  filename: "gfx/Electric/South_Africa_TFR_20E.png"
+
+item:
+  id: electric_South_Africa_TFR_20E
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_20E
+
+  speed: 100                # (1)
+  power: 4000               # (1) 
+  weight: 86                # (1)
+  te: 320                   # (1)
+
+  gauge: cape
+  propulsion: electric_ac
+  country: ZA
+  builders:
+    - crrc_zuzhou
+
+  life:
+    start: 2013     
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

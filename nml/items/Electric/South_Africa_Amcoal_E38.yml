@@ -1,0 +1,37 @@
+.file: &file
+  filename: "gfx/Electric/South_Africa_Amcoal_E38.png"
+
+item:
+  id: electric_South_Africa_Amcoal_E38
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_E38
+
+  speed: 100                # (1)
+  power: 2028               # (1), 4x 507hp
+  weight: 74                # ?  
+  te: 260                   # (1)
+
+  gauge: cape
+  propulsion: electric_dc
+  country: ZA
+  builders:
+    - siemens
+
+  life:
+    start: 1992
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

@@ -1,0 +1,48 @@
+.file: &file
+  filename: "gfx/Electric/Switzerland_RhB_Ge_6_6_Krokodil.png"
+
+item:
+  id: electric_Switzerland_RhB_Ge_6_6_Krokodil
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Rhaetian_Railway_Ge_6/6_I
+
+  speed: 55                 # (1)
+  power: 1130               # (1)
+  weight: 66                # (1)
+  te: 195                   # (1)
+
+  gauge: metre
+  propulsion: electric_ac
+  country: CH
+  builders:
+    - slm
+    - bbc
+    - mfo
+
+  life:
+    start: 1947
+    end: 1987               # (1) modernisation
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+  animations:
+    - id: default
+      steps: [s1, s2]

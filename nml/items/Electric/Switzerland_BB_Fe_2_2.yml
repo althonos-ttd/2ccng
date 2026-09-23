@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/Switzerland_BB_Fe_2_2.png"
+
+item:
+  id: electric_Switzerland_BB_Fe_2_2
+  num: 0
+
+  # Some info from: (1) https://de.wikipedia.org/wiki/BB_Fe_2/2
+
+  speed: 45                 # (1)
+  power: 206                # (1) 154 kW
+  weight: 15                # (1)
+  te: 24.5                  # (1)
+
+  gauge: metre
+  propulsion: electric_dc
+  country: CH
+  builders:
+    - sig
+
+  life:
+    start: 1909
+    end: 1961               # (1) complete overhaul
+
+gfx:
+  length: 5
+  vfx:
+    offset: -3
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

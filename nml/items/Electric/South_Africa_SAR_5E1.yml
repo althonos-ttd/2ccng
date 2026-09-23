@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/South_Africa_SAR_5E1.png"
+
+item:
+  id: electric_South_Africa_SAR_5E1
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_5E1,_Series_4
+
+  speed: 97                 # (1)
+  power: 1953               # (1) 
+  weight: 86                # (1)
+  te: 250                   # (1)
+
+  gauge: cape
+  propulsion: electric_dc
+  country: ZA
+  builders:
+    - ucw
+
+  life:
+    start: 1965     
+    end: 2005               # (1) withdrawn
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

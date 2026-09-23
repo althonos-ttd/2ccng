@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/South_Africa_SAR_11E.png"
+
+item:
+  id: electric_South_Africa_SAR_11E
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_11E
+
+  speed: 90                 # (1)
+  power: 5200               # (1)
+  weight: 172               # (1)
+  te: 580                   # (1)
+
+  gauge: cape
+  propulsion: electric_ac
+  country: ZA
+  builders:
+    - gm
+
+  life:
+    start: 1985
+    end: 2015
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

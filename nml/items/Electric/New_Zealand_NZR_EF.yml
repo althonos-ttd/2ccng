@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/New_Zealand_NZR_EF.png"
+
+item:
+  id: electric_New_Zealand_NZR_EF
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/New_Zealand_EF_class_locomotive
+
+  speed: 105                # (1)
+  power: 4000               # (1)
+  weight: 107               # (1)
+  te: 300                   # ?
+
+  gauge: cape
+  propulsion: electric_ac
+  country: NZ
+  builders:
+    - brush
+
+  life:
+    start: 1986
+    end: 2016               # (1) start of withdrawal 
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

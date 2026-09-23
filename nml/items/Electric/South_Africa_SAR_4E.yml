@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/South_Africa_SAR_4E.png"
+
+item:
+  id: electric_South_Africa_SAR_4E
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_4E
+
+  speed: 97                 # (1)
+  power: 3033               # (1) 
+  weight: 158               # (1)
+  te: 322                   # (1)
+
+  gauge: cape
+  propulsion: electric_dc
+  country: ZA
+  builders:
+    - north_british
+
+  life:
+    start: 1952     
+    end: 1982               # ?, (1) says "long retired" by 1989
+
+gfx:
+  length: 8
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/Switzerland_MOB_Ge_4_4_8000.xpm"
+
+item:
+  id: electric_Switzerland_MOB_Ge_4_4_8000
+  num: 0
+
+  # Some info from: (1) https://de.wikipedia.org/wiki/MOB_Ge_4/4_8001%E2%80%938004
+
+  speed: 120                # (1)
+  power: 2682               # (1) 2000 kW
+  weight: 64                # ?
+  te_coefficient: 0.24      # ?
+
+  gauge: metre
+  propulsion: electric_dc
+  country: CH
+  builders:
+    - slm
+    - abb
+
+  life:
+    start: 1994
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

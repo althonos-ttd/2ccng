@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Electric/Venezuela_La_Guaira_Caracas_19_23.xpm"
+
+item:
+  id: electric_Venezuela_La_Guaira_Caracas_19_23
+  num: 0
+
+  # Some info from: (1) http://www.tramz.com/ve/lc/lcbb.html
+  #                 (2) http://www.tramz.com/ve/lc/lc.html
+
+  speed: 29                 # (1)
+  power: 225                # (1) 2x 84 kW
+  weight: 33                # (1)
+  te_coefficient: 0.3       # ???
+
+  gauge: 3ft
+  propulsion: electric_dc
+  country: VE
+  builders:
+    - bbc
+
+  life:
+    start: 1927
+    end: 1952               # (1) railway closure
+
+gfx:
+  length: 5
+  vfx:
+    offset: -2
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
+    

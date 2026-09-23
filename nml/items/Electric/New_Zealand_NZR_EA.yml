@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/New_Zealand_NZR_EA.png"
+
+item:
+  id: electric_New_Zealand_NZR_EA
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/New_Zealand_EA_class_locomotive
+
+  speed: 72                 # (1)
+  power: 1290               # (1)
+  weight: 55                # (1)
+  te_coefficient: 0.32      # unknown
+
+  gauge: cape
+  propulsion: electric_dc
+  country: NZ
+  builders:
+    - toshiba
+
+  life:
+    start: 1968
+    end: 2008               # (1) reconditioned
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

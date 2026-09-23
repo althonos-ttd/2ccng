@@ -1,0 +1,38 @@
+.file: &file
+  filename: "gfx/Electric/New_Zealand_NZR_EO.png"
+
+item:
+  id: electric_New_Zealand_NZR_EO
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/NZR_EO_class
+
+  speed: 64                 # (1)
+  power: 680                # (1)
+  weight: 50                # (1)
+  te: 63                    # (1)
+
+  gauge: cape
+  propulsion: electric_dc
+  country: NZ
+  builders:
+    - ee
+
+  life:
+    start: 1923
+    end: 1968               # (1) retired 
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
