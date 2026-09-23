@@ -37,10 +37,11 @@
     "region/{{ region.region }}", \
     {% if region.subregion is defined %}"region/{{ region.region }}/{{ region.subregion }}", \{% endif %}
     {% endif -%}
-    "power/{{ item.propulsion }}", \
+    "power/{{ item.propulsion | replace("_", "/") }}", \
     "railgauge/narrow/{{ item.gauge }}", \
     {% for builder in item.builders -%}
-    "builder/{{ builder }}"{% if not loop.last %}, \{% endif %}
+    "builder/{{ builder }}"{% if not loop.last %}, \
+    {% endif %}
     {%- endfor %}
 
 #define INTRODUCTION_YEAR {{ item.life.start }}
@@ -61,7 +62,7 @@
 {%- endif %}
 
 {% if units is defined -%}
-#define ARTICULATED {{ units | length }}
+#define ARTICULATED {{ (units | length) - 1 }}
 #define LENGTH {{ units[0].length }}
 #define ACTUAL_LENGTH {{ units | map(attribute="length") | sum }}
 {% elif gfx.length > 8 %}
