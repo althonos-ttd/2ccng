@@ -564,7 +564,7 @@ str_diesel_Canada_CNR_900_GMD_NF110 :CNR 900 GMD NF110 (Diesel)
 str_diesel_Taiwan_TR_R200_AsiaLight :TR R200 'AsiaLight' (Diesel)
 
 #Electric
-str_electric_Switzerland_RhB_DE_2_2 			:RhB De 2/2 (Electric)
+str_electric_Switzerland_BB_Fe_2_2 			:BB Fe 2/2 (Electric)
 str_electric_Norway_NSB_EL7 					:NSB EL7 (Electric)
 str_electric_UK_NER_EF1 						:NER EF1 (Electric)
 str_electric_USA_Milwaukee_Road_ES_2 			:Milwaukee Road ES-2 (Electric)

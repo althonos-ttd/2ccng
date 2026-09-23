@@ -520,7 +520,7 @@ item(FEAT_TRAINS, item_dual_Spain_FGC_257, 5902) {}
 
 //Electric, available ID range: 6000-6999 (hex 0x1770..0x1B57)
 #define ID_RANGE_ELECTRIC 0x1770..0x1B57
-item(FEAT_TRAINS, item_electric_Switzerland_RhB_DE_2_2, 6000) {}
+item(FEAT_TRAINS, item_electric_Switzerland_BB_Fe_2_2, 6000) {}
 item(FEAT_TRAINS, item_electric_Norway_NSB_EL7, 6001) {}
 item(FEAT_TRAINS, item_electric_UK_NER_EF1, 6002) {}
 item(FEAT_TRAINS, item_electric_USA_Milwaukee_Road_ES_2, 6003) {}
