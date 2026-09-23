@@ -71,7 +71,7 @@ switch(FEAT_TRAINS, SELF, {{ "switch_%s_visual_effect" | format(item.id) }}, pos
 {% endif %}
 
 {# Add special definitions for longer vehicles #}
-{% if gfx.length is defined and gfx.length > 8 %}
+{% if gfx.length is defined and gfx.length > 8 and units is not defined %}
 {% set n_units = (gfx.length + 7) // 8 %}
 switch(FEAT_TRAINS, SELF, {{ "switch_%s_length" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
     {% for i in range(gfx.length // 8) %}

@@ -1,0 +1,39 @@
+.file: &file
+  filename: "gfx/Electric/Japan_JNR_EF81.png"
+
+item:
+  id: electric_Japan_JNR_EF81
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84EF81%E5%BD%A2%E9%9B%BB%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A#%E6%A6%82%E8%A6%81
+
+  speed: 110                # (1)
+  power: 3178               # (1) 2,370 kW
+  weight: 101               # (1)
+  te: 178.48                # (1) 18,200 kgf 
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - hitachi
+    - mitsubishi
+
+  life:
+    start: 1968
+    end: 2003               # (1) update work
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

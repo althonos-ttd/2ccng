@@ -1,0 +1,54 @@
+.file: &file
+  filename: "gfx/Electric/Japan_JR_Freight_EH500.png"
+
+item:
+  id: electric_Japan_JR_Freight_EH500
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/JR%E8%B2%A8%E7%89%A9EH500%E5%BD%A2%E9%9B%BB%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 110                # (1)
+  power: 5364               # (1) 4,000 kW
+  weight: 134.4             # (1)
+  te:	411.9                 # (1)          
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - toshiba
+
+  life:
+    start: 1997             # (1) prototype, mass production 2000    
+
+units:
+  - length: 8
+    sprite: engine
+    vfx:
+      type: VISUAL_EFFECT_ELECTRIC
+      offset: -3
+  - length: 8
+    sprite: tender
+    vfx:
+      type: VISUAL_EFFECT_DISABLE
+      offset: 0
+
+gfx:
+  length: 16
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: engine
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32

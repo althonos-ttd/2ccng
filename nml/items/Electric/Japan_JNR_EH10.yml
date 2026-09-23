@@ -1,0 +1,57 @@
+.file: &file
+  filename: "gfx/Electric/Japan_JNR_EH10.png"
+
+item:
+  id: electric_Japan_JNR_EH10
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84EH10%E5%BD%A2%E9%9B%BB%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 85                 # (1)
+  power: 3151               # (1) 2350 kW
+  weight: 116               # (1)
+  te: 183.6                 # (1) 18720 kgf
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - kawasaki
+    - toshiba
+    - mitsubishi
+
+  life:
+    start: 1967
+    end: 1982               # (1) discarded
+
+units:
+  - length: 7
+    sprite: engine
+    vfx:
+      type: VISUAL_EFFECT_ELECTRIC
+      offset: -3
+  - length: 7
+    sprite: tender
+    vfx:
+      type: VISUAL_EFFECT_DISABLE
+      offset: 0
+
+gfx:
+  length: 14
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: engine
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
