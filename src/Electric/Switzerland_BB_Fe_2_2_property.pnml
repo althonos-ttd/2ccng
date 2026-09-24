@@ -8,7 +8,7 @@
 
 #include "../undefine_properties.pnml"
 
-#define VEHIDCODE electric_Switzerland_RhB_DE_2_2
+#define VEHIDCODE electric_Switzerland_BB_Fe_2_2
 
 #define VEHICLE_REGION REGION(WESTERNEUROPE,NOREGION,NOCONCEPT)
 #define VEHICLE_GAUGE NAR_METRE
