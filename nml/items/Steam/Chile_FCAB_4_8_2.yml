@@ -1,0 +1,59 @@
+.file: &file
+  filename: "gfx/Steam/Chile_FCAB_4_8_2.png"
+
+item:
+  id: steam_Chile_FCAB_4_8_2
+  num: 0
+
+  # Some info from: (1) https://www.steamlocomotive.com/locobase.php?country=Chile&wheel=4-8-2&railroad=fcab#14478
+  #                 (2) https://ferrocarrilesenelconosur.co.uk/Resources/Chilean%20steam%20locos%203%20metre%20gaugea.pdf p.178
+
+  speed: 85                 # ???
+  power: 1457               # ???
+  weight: 148               # (1)
+  te: 148                   # (1) 33,242 lbf
+
+  gauge: metre
+  propulsion: steam
+  country: CL
+  builders:
+    - beyer_peacock
+
+  life:
+    start: 1954     
+    end: 1994               # (1) stored
+
+units:
+  - length: 7
+    sprite: engine
+    vfx:
+      type: VISUAL_EFFECT_STEAM
+      offset: -3
+  - length: 4
+    sprite: tender
+
+gfx:
+  length: 11
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

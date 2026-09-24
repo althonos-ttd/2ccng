@@ -1,0 +1,58 @@
+.file: &file
+  filename: "gfx/Steam/Japan_Horonai_Railway_7100.png"
+
+item:
+  id: steam_Japan_Horonai_Railway_7100
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/JGR_Class_7100
+  #                 (2) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%847100%E5%BD%A2%E8%92%B8%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 40                 # (2) tests after 1952 restoration
+  power: 200                # ???
+  weight: 27                # (2) 16.3 tons locomotive + 10.6 tons tender
+  te: 22.95                 # (1)
+
+  gauge: 3ft
+  propulsion: steam
+  country: JP
+  builders:
+    - hk_porter
+
+  life:
+    start: 1880     
+    end: 1922               # (2) Locomotive Nr. 1 sent to museum
+
+units:
+  - length: 5
+    sprite: engine
+    vfx:
+      offset: -3
+  - length: 3
+    sprite: tender
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+  animations:
+    - id: engine
+      steps: [s1, s2]

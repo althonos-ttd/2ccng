@@ -1,0 +1,56 @@
+.file: &file
+  filename: "gfx/Steam/Australia_Queensland_Railways_A10.xpm"
+
+item:
+  id: steam_Australia_Queensland_Railways_A10
+  num: 0
+
+  speed: 40                
+  power: 111              
+  weight: 23               
+  te_coefficient: 0.1               
+
+  gauge: cape
+  propulsion: steam
+  country: AU
+  builders:
+    - neilson_co
+
+  life:
+    start: 1865     
+    end: 1910            
+
+units:
+  - length: 6
+    sprite: engine
+    vfx:
+      type: VISUAL_EFFECT_STEAM
+      offset: -3
+  - length: 2
+    sprite: tender
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

@@ -42,5 +42,26 @@ PNML_ELEC_FILES_I = $(foreach x,$(YAML_ELEC_FILES),$(patsubst nml/items/Electric
 
 
 
+src/Steam/%_property.pnml: nml/templates/property.pnml.j2 nml/items/Steam/%.yml nml/data/geoscheme.yml
+	$(_E) "[J2]" $(@F)
+	$(_V) minijinja-cli $^ > $@
+
+src/Steam/%_graphics.pnml: nml/templates/graphics.pnml.j2 nml/items/Steam/%.yml
+	$(_E) "[J2]" $(@F)
+	$(_V) minijinja-cli $^ > $@
+
+src/Steam/%_item.pnml: nml/templates/item.pnml.j2 nml/items/Steam/%.yml
+	$(_E) "[J2]" $(@F)
+	$(_V) minijinja-cli $^ > $@
+
+
+YAML_STEAM_FILES = $(wildcard nml/items/Steam/*.yml)
+PNML_STEAM_FILES_P = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%_property.pnml,$x))
+PNML_STEAM_FILES_G = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%_graphics.pnml,$x))
+PNML_STEAM_FILES_I = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%_item.pnml,$x))
+
+
+
 PNML_FILES = $(PNML_DIESEL_FILES_P) $(PNML_DIESEL_FILES_G) $(PNML_DIESEL_FILES_I) \
-			 $(PNML_ELEC_FILES_P) $(PNML_ELEC_FILES_G) $(PNML_ELEC_FILES_I)
+			 $(PNML_ELEC_FILES_P) $(PNML_ELEC_FILES_G) $(PNML_ELEC_FILES_I) \
+			 $(PNML_STEAM_FILES_P) $(PNML_STEAM_FILES_G) $(PNML_STEAM_FILES_I)

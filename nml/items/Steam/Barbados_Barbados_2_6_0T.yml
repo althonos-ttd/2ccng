@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Steam/Barbados_Barbados_2_6_0T.xpm"
+
+item:
+  id: steam_Barbados_Barbados_2_6_0T
+  num: 0
+
+  # Some info from: (1) https://www.steamlocomotive.com/locobase.php?country=Barbados&wheel=2-8-2&railroad=bsab
+
+  speed: 36                 # (1) estimated from driver wheel at 120rpm
+  power: 115                # (1) estimated with PLAN
+  weight: 29                # (1)
+  te: 54                    # (1) 12,258 lbf
+
+  gauge: 2ft6in
+  propulsion: steam
+  country: BB
+  builders:
+    - baldwin
+
+  life:
+    start: 1898     
+    end: 1937               # (1) railway closure            
+
+gfx:
+  length: 5
+  vfx:
+    offset: -4
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [s1, s2]

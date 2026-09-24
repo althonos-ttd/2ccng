@@ -64,7 +64,11 @@ switch(FEAT_TRAINS, SELF, {{ "switch_%s_default" | format(item.id) }}, position_
 }
 switch(FEAT_TRAINS, SELF, {{ "switch_%s_visual_effect" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
+    {% if unit.vfx is defined %}
     {{ loop.index0 }}: return visual_effect_and_powered({{ unit.vfx.type if unit.vfx.type is defined else "VISUAL_EFFECT_DISABLE" }}, {{ unit.vfx.offset if unit.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
+    {# {% else %} #}
+    {# {{ loop.index0 }}: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER); #}
+    {% endif %}
     {% endfor %}
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
 }

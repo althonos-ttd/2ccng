@@ -1,0 +1,47 @@
+.file: &file
+  filename: "gfx/Steam/Eritrea_Eritrean_Railway_R440.xpm"
+
+item:
+  id: steam_Eritrea_Eritrean_Railway_R440
+  num: 0
+
+  # Some info from: (1) https://www.steamlocomotive.com/locobase.php?country=Ethiopia&wheel=Articulated&railroad=er#5017
+  #                 (2) https://it.wikipedia.org/wiki/Locomotiva_FS_R.440
+
+  speed: 40                 # (2)
+  power: 250                # (2)
+  weight: 35                # (1, 2)
+  te: 56                    # (1)
+
+  gauge: itmetre
+  propulsion: steam
+  country: ER
+  builders:
+    # - ansaldo
+
+  life:
+    start: 1911     
+    end: 1961               # (1)
+
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [s1, s2]

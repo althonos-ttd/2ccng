@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Steam/Germany_Saxon_IV_K.png"
+
+item:
+  id: steam_Germany_Saxon_IV_K
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Saxon_IV_K
+
+  speed: 30                 # (1)
+  power: 206                # (1)
+  weight: 27                # (1)
+  te: 36.28                 # (1)
+
+  gauge: 750mm
+  propulsion: steam
+  country: DE
+  builders:
+    - sachsiche
+
+  life:
+    start: 1892     
+    end: 1932               # (1) first engines retired
+
+gfx:
+  length: 6
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [s1, s2]
