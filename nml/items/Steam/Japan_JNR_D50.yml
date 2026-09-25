@@ -1,0 +1,62 @@
+.file: &file
+  filename: "gfx/Steam/Japan_JNR_D50.png"
+
+item:
+  id: steam_Japan_JNR_D50
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84D50%E5%BD%A2%E8%92%B8%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 70                 # (1)
+  power: 1520               # ???
+  weight: 127               # (1)
+  te:	165.98                # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: JP
+  builders:
+    - kawasaki
+    - kisha_seizo
+    - nippon_sharyo
+    - hitachi
+
+  life:
+    start: 1923              
+    end: 1956               # (1) rebuild date 
+
+units:
+  - sprite: engine
+    length: 6
+    vfx:
+      offset: -3
+      type: VISUAL_EFFECT_STEAM
+  - sprite: tender
+    length: 4
+
+gfx:
+  length: 10
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+      
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

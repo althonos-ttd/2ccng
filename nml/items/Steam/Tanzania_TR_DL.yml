@@ -1,0 +1,60 @@
+.file: &file
+  filename: "gfx/Steam/Kenya_East_African_Railway_23.png"
+
+item:
+  id: steam_Kenya_East_African_Railway_23   # FIXME
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/TR_DL_class
+  #                 (2) https://www.loco-info.com/view.aspx?id=13966
+
+  speed: 70                 # ???
+  power: 900                # (2)
+  weight: 78                # (2)
+  te:	108                   # (2)
+
+  gauge: metre
+  propulsion: steam
+  country: TZ
+  builders:
+    - beyer_peacock
+
+  life:
+    start: 1923          
+    end: 1963               # ???
+
+units:
+  - sprite: engine
+    length: 5
+    vfx:
+      offset: -3
+      type: VISUAL_EFFECT_STEAM
+  - sprite: tender
+    length: 3
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+      
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

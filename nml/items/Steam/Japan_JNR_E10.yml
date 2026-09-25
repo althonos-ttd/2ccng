@@ -1,0 +1,47 @@
+.file: &file
+  filename: "gfx/Steam/Japan_JNR_Class_E10.png"
+
+item:
+  id: steam_Japan_JNR_Class_E10
+  num: 0
+
+  # Some info from: (1) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84E10%E5%BD%A2%E8%92%B8%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+  #                 (2) https://www.steamlocomotive.com/locobase.php?country=Japan&wheel=2-10-4&railroad=jgr
+
+  speed: 65                 # (1)
+  power: 1340               # (1)
+  weight: 102               # (1, 2)
+  te: 213                   # (2)
+
+  gauge: cape
+  propulsion: steam
+  country: JP
+  builders:
+    - kisha_seizo
+
+  life:
+    start: 1948          
+    end: 1978               # (1) Scrapped 1962, but that's too early!
+
+gfx:
+  length: 7
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

@@ -1,0 +1,47 @@
+.file: &file
+  filename: "gfx/Steam/Japan_JGR_860.png"
+
+item:
+  id: steam_Japan_JGR_860
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/JGR_Class_860
+  #                 (2) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%84860%E5%BD%A2%E8%92%B8%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+
+  speed: 52                 # (1) ~front driver wheels diameter
+  power: 410                # (2) ~estimated with PLAN
+  weight: 39                # (2)
+  te: 48.0                  # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: JP
+  builders:
+    - jgr_kobe
+
+  life:
+    start: 1893     
+    end: 1929               # (2)
+
+gfx:
+  length: 5
+  vfx:
+    offset: 0
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [engine_s1, engine_s2]

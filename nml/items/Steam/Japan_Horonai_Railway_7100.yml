@@ -7,6 +7,7 @@ item:
 
   # Some info from: (1) https://en.wikipedia.org/wiki/JGR_Class_7100
   #                 (2) https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%89%847100%E5%BD%A2%E8%92%B8%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A
+  #                 (3) https://www.oldtokyo.com/j-g-r-j-n-r-steam-locomotive-evolution-1872-1948/
 
   speed: 40                 # (2) tests after 1952 restoration
   power: 200                # ???
@@ -21,7 +22,7 @@ item:
 
   life:
     start: 1880     
-    end: 1922               # (2) Locomotive Nr. 1 sent to museum
+    end: 1915               # (3)
 
 units:
   - length: 5

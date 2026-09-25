@@ -1,0 +1,59 @@
+.file: &file
+  filename: "gfx/Steam/Kenya_East_African_Railway_31.png"
+
+item:
+  id: steam_Kenya_East_African_Railway_31
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/EAR_31_class
+
+  speed: 80                 # ???
+  power: 1220               # ???
+  weight: 115               # ???
+  te:	118.32                # (1)
+
+  gauge: metre
+  propulsion: steam
+  country: KE               
+  builders:
+    - vulcan
+
+  life:
+    start: 1955
+    end: 1985               # ???
+
+units:
+  - sprite: engine
+    length: 7
+    vfx:
+      offset: -3
+      type: VISUAL_EFFECT_STEAM
+  - sprite: tender
+    length: 4
+
+gfx:
+  length: 11
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+      
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]
