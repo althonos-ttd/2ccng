@@ -21,7 +21,7 @@ item:
     - sharp_stewart
 
   life:
-    start: 1889     
+    start: 1889
     end: 1957               # (2)
 
 units:
@@ -56,4 +56,4 @@ gfx:
       y: 64
   animations:
     - id: engine
-      steps: [s1, s2]
+      steps: [engine_s1, engine_s2]

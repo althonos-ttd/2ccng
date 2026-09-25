@@ -55,4 +55,4 @@ gfx:
       y: 64
   animations:
     - id: engine
-      steps: [s1, s2]
+      steps: [engine_s1, engine_s2]
