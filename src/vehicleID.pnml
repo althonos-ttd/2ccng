@@ -196,12 +196,12 @@ item(FEAT_TRAINS, item_steam_Austria_KKStB_310, 4084) {}
 item(FEAT_TRAINS, item_steam_Russia_RZD_E, 4085) {}
 item(FEAT_TRAINS, item_steam_Japan_JGR_9600, 4086) {}
 item(FEAT_TRAINS, item_steam_Israel_Israel_Railways_H, 4087) {}
-item(FEAT_TRAINS, item_steam_Kenya_East_African_Railway_23, 4088) {}
+item(FEAT_TRAINS, item_steam_Tanzania_TR_DL, 4088) {}
 item(FEAT_TRAINS, item_steam_Italy_FS_480, 4089) {}
 item(FEAT_TRAINS, item_steam_New_Zealand_NZR_WAB, 4090) {}
 item(FEAT_TRAINS, item_steam_Poland_PKP_Ok22, 4091) {}
 item(FEAT_TRAINS, item_steam_Croatia_HZ_11, 4092) {}
-item(FEAT_TRAINS, item_steam_Kenya_East_African_Railway_21, 4093) {}
+item(FEAT_TRAINS, item_steam_Tanzania_TR_RV, 4093) {}
 item(FEAT_TRAINS, item_steam_Italy_FS_691, 4094) {}
 item(FEAT_TRAINS, item_steam_Australia_NSWGR_D57, 4095) {}
 item(FEAT_TRAINS, item_steam_Argentina_FCCA_PS11, 4096) {}

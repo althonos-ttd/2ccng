@@ -8,18 +8,18 @@
 
 #include "../undefine_properties.pnml"
 
-#define VEHIDCODE steam_Kenya_East_African_Railway_21
-#define ITEM item_steam_Kenya_East_African_Railway_21
-#define NAME string(str_steam_Kenya_East_African_Railway_21)
+#define VEHIDCODE steam_Tanzania_TR_RV
+#define ITEM item_steam_Tanzania_TR_RV
+#define NAME string(str_steam_Tanzania_TR_RV)
 
 #define VEHICLE_REGION  REGION(AFRICA,NOREGION,NOCONCEPT)
 #define VEHICLE_GAUGE   NAR_METRE
 #define VEHICLE_MAKER   MAKER_NORTH_BRITISH
 #define VEHICLE_POWER   STEAM
-#define VEHICLE_COUNTRY KE
+#define VEHICLE_COUNTRY NZ
 
 #define VEHICLE_BADGES \
-    "flag/KE", \
+    "flag/NZ", \
     "region/africa/eastern", \
     "power/steam", \
     "railgauge/narrow/metre"
