@@ -2,7 +2,7 @@
   filename: "gfx/Steam/Sweden_NJ_Forstlingen.xpm"
 
 .sprite: &sprite
-  <<: *file
+  filename: "gfx/Steam/Sweden_NJ_Forstlingen.xpm"
   template: template_2cc_engines_general
   x: 1
 

@@ -51,6 +51,6 @@ item(FEAT_TRAINS, ITEM ) {
 		//Add calls to defined switches below
 		RUNNINGCOSTENGINESWITCHCALL
 		EXPANDEDPURCHASETEXTSWITCHCALL(VEHIDCODE)
-		default: switch_steam_Australia_Queensland_Railways_A10_position;
+		default: switch_steam_Australia_Queensland_Railways_A10_default;
 	}
 }

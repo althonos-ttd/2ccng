@@ -2,7 +2,7 @@
   filename: "gfx/Steam/South_Africa_SAR_25.png"
 
 .sprite: &sprite
-  <<: *file
+  filename: "gfx/Steam/South_Africa_SAR_25.png"
   template: template_2cc_engines_general
   x: 1
 

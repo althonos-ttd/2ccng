@@ -37,7 +37,7 @@ switch(FEAT_TRAINS, SELF, switch_steam_Australia_Queensland_Railways_A10_animati
 	spriteset_steam_Australia_Queensland_Railways_A10_engine2;
 }
 
-switch(FEAT_TRAINS, SELF, switch_steam_Australia_Queensland_Railways_A10_position, position_in_vehid_chain % 2) {
+switch(FEAT_TRAINS, SELF, switch_steam_Australia_Queensland_Railways_A10_default, position_in_vehid_chain % 2) {
 	0: switch_steam_Australia_Queensland_Railways_A10_animation;
 	switch_steam_Australia_Queensland_Railways_A10_tender;
 }

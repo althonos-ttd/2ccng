@@ -5,7 +5,9 @@ item:
   id: steam_USA_0_4_4_Forney
   num: 0
 
-  # Some info from: (1) 
+  # Some info from: (1) https://www.steamlocomotive.com/locobase.php?country=USA&wheel=0-4-4&railroad=srrl
+  #                 (2) https://en.wikipedia.org/wiki/Billerica_and_Bedford_Railroad
+  #                 (3) https://en.wikipedia.org/wiki/Sandy_River_Railroad
 
   speed: 24                 # ???
   power: 107                # ???
@@ -20,7 +22,7 @@ item:
 
   life:
     start: 1877                  
-    end:                    # ???
+    end: 1912               # (2, 3) scrapped
 
 gfx:
   length: 6

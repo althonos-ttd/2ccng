@@ -2,7 +2,7 @@
   filename: "gfx/Steam/South_Africa_SAR_MD_Class.png"
 
 .sprite: &sprite
-  <<: *file
+  filename: "gfx/Steam/South_Africa_SAR_MD_Class.png"
   template: template_2cc_engines_general
   x: 1
 
@@ -25,7 +25,7 @@ item:
 
   life:
     start: 1910
-    end:                   # ???
+    end: 1930              # (1) scrapped 1926 but that's a bit early
 
 units:
   - sprite: engine
@@ -36,21 +36,21 @@ units:
     length: 5
 
 gfx:
-  length: 10
+  length: 13
   purchase:
     <<: *file
     x: 1
     y: 96
   spritesets:
     - id: engine_s1
-      <<: *sprite
       y: 1
+      <<: *sprite
     - id: engine_s2
-      <<: *sprite
       y: 32
-    - id: tender
       <<: *sprite
+    - id: tender
       y: 64
+      <<: *sprite
   animations:
     - id: engine
       steps: [engine_s1, engine_s2]
