@@ -1,18 +1,19 @@
 
+.DELETE_ON_ERROR:
 
 nml/templates/diesel.nml.j2: nml/templates/item.nml.j2
 
 src/Diesel/%_property.pnml: nml/templates/property.pnml.j2 nml/items/Diesel/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli $^ > $@
+	$(_V) minijinja-cli -o $@ $^ 
 
 src/Diesel/%_graphics.pnml: nml/templates/graphics.pnml.j2 nml/items/Diesel/%.yml
 	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli $^ > $@
+	$(_V) minijinja-cli -o $@ $^
 
 src/Diesel/%_item.pnml: nml/templates/item.pnml.j2 nml/items/Diesel/%.yml
 	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli $^ > $@
+	$(_V) minijinja-cli -o $@ $^
 
 YAML_DIESEL_FILES = $(wildcard nml/items/Diesel/*.yml)
 PNML_DIESEL_FILES_P = $(foreach x,$(YAML_DIESEL_FILES),$(patsubst nml/items/Diesel/%.yml,src/Diesel/%_property.pnml,$x))
