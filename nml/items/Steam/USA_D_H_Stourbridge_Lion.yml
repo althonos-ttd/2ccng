@@ -28,11 +28,11 @@ item:
     end: 1844               # (1) all but boiler scrapped
 
 units:
-  - id: engine
+  - sprite: engine
     length: 3
     vfx:
       offset: -3
-  - id: tender
+  - sprite: tender
     length: 2
 
 gfx:

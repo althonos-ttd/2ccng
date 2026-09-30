@@ -51,5 +51,5 @@ gfx:
       <<: *sprite
       y: 96
   animations:
-    - id: engine
+    - id: default
       steps: [engine_s1, engine_s2, engine_s3, engine_s4]

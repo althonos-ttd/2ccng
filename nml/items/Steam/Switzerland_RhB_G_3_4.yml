@@ -32,9 +32,9 @@ gfx:
   purchase:
     <<: *file
     x: 1
-    y: 128
+    y: 96
   vfx:
-    offset: -4
+    offset: 0
     type: VISUAL_EFFECT_STEAM
   spritesets:
     - id: engine_s1

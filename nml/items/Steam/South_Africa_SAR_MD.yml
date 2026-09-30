@@ -32,7 +32,7 @@ units:
     length: 8
     vfx:
       offset: -3
-  - sprite: middle
+  - sprite: tender
     length: 5
 
 gfx:

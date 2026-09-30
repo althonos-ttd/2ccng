@@ -29,11 +29,11 @@ item:
     end: 1953               # (1) many K-27 scrapped in 1953
 
 units:
-  - id: engine
+  - sprite: engine
     length: 7
     vfx:
       offset: -3
-  - id: tender
+  - sprite: tender
     length: 4
 
 gfx:

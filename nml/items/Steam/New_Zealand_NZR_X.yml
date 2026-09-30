@@ -5,12 +5,12 @@ item:
   id: steam_New_Zealand_NZR_X_Class
   num: 0
 
-  # Some info from: (1) 
+  # Some info from: (1) https://en.wikipedia.org/wiki/NZR_X_class
 
-  speed: 50                 # ???
+  speed: 48                 # (1)
   power: 1500               # ???
-  weight: 94                # ???
-  te_coefficient: 0.15      # ???
+  weight: 96                # (1)
+  te: 118.4                 # (1)
 
   gauge: cape
   propulsion: steam
@@ -20,7 +20,7 @@ item:
 
   life:
     start: 1908          
-    end:               
+    end: 1957               # (1) withdrawn      
 
 units:
   - sprite: engine
@@ -54,4 +54,4 @@ gfx:
       y: 64
   animations:
     - id: engine
-      steps: [s1, s2]
+      steps: [engine_s1, engine_s2]

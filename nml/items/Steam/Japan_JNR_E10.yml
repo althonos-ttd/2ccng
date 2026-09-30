@@ -43,5 +43,5 @@ gfx:
       x: 1
       y: 32
   animations:
-    - id: engine
+    - id: default
       steps: [engine_s1, engine_s2]
