@@ -2,7 +2,7 @@
   filename: "gfx/Steam/Tanzania_TR_RV.png"
 
 item:
-  id: steam_Tanzania_TR_RV   # FIXME
+  id: steam_Tanzania_TR_RV
   num: 0
 
   # Some info from: (1) https://en.wikipedia.org/wiki/TR_RV_class

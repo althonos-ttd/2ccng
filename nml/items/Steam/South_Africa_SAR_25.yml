@@ -1,0 +1,56 @@
+.file: &file
+  filename: "gfx/Steam/South_Africa_SAR_25.png"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_South_Africa_SAR_25
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_25_4-8-4
+
+  speed: 110                # ???
+  power: 5100               # ???
+  weight: 238               # (1)
+  te: 201.8                 # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: ZA
+  builders:
+    - henschel
+
+  life:
+    start: 1953
+    end: 1983              # ???
+
+units:
+  - sprite: engine
+    length: 8
+    vfx:
+      offset: -3
+  - sprite: tender
+    length: 5
+
+gfx:
+  length: 13
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *sprite
+      y: 1
+    - id: engine_s2
+      <<: *sprite
+      y: 32
+    - id: tender
+      <<: *sprite
+      y: 64
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

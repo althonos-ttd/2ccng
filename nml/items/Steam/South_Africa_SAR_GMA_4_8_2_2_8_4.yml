@@ -1,0 +1,68 @@
+.file: &file
+  filename: "gfx/Steam/South_Africa_SAR_GMA_4_8_2_2_8_4.png"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_South_Africa_SAR_GMA_4_8_2_2_8_4
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_GMA_4-8-2%2B2-8-4
+  #                 (2) https://loco-info.com/view.aspx?id=11809
+  #                 (3) https://de.wikipedia.org/wiki/SAR-Klasse_GMA/GMAM
+
+  speed: 95                 # ???
+  power: 2175               # (2)
+  weight: 195               # (1) without tender
+  te: 270                   # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: ZA
+  builders:
+    - henschel
+
+  life:
+    start: 1953
+    end: 1988              # (1)
+
+units:
+  - sprite: front
+    length: 4
+  - sprite: middle
+    length: 4
+    vfx:
+      offset: -3
+  - sprite: back
+    length: 5
+
+gfx:
+  length: 13
+  purchase:
+    <<: *file
+    x: 1
+    y: 160
+  spritesets:
+    - id: front_s1
+      <<: *sprite
+      y: 1
+    - id: front_s2
+      <<: *sprite
+      y: 32
+    - id: middle
+      <<: *sprite
+      y: 64
+    - id: back_s1
+      <<: *sprite
+      y: 96
+    - id: back_s2
+      <<: *sprite
+      y: 128
+  animations:
+    - id: front
+      steps: [front_s1, front_s2]
+    - id: back
+      steps: [back_s1, back_s2]

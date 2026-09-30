@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Steam/Myanmar_Burma_Railways_C.xpm"
+
+item:
+  id: steam_Myanmar_Burma_Railways_C
+  num: 0
+
+  # Some info from: (1) https://loco-info.com/view.aspx?id=14598
+
+  speed: 40                 # ???
+  power: 350                # (1)
+  weight: 37                # (1)
+  te: 42                    # (1)
+
+  gauge: metre
+  propulsion: steam
+  country: MM
+  builders:
+    - neilson
+
+  life:
+    start: 1896          
+    end: 1926               # ???
+
+gfx:
+  length: 7
+  vfx:
+    offset: -3
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [engine_s1, engine_s2]

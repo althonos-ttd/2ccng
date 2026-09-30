@@ -19,6 +19,8 @@ item:
   country: IN
   builders:
     - sharp_stewart
+    - north_british
+    - baldwin
 
   life:
     start: 1889

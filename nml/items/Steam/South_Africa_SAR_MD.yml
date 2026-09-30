@@ -1,0 +1,56 @@
+.file: &file
+  filename: "gfx/Steam/South_Africa_SAR_MD_Class.png"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_South_Africa_SAR_MD_Class
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_MD_2-6-6-2
+
+  speed: 65                 # ???
+  power: 1360               # ???
+  weight: 160               # (1)
+  te: 204                   # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: ZA
+  builders:
+    - alco
+
+  life:
+    start: 1910
+    end:                   # ???
+
+units:
+  - sprite: engine
+    length: 8
+    vfx:
+      offset: -3
+  - sprite: middle
+    length: 5
+
+gfx:
+  length: 10
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *sprite
+      y: 1
+    - id: engine_s2
+      <<: *sprite
+      y: 32
+    - id: tender
+      <<: *sprite
+      y: 64
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

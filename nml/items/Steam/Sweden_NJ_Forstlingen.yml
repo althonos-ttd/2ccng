@@ -1,0 +1,55 @@
+.file: &file
+  filename: "gfx/Steam/Sweden_NJ_Forstlingen.xpm"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_Sweden_NJ_Forstlingen
+  num: 0
+
+  # Some info from: (1) https://sv.wikipedia.org/wiki/F%C3%B6rstlingen
+  #                 (2) https://de.wikipedia.org/wiki/F%C3%B6rstlingen
+
+  speed: 18                 # (2) 13 km/h, other sources 15-20 km/h
+  power: 20                 # (1)
+  weight: 6                 # (1)
+  te_coefficient: 0.20      # ??? unknown
+
+  gauge: se3ft
+  propulsion: steam
+  country: SE
+  builders:
+    - munktells
+
+  life:
+    start: 1853
+    end: 1871              # (2)
+
+gfx:
+  length: 5
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  vfx:
+    offset: -4
+    type: VISUAL_EFFECT_STEAM
+  spritesets:
+    - id: engine_s1
+      <<: *sprite
+      y: 1
+    - id: engine_s2
+      <<: *sprite
+      y: 32
+    - id: engine_s3
+      <<: *sprite
+      y: 64
+    - id: engine_s4
+      <<: *sprite
+      y: 96
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2, engine_s3, engine_s4]

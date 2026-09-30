@@ -1,0 +1,59 @@
+.file: &file
+  filename: "gfx/Steam/UK_Padarn_Railway_Fire_Queen.xpm"
+
+item:
+  id: steam_UK_Padarn_Railway_Fire_Queen
+  num: 0
+
+  # Some info from: (1) https://www.steamlocomotive.com/locobase.php?country=Great_Britain&wheel=0-4-0&railroad=padarn
+
+  speed: 26                 # (1) driver wheel 1.372 m with est. 100 RPMs
+  power: 44                 # (1) from heating surface of 437 sq ft
+  weight: 13                # ???
+  te_coefficient: 0.12      # ???
+
+  gauge: 4ft
+  propulsion: steam
+  country: GB
+  builders:
+    - horlock_co
+
+  life:
+    start: 1848                  
+    end: 1884               # (1) sister locomotive Jenny Lind scrapped
+
+units:
+  - sprite: engine
+    length: 5
+    vfx:
+      offset: -3
+      type: VISUAL_EFFECT_STEAM
+  - sprite: tender
+    length: 3
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+      
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

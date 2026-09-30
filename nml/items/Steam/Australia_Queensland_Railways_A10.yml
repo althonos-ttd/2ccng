@@ -14,7 +14,7 @@ item:
   propulsion: steam
   country: AU
   builders:
-    - neilson_co
+    - neilson
 
   life:
     start: 1865     

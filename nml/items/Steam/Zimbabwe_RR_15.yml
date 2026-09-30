@@ -1,0 +1,67 @@
+.file: &file
+  filename: "gfx/Steam/Zimbabwe_Zimbabwe_Railways_15.png"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_Zimbabwe_Zimbabwe_Railways_15
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Rhodesia_Railways_15th_class
+  #                 (2) https://loco-info.com/view.aspx?id=10932&t=Type
+
+  speed: 80                 # ???
+  power: 1600               # (2)
+  weight: 184               # (1) 
+  te: 190.1                 # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: ZW
+  builders:
+    - beyer_peacock
+
+  life:
+    start: 1940
+    end: 1978              # (1) start of rebuilding program
+
+units:
+  - sprite: front
+    length: 4
+  - sprite: middle
+    length: 4
+    vfx:
+      offset: -3
+  - sprite: back
+    length: 5
+
+gfx:
+  length: 13
+  purchase:
+    <<: *file
+    x: 1
+    y: 160
+  spritesets:
+    - id: front_s1
+      <<: *sprite
+      y: 1
+    - id: front_s2
+      <<: *sprite
+      y: 32
+    - id: middle
+      <<: *sprite
+      y: 64
+    - id: back_s1
+      <<: *sprite
+      y: 96
+    - id: back_s2
+      <<: *sprite
+      y: 128
+  animations:
+    - id: front
+      steps: [front_s1, front_s2]
+    - id: back
+      steps: [back_s1, back_s2]

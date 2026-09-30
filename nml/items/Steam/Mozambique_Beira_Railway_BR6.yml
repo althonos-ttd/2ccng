@@ -1,0 +1,60 @@
+.file: &file
+  filename: "gfx/Steam/Mozambique_Beira_Railway_BR6_F2_Falcon.png"
+
+item:
+  id: steam_Mozambique_Beira_Railway_BR6_F2_Falcon
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_African_Class_NG6_4-4-0#Beira_Railway
+  #                 (2) https://www.steamlocomotive.com/locobase.php?country=Mozambique&wheel=4-4-0&railroad=br
+
+  speed: 40                 # ???
+  power: 140                # ???
+  weight: 20                # (1)
+  te:	13                    # (1)
+
+  gauge: 2ft
+  propulsion: steam
+  country: MZ               
+  builders:
+    - falcon
+
+  life:
+    start: 1895
+    end: 1935               # (1) last of NG6, maybe not Falcon F2?
+
+units:
+  - sprite: engine
+    length: 4
+    vfx:
+      offset: -3
+      type: VISUAL_EFFECT_STEAM
+  - sprite: tender
+    length: 3
+
+gfx:
+  length: 7
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+      
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

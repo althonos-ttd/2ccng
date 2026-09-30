@@ -1,0 +1,58 @@
+.file: &file
+  filename: "gfx/Steam/USA_D_RGW_K_27_Mudhen.xpm"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_USA_D_RGW_K_27_Mudhen
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Rio_Grande_class_K-27
+  #                 (2) https://www.loco-info.com/view.aspx?id=16447&t=Country&cookies=decline
+
+  speed: 48                 # ???
+  power: 900                # (2)
+  weight: 89                # (2) 197,500 lbs
+  te: 120                   # (1, 2) 27,000 lbf
+
+  gauge: 3ft
+  propulsion: steam
+  country: US
+  builders:
+    - baldwin
+
+  life:
+    start: 1903                  
+    end: 1953               # (1) many K-27 scrapped in 1953
+
+units:
+  - id: engine
+    length: 7
+    vfx:
+      offset: -3
+  - id: tender
+    length: 4
+
+gfx:
+  length: 5
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *sprite
+      y: 1
+    - id: engine_s2
+      <<: *sprite
+      y: 32
+    - id: tender
+      <<: *sprite
+      y: 64
+      
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

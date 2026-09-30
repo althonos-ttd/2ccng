@@ -1,0 +1,57 @@
+.file: &file
+  filename: "gfx/Steam/New_Zealand_NZR_X_Class.png"
+
+item:
+  id: steam_New_Zealand_NZR_X_Class
+  num: 0
+
+  # Some info from: (1) 
+
+  speed: 50                 # ???
+  power: 1500               # ???
+  weight: 94                # ???
+  te_coefficient: 0.15      # ???
+
+  gauge: cape
+  propulsion: steam
+  country: NZ
+  builders:
+    - nzr_addington
+
+  life:
+    start: 1908          
+    end:               
+
+units:
+  - sprite: engine
+    length: 8
+    vfx:
+      offset: -3
+  - sprite: tender
+    length: 6
+
+gfx:
+  length: 14
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: engine_s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: tender
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+  animations:
+    - id: engine
+      steps: [s1, s2]

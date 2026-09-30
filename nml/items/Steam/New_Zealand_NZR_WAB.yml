@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Steam/New_Zealand_NZR_WAB.png"
+
+item:
+  id: steam_New_Zealand_NZR_WAB
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/South_West_African_2-8-0
+
+  speed: 60                 # ???
+  power: 640                # ???
+  weight: 67                # (1)
+  te: 60.4                  # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: NZ
+  builders:
+    - nzr_hillside
+
+  life:
+    start: 1911          
+    end: 1941              # (1) still in service in 1937
+
+gfx:
+  length: 6
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [s1, s2]

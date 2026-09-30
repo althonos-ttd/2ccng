@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Steam/South_Africa_Natal_Government_Railways_2_6_0T.png"
+
+item:
+  id: steam_South_Africa_Natal_Government_Railways_2_6_0T
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/NGR_2-6-0T_Durban_%26_Pietermaritzburg
+  #                 (2) https://en.wikipedia.org/wiki/NGR_Class_K_2-6-0T
+
+  speed: 18                 # wheels diameter 39" (2) at 100 rpm
+  power: 96                 # ???
+  weight: 30                # (2) 26 tons loco weight + 1.0 ton coal + 2.7 tons water
+  te: 44                    # (1, 2)
+
+  gauge: cape
+  propulsion: steam
+  country: ZA
+  builders:
+    - beyer_peacock
+    - kitson_co
+
+  life:
+    start: 1877          
+    end: 1931              # (2)
+
+gfx:
+  length: 5
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [s1, s2]

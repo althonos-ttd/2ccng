@@ -1,0 +1,57 @@
+.file: &file
+  filename: "gfx/Steam/USA_D_H_Stourbridge_Lion.xpm"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_USA_D_H_Stourbridge_Lion
+  num: 0
+
+  speed: 18                 # ???
+  power: 20                 # ???
+  weight: 9                 # ???
+  te_coefficient: 0.10      # ???
+
+  gauge: 4ft
+  propulsion: steam
+  country: US
+  builders:
+    - foster_rastrick_co
+
+  life:
+    start: 1829                  
+    end:                    # ???
+
+units:
+  - id: engine
+    length: 3
+    vfx:
+      offset: -3
+  - id: tender
+    length: 2
+
+gfx:
+  length: 5
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: engine_s1
+      <<: *sprite
+      template: template_2cc_engines_general
+      y: 1
+    - id: engine_s2
+      <<: *sprite
+      template: template_2cc_engines_general
+      y: 32
+    - id: tender
+      <<: *sprite
+      y: 64
+      
+  animations:
+    - id: engine
+      steps: [engine_s1, engine_s2]

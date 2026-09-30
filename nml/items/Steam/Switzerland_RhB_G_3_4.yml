@@ -1,0 +1,48 @@
+.file: &file
+  filename: "gfx/Steam/Switzerland_RhB_G_3_4.png"
+
+.sprite: &sprite
+  <<: *file
+  template: template_2cc_engines_general
+  x: 1
+
+item:
+  id: steam_Switzerland_RhB_G_3_4
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Landquart-Davos_G_3/4
+
+  speed: 45                 # (1)
+  power: 247                # (1)
+  weight: 30                # (1)
+  te_coefficient: 0.19      # ???
+
+  gauge: metre
+  propulsion: steam
+  country: CH
+  builders:
+    - slm
+
+  life:
+    start: 1889
+    end: 1954              # (1) some first batch units served until 1954 in Luxembourg
+
+gfx:
+  length: 5
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  vfx:
+    offset: -4
+    type: VISUAL_EFFECT_STEAM
+  spritesets:
+    - id: engine_s1
+      <<: *sprite
+      y: 1
+    - id: engine_s2
+      <<: *sprite
+      y: 32
+  animations:
+    - id: default
+      steps: [engine_s1, engine_s2]

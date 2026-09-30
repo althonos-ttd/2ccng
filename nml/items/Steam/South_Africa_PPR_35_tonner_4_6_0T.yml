@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Steam/South_Africa_PPR_35_tonner_4_6_0T.png"
+
+item:
+  id: steam_South_Africa_PPR_35_tonner_4_6_0T
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/PPR_35_Tonner_4-6-0T_Portuguese
+
+  speed: 60                 # ???
+  power: 88                 # ???
+  weight: 35                # (1)
+  te: 41.61                 # (1)
+
+  gauge: cape
+  propulsion: steam
+  country: ZA
+  builders:
+    - nasmyth_wilson_co
+
+  life:
+    start: 1887          
+    end: 1917              # (2) sold 1908, later service unknown
+
+gfx:
+  length: 5
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [s1, s2]

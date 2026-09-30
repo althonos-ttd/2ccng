@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Steam/Norway_NSB_Class_XXI.png"
+
+item:
+  id: steam_Norway_NSB_Class_XXI
+  num: 0
+
+  # Some info from: (1) https://no.wikipedia.org/wiki/NSB_type_XXI
+
+  speed: 40                 # (1)
+  power: 98                 # ???
+  weight: 23                # (1)
+  te: 36.0                  # (1) 14.7 tons adhesive weight
+
+  gauge: cape
+  propulsion: steam
+  country: NO
+  builders:
+    - dubs_co
+
+  life:
+    start: 1894          
+    end: 1962              # (1) railway closure
+
+gfx:
+  length: 7
+  purchase:
+    <<: *file
+    x: 1
+    y: 96
+  spritesets:
+    - id: s1
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: s2
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+  animations:
+    - id: default
+      steps: [s1, s2]
