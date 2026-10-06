@@ -1,5 +1,5 @@
 .file: &file
-  filename: "gfx/Electric/New_Zealand_NZR_EF.png"
+  filename: "gfx/Electric/New_Zealand_TranzRail_EF.png"
 
 item:
   id: electric_New_Zealand_NZR_EF

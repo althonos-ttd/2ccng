@@ -1,68 +1,34 @@
 
 .DELETE_ON_ERROR:
 
-nml/templates/diesel.nml.j2: nml/templates/item.nml.j2
+nml/templates/engine/diesel.pnml.j2: nml/templates/engine/base.pnml.j2
+	$(_V) touch $@
 
-src/Diesel/%_property.pnml: nml/templates/property.pnml.j2 nml/items/Diesel/%.yml nml/data/geoscheme.yml
+src/Diesel/%.pnml: nml/templates/engine/diesel.pnml.j2 nml/items/Diesel/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli -o $@ $^ 
 
-src/Diesel/%_graphics.pnml: nml/templates/graphics.pnml.j2 nml/items/Diesel/%.yml
-	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli -o $@ $^
-
-src/Diesel/%_item.pnml: nml/templates/item.pnml.j2 nml/items/Diesel/%.yml
-	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli -o $@ $^
-
 YAML_DIESEL_FILES = $(wildcard nml/items/Diesel/*.yml)
-PNML_DIESEL_FILES_P = $(foreach x,$(YAML_DIESEL_FILES),$(patsubst nml/items/Diesel/%.yml,src/Diesel/%_property.pnml,$x))
-PNML_DIESEL_FILES_G = $(foreach x,$(YAML_DIESEL_FILES),$(patsubst nml/items/Diesel/%.yml,src/Diesel/%_graphics.pnml,$x))
-PNML_DIESEL_FILES_I = $(foreach x,$(YAML_DIESEL_FILES),$(patsubst nml/items/Diesel/%.yml,src/Diesel/%_item.pnml,$x))
+PNML_DIESEL_FILES = $(foreach x,$(YAML_DIESEL_FILES),$(patsubst nml/items/Diesel/%.yml,src/Diesel/%.pnml,$x))
 
+nml/templates/engine/electric.pnml.j2: nml/templates/engine/base.pnml.j2
+	$(_V) touch $@
 
-nml/templates/diesel.nml.j2: nml/templates/item.nml.j2
-
-src/Electric/%_property.pnml: nml/templates/property.pnml.j2 nml/items/Electric/%.yml nml/data/geoscheme.yml
+src/Electric/%.pnml: nml/templates/engine/electric.pnml.j2 nml/items/Electric/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli $^ > $@
-
-src/Electric/%_graphics.pnml: nml/templates/graphics.pnml.j2 nml/items/Electric/%.yml
-	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli $^ > $@
-
-src/Electric/%_item.pnml: nml/templates/item.pnml.j2 nml/items/Electric/%.yml
-	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli $^ > $@
-
 
 YAML_ELEC_FILES = $(wildcard nml/items/Electric/*.yml)
-PNML_ELEC_FILES_P = $(foreach x,$(YAML_ELEC_FILES),$(patsubst nml/items/Electric/%.yml,src/Electric/%_property.pnml,$x))
-PNML_ELEC_FILES_G = $(foreach x,$(YAML_ELEC_FILES),$(patsubst nml/items/Electric/%.yml,src/Electric/%_graphics.pnml,$x))
-PNML_ELEC_FILES_I = $(foreach x,$(YAML_ELEC_FILES),$(patsubst nml/items/Electric/%.yml,src/Electric/%_item.pnml,$x))
+PNML_ELEC_FILES = $(foreach x,$(YAML_ELEC_FILES),$(patsubst nml/items/Electric/%.yml,src/Electric/%.pnml,$x))
 
+nml/templates/engine/steam.pnml.j2: nml/templates/engine/base.pnml.j2
+	$(_V) touch $@
 
-
-src/Steam/%_property.pnml: nml/templates/property.pnml.j2 nml/items/Steam/%.yml nml/data/geoscheme.yml
+src/Steam/%.pnml: nml/templates/engine/diesel.pnml.j2 nml/items/Steam/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli $^ > $@
-
-src/Steam/%_graphics.pnml: nml/templates/graphics.pnml.j2 nml/items/Steam/%.yml
-	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli $^ > $@
-
-src/Steam/%_item.pnml: nml/templates/item.pnml.j2 nml/items/Steam/%.yml
-	$(_E) "[J2]" $(@F)
-	$(_V) minijinja-cli $^ > $@
-
 
 YAML_STEAM_FILES = $(wildcard nml/items/Steam/*.yml)
-PNML_STEAM_FILES_P = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%_property.pnml,$x))
-PNML_STEAM_FILES_G = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%_graphics.pnml,$x))
-PNML_STEAM_FILES_I = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%_item.pnml,$x))
+PNML_STEAM_FILES = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%.pnml,$x))
 
-
-
-PNML_FILES = $(PNML_DIESEL_FILES_P) $(PNML_DIESEL_FILES_G) $(PNML_DIESEL_FILES_I) \
-			 $(PNML_ELEC_FILES_P) $(PNML_ELEC_FILES_G) $(PNML_ELEC_FILES_I) \
-			 $(PNML_STEAM_FILES_P) $(PNML_STEAM_FILES_G) $(PNML_STEAM_FILES_I)
+PNML_FILES = $(PNML_DIESEL_FILES) $(PNML_ELEC_FILES) $(PNML_STEAM_FILES)
