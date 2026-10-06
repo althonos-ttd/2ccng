@@ -1,0 +1,138 @@
+.file: &file
+  filename: "gfx/EMU/Switzerland_RhB_ABe_4_16_Capricorn.xpm"
+
+item:
+  id: emu_Switzerland_RhB_ABe_4_16_Capricorn
+  num: 0
+
+  speed: 110                # ???
+  power: 2340               # ???
+  weight: 50                # ???
+  te_coefficient: 0.20      # ???
+
+  gauge: metre
+  propulsion: electric_ac
+  country: CH
+  builders:
+    - stadler
+
+  life:
+    start: 2019
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 43
+  middle:
+    length: 8
+    capacity: 52
+    powered:
+      sprite: middle_powered
+      vfx:
+        offset: 0
+    unpowered:
+      sprite: middle_unpowered
+  back:
+    length: 8
+    sprite: back
+    capacity: 43
+    vfx:
+      offset: 0
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 160
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 179
+        y: 32
+    - id: middlepassA_powered
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 64
+      backward:
+        x: 179
+        y: 64
+    - id: middlepassA_unpowered
+      <<: *file
+      template: template_2cc_engines_general
+      x: 357
+      y: 64
+    - id: middlepassB_powered
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 96
+      backward:
+        x: 179
+        y: 96
+    - id: middlepassB_unpowered
+      <<: *file
+      template: template_2cc_engines_general
+      x: 357
+      y: 96
+    - id: middlemail_powered
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 128
+      backward:
+        x: 179
+        y: 128
+    - id: middlemail_unpowered
+      <<: *file
+      template: template_2cc_engines_general
+      x: 357
+      y: 128
+  
+  cargosets:
+    - id: middle_powered
+      default:
+        sprite: middlemail_powered
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass_powered
+    - id: middle_unpowered
+      default:
+        sprite: middlemail_unpowered
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass_unpowered
+
+  extra: >
+    random_switch(FEAT_TRAINS, SELF, spriteset_emu_Switzerland_RhB_ABe_4_16_Capricorn_middlepass_powered) {
+      3: spriteset_emu_Switzerland_RhB_ABe_4_16_Capricorn_middlepassA_powered;
+      1: spriteset_emu_Switzerland_RhB_ABe_4_16_Capricorn_middlepassB_powered;
+    }
+
+    random_switch(FEAT_TRAINS, SELF, spriteset_emu_Switzerland_RhB_ABe_4_16_Capricorn_middlepass_unpowered) {
+      3: spriteset_emu_Switzerland_RhB_ABe_4_16_Capricorn_middlepassA_unpowered;
+      1: spriteset_emu_Switzerland_RhB_ABe_4_16_Capricorn_middlepassB_unpowered;
+    }

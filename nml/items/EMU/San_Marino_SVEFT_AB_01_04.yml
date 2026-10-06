@@ -1,0 +1,68 @@
+.file: &file
+  filename: "gfx/EMU/San_Marino_SVEFT_AB_01_04.xpm"
+
+item:
+  id: emu_San_Marino_SVEFT_AB_01_04
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Rimini%E2%80%93San_Marino_railway#Rolling_stock
+  #                 (2) https://fr.wikipedia.org/wiki/Automotrice_FRT/SSIF_ABDe_4/4
+  #                 (3) https://transphoto.org/vehicle/342835/?&lang=en
+
+  speed: 65                 # (1)
+  power: 320                # (2) Similar locomotive
+  weight: 39                # (2) Similar locomotive
+  te_coefficient: 0.22      # (2) Similar locomotive
+
+  gauge: italian_metre
+  propulsion: electric_dc
+  country: SM
+  builders:
+    - carminati_toselli
+
+  life:
+    start: 1932
+    end: 1962               # (1) Railway demolished in 1945
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS
+
+# Capacity estimated from (3), the pictures of the car interior show 10 seats 
+# in 1st class and 24 seats in 2nd class, but it's unsure how many seats are 
+# inside the coaches.
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 34
+    vfx:
+      offset: -3
+  middle:
+    length: 7
+    capacity: 34
+    sprite: middlepass
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+

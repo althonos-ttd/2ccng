@@ -1,0 +1,80 @@
+.file: &file
+  filename: "gfx/EMU/Italy_EAV_ETR_200_Metrostar.xpm"
+
+item:
+  id: emu_Italy_EAV_ETR_200_Metrostar
+  num: 0
+
+  speed: 160                # ???
+  power: 910                # ???
+  weight: 47                # ???
+  te_coefficient: 0.33      # ???
+
+  gauge: italian_metre
+  propulsion: electric_dc
+  country: IT
+  builders:
+    - ansaldo_breda
+
+  life:
+    start: 1997
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 48
+    vfx:
+      offset: -3
+  middle:
+    length: 6
+    sprite: middlepass
+    capacity: 40
+  back:
+    length: 8
+    sprite: back
+    capacity: 48
+
+# The reported capacity of 150 is for a crush load of 6p/m2, which is not realistic
+# for European trains: this is instead an estimation if the entire train was
+# filled with 2 seats per side (and jump seats next to doors) instead of
+# the 2/1 configuration and empty door space.
+#
+# See: http://www.fedoa.unina.it/10204/1/Miraglia_Elisabetta_27.pdf, Fig. D6
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 179
+        y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    

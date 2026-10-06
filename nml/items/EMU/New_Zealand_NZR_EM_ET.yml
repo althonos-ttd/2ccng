@@ -1,0 +1,85 @@
+.file: &file
+  filename: "gfx/EMU/New_Zealand_NZR_EM_ET_Class.png"
+
+item:
+  id: emu_New_Zealand_NZR_EM_ET_Class
+  num: 0
+
+  speed: 110                # ???
+  power: 540                # ???
+  weight: 37                # ???
+  te_coefficient: 0.26      # ???
+
+  gauge: cape
+  propulsion: electric_dc
+  country: NZ
+  builders:
+    - ganz_mavag
+
+  life:
+    start: 1979
+    end: 2014               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 74
+    vfx:
+      offset: -3
+  middle:
+    length: 8
+    capacity: 74
+    sprite: middle
+  back:
+    length: 8
+    sprite: back
+    capacity: 74
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 1
+        y: 1
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass

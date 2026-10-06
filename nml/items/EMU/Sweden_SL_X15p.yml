@@ -1,0 +1,76 @@
+.file: &file
+  filename: "gfx/EMU/Sweden_SL_X15p.xpm"
+
+item:
+  id: emu_Sweden_SL_X15p
+  num: 0
+
+  speed: 120                # ???
+  power: 960                # ???
+  weight: 33                # ???
+  te_coefficient: 0.24      # ???
+
+  gauge: swedish_3ft
+  propulsion: electric_ac
+  country: SE
+  builders:
+    - stadler
+
+  life:
+    start: 2017
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 54
+  middle:
+    length: 8
+    capacity: 54
+    sprite: middle
+  back:
+    length: 8
+    sprite: back
+    capacity: 43
+    vfx:
+      offset: -4
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass

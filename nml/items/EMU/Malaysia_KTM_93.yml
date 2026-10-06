@@ -1,0 +1,84 @@
+.file: &file
+  filename: "gfx/EMU/Malaysia_KTM_Class_93.xpm"
+
+item:
+  id: emu_Malaysia_KTM_Class_93
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/KTM_Class_93
+
+  speed: 160                # ???
+  power: 1680               # ???
+  weight: 43                # ???
+  te_coefficient: 0.30      # ???
+
+  gauge: metre
+  propulsion: electric_ac
+  country: MY
+  builders:
+    - crrc/zuzhou
+
+  life:
+    start: 2016
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 44
+  middle:
+    length: 8
+    capacity: 58
+    sprite: middle
+  back:
+    length: 8
+    sprite: back
+    capacity: 44
+    vfx:
+      offset: -4 
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 179
+        y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass

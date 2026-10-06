@@ -1,0 +1,124 @@
+.file: &file
+  filename: "gfx/EMU/Japan_Odakyu_10000_Series_Romance.png"
+
+.sprite: &sprite
+  filename: "gfx/EMU/Japan_Odakyu_10000_Series_Romance.png"
+  template: template_2cc_engines_general
+
+item:
+  id: emu_Japan_Odakyu_10000_Series_Romance
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/Odakyu_10000_series_HiSE
+
+  speed: 110                # ???
+  power: 1550               # ???
+  weight: 35                # ???
+  te_coefficient: 0.22      # ???
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - nippon_sharyo
+    - kawasaki
+
+  life:
+    start: 1986
+    end: 2012               # (1)
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 40
+  middle:
+    length: 8
+    capacity: 40
+    sprite: middle
+    vfx:
+      custom: ""
+  back:
+    length: 8
+    capacity: 40
+    sprite: back
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *sprite
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
+    - id: back
+      <<: *sprite
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 1
+        y: 1
+    - id: middlepass
+      <<: *sprite
+      x: 1
+      y: 64
+    - id: middlepass_pantograph
+      <<: *sprite
+      x: 178
+      y: 64
+    - id: middlemail
+      <<: *sprite
+      x: 1
+      y: 96
+    - id: middlemail_pantograph
+      <<: *sprite
+      x: 178
+      y: 96
+
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail_position
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass_position
+
+  extra: >
+
+    random_switch(FEAT_TRAINS, SELF, switch_emu_Japan_Odakyu_10000_Series_Romance_wagon_visual_effect_and_powered) {
+      9: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+      1: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -3, DISABLE_WAGON_POWER);
+    }
+
+    random_switch(FEAT_TRAINS, SELF, switch_emu_Japan_Odakyu_10000_Series_Romance_middlepass_livery) {
+      dependent: switch_emu_Japan_Odakyu_10000_Series_Romance_wagon_visual_effect_and_powered;
+      9: spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlepass;
+      1: spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlepass_pantograph;
+    }
+
+    random_switch(FEAT_TRAINS, SELF, switch_emu_Japan_Odakyu_10000_Series_Romance_middlemail_livery) {
+      dependent: switch_emu_Japan_Odakyu_10000_Series_Romance_wagon_visual_effect_and_powered;
+      9: spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlemail;
+      1: spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlemail_pantograph;
+    }
+
+    switch(FEAT_TRAINS, SELF, spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlepass_position, [STORE_TEMP(-1, 0x10F), var[0x61, 0, 0x0000FFFF, 0xC6]]) {
+      ID_RANGE_UNIT_WAGONS: switch_emu_Japan_Odakyu_10000_Series_Romance_middlepass_livery;
+      spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlepass_pantograph;
+    }
+
+    switch(FEAT_TRAINS, SELF, spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlemail_position, [STORE_TEMP(-1, 0x10F), var[0x61, 0, 0x0000FFFF, 0xC6]]) {
+      ID_RANGE_UNIT_WAGONS: switch_emu_Japan_Odakyu_10000_Series_Romance_middlemail_livery;
+      spriteset_emu_Japan_Odakyu_10000_Series_Romance_middlemail_pantograph;
+    }

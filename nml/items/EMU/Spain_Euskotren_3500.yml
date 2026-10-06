@@ -1,0 +1,73 @@
+.file: &file
+  filename: "gfx/EMU/Spain_Euskotren_3500.xpm"
+
+item:
+  id: emu_Spain_Euskotren_3500
+  num: 0
+
+  speed: 80                 # ???
+  power: 885                # ???
+  weight: 30                # ???
+  te_coefficient: 0.23      # ???
+
+  gauge: metre
+  propulsion: electric_dc
+  country: ES
+  builders:
+    - caf
+
+  life:
+    start: 1977
+    end: 2017
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 7
+    sprite: front
+    capacity: 75
+    vfx:
+      offset: -3
+  middle:
+    length: 7
+    capacity: 75
+    sprite: middle
+  back:
+    length: 7
+    sprite: back
+    capacity: 75
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 179
+        y: 32
+    - id: middle
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+  
