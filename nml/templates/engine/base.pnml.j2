@@ -52,15 +52,6 @@
 {%- endif %}
 #define VEHICLE_LIFE 40
 
-{% if cargo is defined %}
-{% if cargo.loading_speed is defined %}
-#define LOADINGSPEED {{ cargo.loading_speed }}
-{% endif %}
-{% if cargo.cargodef is defined %}
-#define CARGODEF {{ cargo.cargodef }}
-{% endif %}
-{% endif %}
-
 #define SPEED {{ item.speed }}
 #define POWER {{ item.power }}
 #define WEIGHT {{ item.weight }}
@@ -82,12 +73,6 @@
 #define LENGTH {{ 8 if gfx.length > 8 else gfx.length }}
 #define ACTUAL_LENGTH {{ gfx.length }}
 {%- endif %}
-
-{% if cargo is defined %}
-{% if cargo.capacity is defined %}
-#define HEAD_CAPACITY {{ cargo.capacity }}
-{% endif %}
-{% endif %}
 
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
 
