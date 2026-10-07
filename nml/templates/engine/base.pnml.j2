@@ -77,16 +77,8 @@
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
 
 {%- if gfx.vfx is defined %}
-{%- set vxf_offset = gfx.vfx.offset if gfx.vfx.offset is defined else 0 %}
-{%- if item.propulsion == "diesel" %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DIESEL, {{ vxf_offset }}, DISABLE_WAGON_POWER)
-{%- elif item.propulsion == "electric_ac" or item.propulsion == "electric_dc" %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ vxf_offset }}, DISABLE_WAGON_POWER)
-{%- elif item.propulsion == "steam" %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ vxf_offset }}, DISABLE_WAGON_POWER)
-{%- else %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
-{%- endif %}
+{%- set vfx_offset = gfx.vfx.offset if gfx.vfx.offset is defined else 0 %}
+#define VISUAL_FLAG visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ vfx_offset }}, DISABLE_WAGON_POWER)
 {%- else %}
 #define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
 {%- endif %}
