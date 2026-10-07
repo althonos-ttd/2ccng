@@ -1,0 +1,247 @@
+/*
+ *  Copyright (C) 2026 Martin Larralde
+ *  This file is part of the 2cc Narrow Gauge in NML, and is based on the 2cc Trains In NML by Transportman
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+#include "../undefine_properties.pnml"
+
+{% block properties %}
+
+#define VEHIDCODE {{ item.id }}
+#define ITEM item_{{ item.id }}
+#define NAME string(str_{{ item.id }})
+
+{%- set region = REGIONS[item.country] %}
+{% if region.region == "europe" %}
+{% set climate = "%sEUROPE" | format(region.subregion | upper) %}
+{% elif region.region == "america" %}
+    {% if region.subregion == "northern" %}
+    {% set climate = "NORTHAMERICA" %}
+    {% else %}
+    {% set climate = "SOUTHAMERICA" %}
+    {% endif %}
+{% else %}
+{% set climate = region.region | upper %}
+{% endif -%}
+
+#define VEHICLE_REGION  REGION({{ climate }},NOREGION,NOCONCEPT)
+#define VEHICLE_GAUGE   NAR_{{ item.gauge | upper }}
+#define VEHICLE_MAKER   MAKER_{{ item.builders[0] | upper }}
+#define VEHICLE_POWER   {{ item.propulsion | upper }}
+#define VEHICLE_COUNTRY {{ item.country }}
+
+#define VEHICLE_BADGES \
+    "flag/{{ item.country }}", \
+    {%- if region is defined %}
+    "region/{{ region.region }}", \
+    {% if region.subregion is defined %}"region/{{ region.region }}/{{ region.subregion }}", \{% endif %}
+    {% endif -%}
+    "power/{{ item.propulsion | replace("_", "/") }}", \
+    "railgauge/narrow/{{ item.gauge }}", \
+    {% for builder in item.builders -%}
+    "builder/{{ builder }}"{% if not loop.last %}, \
+    {% endif %}
+    {%- endfor %}
+
+#define INTRODUCTION_YEAR {{ item.life.start }}
+{%- if item.life.end is defined %}
+#define MODEL_LIFE {{ item.life.end - item.life.start }}
+{%- else %}
+#define MODEL_LIFE VEHICLE_NEVER_EXPIRES
+{%- endif %}
+#define VEHICLE_LIFE 40
+
+#define SPEED {{ item.speed }}
+#define POWER {{ item.power }}
+#define WEIGHT {{ item.weight }}
+{% if item.te_coefficient is defined -%}
+#define TE_COEFFICIENT {{ item.te_coefficient }}
+{%- else %}
+#define TE_COEFFICIENT {{ item.te / (item.weight * 9.81) }}
+{%- endif %}
+
+{% block properties_extra %}
+{% endblock properties_extra %}
+
+{% endblock properties %}
+
+{% block defaults %}
+#include "../_CodeSupport/item_defaults.pnml"
+{% endblock defaults %}
+
+{% block graphics %}
+
+/*
+* PURCHASE
+*/
+
+{% block graphics_purchase %}
+PURCHASE_SPRITESET(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+{% endblock graphics_purchase %}
+
+/*
+* VEHICLE
+*/
+
+{% block graphics_spritesets %}
+{% for spriteset in gfx.spritesets %}
+{% if spriteset.forward is defined and spriteset.backward is defined %}
+spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}_fwd, {{ spriteset.filename|tojson }}) {
+    {{ spriteset.template }}({{ spriteset.forward.x }}, {{ spriteset.forward.y }})
+}
+spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}_bwd, {{ spriteset.filename|tojson }}) {
+    {{ spriteset.template }}({{ spriteset.backward.x }}, {{ spriteset.backward.y }})
+}
+switch(FEAT_TRAINS, PARENT, spriteset_{{ item.id }}_{{ spriteset.id }}, train_is_driving_backwards) {
+    0: spriteset_{{ item.id }}_{{ spriteset.id }}_fwd;
+    spriteset_{{ item.id }}_{{ spriteset.id }}_bwd;
+}
+{% elif spriteset.loading is defined and spriteset.loaded is defined %}
+spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}_loading, {{ spriteset.filename|tojson }}) {
+    {{ spriteset.template }}({{ spriteset.loading.x }}, {{ spriteset.loading.y }})
+}
+spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}_loaded, {{ spriteset.filename|tojson }}) {
+    {{ spriteset.template }}({{ spriteset.loaded.x }}, {{ spriteset.loaded.y }})
+}
+spritegroup spriteset_{{ item.id }}_{{ spriteset.id }} {
+    loading: spriteset_{{ item.id }}_{{ spriteset.id }}_loading;
+    loaded: spriteset_{{ item.id }}_{{ spriteset.id }}_loaded;
+}
+{% else %}
+spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}, {{ spriteset.filename|tojson }}) {
+    {{ spriteset.template }}({{ spriteset.x }}, {{ spriteset.y }})
+}
+{% endif %}
+{% endfor %}
+{% endblock graphics_spritesets %}
+
+{% block graphics_animations %}
+{% if gfx.animations is defined %}
+{% for animation in gfx.animations %}
+switch(FEAT_TRAINS, PARENT, spriteset_{{ item.id }}_{{ animation.id }}, motion_counter % {{ animation.steps | length }}) {
+    {% for step in animation.steps %}
+    {{ loop.index0 }}: spriteset_{{ item.id }}_{{ step }};
+    {% endfor %}
+}
+{% endfor %}
+{% endif %}
+{% endblock graphics_animations %}
+
+{% block graphics_cargosets %}
+{% if gfx.cargosets is defined %}
+{% for cargoset in gfx.cargosets %}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_{{ cargoset.id }}_cargo, cargo_type_in_veh) {
+    {% for option in cargoset.options %}
+    {% if option.cargos is defined %}
+    {% for cargo in option.cargos %}
+    {{ cargo }}: spriteset_{{ item.id }}_{{ option.sprite }};
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    default: spriteset_{{ item.id }}_{{ cargoset.default.sprite }};
+}
+switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ cargoset.id }}, cargo_classes) {
+    {% for option in cargoset.options %}
+    {% if option.bitmask is defined %}
+    bitmask({{ option.bitmask }}): spriteset_{{ item.id }}_{{ option.sprite }};
+    {% endif %}
+    {% endfor %}
+    default: switch_{{ item.id }}_{{ cargoset.id }}_cargo;
+}
+{% endfor %}
+{% endif %}
+{% endblock graphics_cargosets %}
+
+{% block graphics_extra %}
+{% if gfx.extra is defined %}
+{{ gfx.extra }}
+{% endif %}
+{% endblock graphics_extra %}
+
+{% endblock graphics %}
+
+//Add defined switches
+
+{% block switches %}
+
+RUNNINGCOSTENGINESWITCH
+
+EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+{% endblock %}
+
+/*
+ *  Copyright (C) 2026 Martin Larralde
+ *  This file is part of the 2cc Narrow Gauge in NML, and is based on the 2cc Trains In NML by Transportman
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+{% block item %}
+
+item(FEAT_TRAINS, ITEM) {
+	property {
+        {% block item_property %}
+        name: VEHICLE_NAME(VEHIDCODE);
+        VEHICLE_REGION
+        INTRODUCTIONDATEPROPERTY
+        model_life: MODEL_LIFE;
+        vehicle_life: VEHICLE_LIFE;
+        retire_early: RETIRE_EARLY;
+        LOADINGSPEEDPROPERTY
+        PURCHASECOSTPROPERTY
+        RUNNINGCOSTPROPERTY
+        speed: SPEED km/h;
+        power: POWER hp;
+        cargo_capacity: HEAD_CAPACITY;
+        weight: WEIGHT ton;
+        tractive_effort_coefficient: TE_COEFFICIENT;
+        air_drag_coefficient: AIR_DRAG_COEFFICIENT;
+        reliability_decay: RELIABILITY_DECAY;
+        CARGODEF
+        cargo_age_period: CARGO_AGE_PERIOD;
+        misc_flags: MISC_FLAGS;
+        refit_cost: REFIT_COST;
+        track_type: TRACK_TYPE;
+        AIFLAGPROPERTY
+        running_cost_base: RUNNING_COST_BASE;
+        engine_class: ENGINE_CLASS;
+        visual_effect_and_powered: VISUAL_FLAG;
+        sprite_id: SPRITE_ID;
+        dual_headed: DUAL_HEADED;
+        length: LENGTH;
+        extra_power_per_wagon: POWER_PER_WAGON;
+        bitmask_vehicle_info: BITMASK_VEHICLE_INFO;
+        badges: [
+            BADGE_FLAG(VEHICLE_COUNTRY),
+            BADGE_REGION(VEHICLE_COUNTRY),
+            BADGE_GAUGE(VEHICLE_GAUGE),
+            BADGE_POWER(VEHICLE_POWER),
+            EXTRA_BADGES
+        ];
+        EXTRAPROPERTIES
+
+        {% endblock item_property %}
+    }
+    graphics {
+        {% block item_graphics %}
+
+        purchase: spriteset_{{ item.id }}_purchase;
+        can_attach_wagon: switch_can_attach_vehicle;
+       
+        RUNNINGCOSTENGINESWITCHCALL
+        EXPANDEDPURCHASETEXTSWITCHCALL(VEHIDCODE)
+        
+        EXTRAGRAPHICS
+
+        {% endblock item_graphics %}
+    }
+    {% block item_extra %}
+    {% endblock item_extra%}
+}
+
+{% endblock item %}
