@@ -10,7 +10,7 @@ item:
   weight: 33                # ???
   te_coefficient: 0.24      # ???
 
-  gauge: swedish_3ft
+  gauge: se3ft
   propulsion: electric_ac
   country: SE
   builders:

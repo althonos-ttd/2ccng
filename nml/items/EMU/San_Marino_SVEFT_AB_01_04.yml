@@ -14,7 +14,7 @@ item:
   weight: 39                # (2) Similar locomotive
   te_coefficient: 0.22      # (2) Similar locomotive
 
-  gauge: italian_metre
+  gauge: itmetre
   propulsion: electric_dc
   country: SM
   builders:

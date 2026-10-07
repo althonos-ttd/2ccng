@@ -10,7 +10,7 @@ item:
   weight: 47                # ???
   te_coefficient: 0.33      # ???
 
-  gauge: italian_metre
+  gauge: itmetre
   propulsion: electric_dc
   country: IT
   builders:
