@@ -75,16 +75,7 @@
 #define MISC_FLAGS bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC)
 
 {%- if gfx.vfx is defined %}
-{%- set vxf_offset = gfx.vfx.offset if gfx.vfx.offset is defined else 0 %}
-{%- if item.propulsion == "diesel" %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DIESEL, {{ vxf_offset }}, DISABLE_WAGON_POWER)
-{%- elif item.propulsion == "electric_ac" or item.propulsion == "electric_dc" %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ vxf_offset }}, DISABLE_WAGON_POWER)
-{%- elif item.propulsion == "steam" %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ vxf_offset }}, DISABLE_WAGON_POWER)
-{%- else %}
-#define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
-{%- endif %}
+#define VISUAL_FLAG visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ gfx.vfx.offset }}, DISABLE_WAGON_POWER)
 {%- else %}
 #define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
 {%- endif %}
@@ -103,7 +94,11 @@
 * PURCHASE
 */
 
+{% if units.back is defined %}
 PURCHASE_SPRITESET_DUALHEADED(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+{% else %}
+PURCHASE_SPRITESET(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+{% endif %}
 
 /*
 * VEHICLE
@@ -188,13 +183,13 @@ switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_default, vehicle_is_flipped) {
 {# Visual effects for engine #}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect_and_powered, vehicle_is_flipped) {
     {% if units.front.vfx is defined %}
-	0: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ units.front.vfx.offset }}, DISABLE_WAGON_POWER);
+	0: visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ units.front.vfx.offset }}, DISABLE_WAGON_POWER);
     {% else %}
 	0: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
     {% endif %}
 	{% if units.back is defined %}
     {% if units.back.vfx is defined %}
-	1: visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ units.back.vfx.offset }}, DISABLE_WAGON_POWER);
+	1: visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ units.back.vfx.offset }}, DISABLE_WAGON_POWER);
     {% else %}
 	1: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
     {% endif %}
@@ -207,11 +202,7 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect_and_powered, vehicl
 {% endif %}
 {% if units.middle.powered is defined and units.middle.powered.vfx is defined %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_wagon_powered_visual_effect_and_powered, vehicle_is_flipped) {
-	{%- if item.propulsion == "diesel" %}
-	visual_effect_and_powered(VISUAL_EFFECT_DIESEL, {{ units.middle.powered.vfx.offset }}, DISABLE_WAGON_POWER);
-	{%- elif item.propulsion == "electric_ac" or item.propulsion == "electric_dc" %}
-	visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ units.middle.powered.vfx.offset }}, DISABLE_WAGON_POWER);
-	{% endif %}
+	visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ units.middle.powered.vfx.offset }}, DISABLE_WAGON_POWER);
 }
 {% endif %}
 
