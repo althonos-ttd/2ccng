@@ -50,13 +50,21 @@ gfx:
     - id: front
       <<: *file
       template: template_2cc_engines_general
-      x: 1
-      y: 1
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
     - id: back
       <<: *file
       template: template_2cc_engines_general
-      x: 1
-      y: 32
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 1
+        y: 1
     - id: middlepass
       <<: *file
       template: template_2cc_engines_general
