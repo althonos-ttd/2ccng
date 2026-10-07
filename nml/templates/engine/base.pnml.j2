@@ -135,9 +135,9 @@ spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}, {{ spriteset.filename|tojs
 
 {% if gfx.animations is defined %}
 {% for animation in gfx.animations %}
-switch(FEAT_TRAINS, PARENT, {{ "spriteset_%s_%s" | format(item.id, animation.id) }}, motion_counter % {{ animation.steps | length }}) {
+switch(FEAT_TRAINS, PARENT, spriteset_{{ item.id }}_{{ animation.id }}, motion_counter % {{ animation.steps | length }}) {
     {% for step in animation.steps %}
-    {{ loop.index0 }}: {{ "spriteset_%s_%s" | format(item.id, step) }};
+    {{ loop.index0 }}: spriteset_{{ item.id }}_{{ step }};
     {% endfor %}
 }
 {% endfor %}
@@ -146,26 +146,24 @@ switch(FEAT_TRAINS, PARENT, {{ "spriteset_%s_%s" | format(item.id, animation.id)
 {# Add special definitions for articulated engines #}
 {% if units is defined %}
 {% set n_units = units | length %}
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_length" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {{ loop.index0 }}: {{ unit.length }};
     {% endfor %}
 }
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_articulated" | format(item.id) }}, extra_callback_info1) {
-    1..{{ n_units - 1 }}: {{ "item_%s" | format(item.id) }};
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1) {
+    1..{{ n_units - 1 }}: item_{{ item.id }};
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_default" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % {{ n_units }}) {
 	{% for unit in units %}
-    {{ loop.index0 }}: {{ "spriteset_%s_%s" | format(item.id, unit.sprite) }};
+    {{ loop.index0 }}: spriteset_{{ item.id }}_{{ unit.sprite }};
     {% endfor %}
 }
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_visual_effect" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {% if unit.vfx is defined %}
-    {{ loop.index0 }}: return visual_effect_and_powered({{ unit.vfx.type if unit.vfx.type is defined else "VISUAL_EFFECT_DISABLE" }}, {{ unit.vfx.offset if unit.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
-    {# {% else %} #}
-    {# {{ loop.index0 }}: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER); #}
+    {{ loop.index0 }}: return visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ unit.vfx.offset if unit.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
     {% endif %}
     {% endfor %}
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -175,22 +173,22 @@ switch(FEAT_TRAINS, SELF, {{ "switch_%s_visual_effect" | format(item.id) }}, pos
 {# Add special definitions for longer vehicles #}
 {% if gfx.length is defined and gfx.length > 8 and units is not defined %}
 {% set n_units = (gfx.length + 7) // 8 %}
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_length" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
     {% for i in range(gfx.length // 8) %}
     {{ loop.index0 }}: {{ 8 }};
     {% endfor %}
     {{ gfx.length % 8 }};
 }
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_articulated" | format(item.id) }}, extra_callback_info1) {
-    1..{{ n_units - 1 }}: {{ "item_%s" | format(item.id) }};
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1) {
+    1..{{ n_units - 1 }}: item_{{ item.id }};
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_default" | format(item.id) }}, position_in_vehid_chain % 2) {
-	0: {{ "spriteset_%s_default" | format(item.id) }};
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % 2) {
+	0: spriteset_{{ item.id }}_default;
 	EMPTY_SPRITESET
 }
-switch(FEAT_TRAINS, SELF, {{ "switch_%s_visual_effect" | format(item.id) }}, position_in_vehid_chain % {{ n_units }}) {
-    0: return visual_effect_and_powered({{ gfx.vfx.type if gfx.vfx.type is defined else "VISUAL_EFFECT_DISABLE" }}, {{ gfx.vfx.offset if gfx.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
+    0: return visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ gfx.vfx.offset if gfx.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
 }
 {% endif %}
