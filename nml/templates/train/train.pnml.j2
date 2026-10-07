@@ -54,8 +54,12 @@
 {%- endif %}
 #define VEHICLE_LIFE 40
 
+{% block properties_speed %}
 #define SPEED {{ item.speed }}
+{% endblock properties_speed %}
+{% block properties_power %}
 #define POWER {{ item.power }}
+{% endblock properties_power %}
 #define WEIGHT {{ item.weight }}
 {% if item.te_coefficient is defined -%}
 #define TE_COEFFICIENT {{ item.te_coefficient }}
@@ -118,6 +122,21 @@ spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}, {{ spriteset.filename|tojs
 {% endfor %}
 {% endblock graphics_spritesets %}
 
+{% block graphics_loadsets %}
+{% if gfx.loadsets is defined %}
+{% for loadset in gfx.loadsets %}
+spritegroup spriteset_{{ item.id }}_{{ loadset.id }} {
+    loading: [ 
+        {% for stage in loadset.loading %}spriteset_{{ item.id }}_{{ stage }}{% if not loop.last %},{% endif %}{% endfor %}
+    ];
+    loaded: [
+        {% for stage in loadset.loaded %}spriteset_{{ item.id }}_{{ stage }}{% if not loop.last %},{% endif %}{% endfor %}
+    ];
+}
+{% endfor %}
+{% endif %}
+{% endblock graphics_loadsets %}
+
 {% block graphics_animations %}
 {% if gfx.animations is defined %}
 {% for animation in gfx.animations %}
@@ -154,6 +173,22 @@ switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ cargoset.id }}, cargo_class
 {% endfor %}
 {% endif %}
 {% endblock graphics_cargosets %}
+
+{% block graphics_default %}
+{% with n_units = units | length %}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % {{ n_units }}) {
+	{% for unit in units %}
+    {% if unit.sprite is defined %}
+    {{ loop.index0 }}: spriteset_{{ item.id }}_{{ unit.sprite }};
+    {% endif %}
+    {% endfor %}
+	EMPTY_SPRITESET
+}
+{% endwith %}
+{% endblock graphics_default %}
+
+{% block graphics_vfx %}
+{% endblock graphics_vfx %}
 
 {% block graphics_extra %}
 {% if gfx.extra is defined %}

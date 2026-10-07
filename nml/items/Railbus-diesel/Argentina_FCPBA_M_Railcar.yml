@@ -28,7 +28,7 @@ cargo:
 
 units:
   - length: 7
-    sprite: default
+    sprite: engine
     capacity: 62
     vfx:
       offset: 0
@@ -39,7 +39,7 @@ gfx:
     x: 1
     y: 32
   spritesets:
-    - id: default
+    - id: engine
       <<: *file
       template: template_2cc_engines_general
       x: 1

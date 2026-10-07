@@ -40,13 +40,14 @@ PURCHASE_SPRITESET(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }
 {{ self.graphics_cargosets() }}
 
 {# Dualheaded engines #}
-switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_default, vehicle_is_flipped) {
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, vehicle_is_flipped) {
 {% if units.back is defined %}
 	1: spriteset_{{ item.id }}_{{ units.back.sprite }};
 {% endif %}
     default: spriteset_{{ item.id }}_{{ units.front.sprite }};
 }
 
+{% block graphics_vfx %}
 {# Visual effects for engine #}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect_and_powered, vehicle_is_flipped) {
     {% if units.front.vfx is defined %}
@@ -72,6 +73,7 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_wagon_powered_visual_effect_and_p
 	visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ units.middle.powered.vfx.offset }}, DISABLE_WAGON_POWER);
 }
 {% endif %}
+{% endblock graphics_vfx %}
 
 {% endblock graphics %}
 
@@ -86,7 +88,7 @@ RUNNINGCOSTMUWAGONSWITCH
 {{ super() }}
 ENGINECAPACITYSWITCHCALL(VEHIDCODE)
 visual_effect_and_powered: switch_{{ item.id }}_visual_effect_and_powered;
-default: spriteset_{{ item.id }}_default;
+default: switch_{{ item.id }}_default;
 {% endblock item_graphics %}
 
 {% block item_extra %}

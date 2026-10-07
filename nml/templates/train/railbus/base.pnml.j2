@@ -24,6 +24,35 @@
 
 {% endblock properties_extra %}
 
+{% block graphics_default %}
+{% with n_units = units | length %}
+{% block graphics_articulated %}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
+    {% for unit in units %}
+    {{ loop.index0 }}: {{ unit.length }};
+    {% endfor %}
+}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1) {
+    1..{{ n_units - 1 }}: item_{{ item.id }};
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+{% endblock graphics_articulated %}
+{{ super() }}
+{% endwith %}
+{% endblock graphics_default %}
+
+{% block graphics_vfx %}
+{% with n_units = units | length %}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
+    {% for unit in units %}
+    {% if unit.vfx is defined %}
+    {{ loop.index0 }}: return visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ unit.vfx.offset }}, DISABLE_WAGON_POWER);
+    {% endif %}
+    {% endfor %}
+	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+{% endwith %}
+{% endblock graphics_vfx %}
 
 {% block switches %}
 {{ super() }}
@@ -34,6 +63,8 @@ ENGINECAPACITYSWITCH(VEHIDCODE)
 {% block item_graphics %}
 {{ super() }}
 ENGINECAPACITYSWITCHCALL(VEHIDCODE)
-default: spriteset_{{ item.id }}_default;
-{# visual_effect_and_powered: switch_{{ item.id }}_visual_effect_and_powered; #}
+default: switch_{{ item.id }}_default;
+articulated_part: switch_{{ item.id }}_articulated;
+length: switch_{{ item.id }}_length;
+visual_effect_and_powered: switch_{{ item.id }}_visual_effect;
 {% endblock item_graphics %}

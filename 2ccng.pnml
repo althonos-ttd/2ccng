@@ -68,15 +68,9 @@
 
 //Railbus-steam
 #include "src/_CodeSupport/TypeInitialization/init_type_RBS.pnml"
-#include "src/Railbus-steam/Austria_NOLB_1_3_property.pnml"
-#include "src/Railbus-steam/Austria_NOLB_1_3_graphics.pnml"
-#include "src/Railbus-steam/Austria_NOLB_1_3_item.pnml"
-#include "src/Railbus-steam/Mali_Kayes_Niger_No_1_property.pnml"
-#include "src/Railbus-steam/Mali_Kayes_Niger_No_1_graphics.pnml"
-#include "src/Railbus-steam/Mali_Kayes_Niger_No_1_item.pnml"
-#include "src/Railbus-steam/South_Africa_CSAR_Railmotor_property.pnml"
-#include "src/Railbus-steam/South_Africa_CSAR_Railmotor_graphics.pnml"
-#include "src/Railbus-steam/South_Africa_CSAR_Railmotor_item.pnml"
+#include "src/Railbus-steam/Austria_NOLB_1_3.pnml"
+#include "src/Railbus-steam/Mali_Kayes_Niger_No_1.pnml"
+#include "src/Railbus-steam/South_Africa_CSAR_Railmotor.pnml"
 
 //Railbus-diesel
 #include "src/_CodeSupport/TypeInitialization/init_type_RBD.pnml"
@@ -206,15 +200,9 @@
 
 //Dual-Mode
 #include "src/_CodeSupport/TypeInitialization/init_type_Dual.pnml"
-#include "src/Dual/Ecuador_FEEP_TD2000_property.pnml"
-#include "src/Dual/Ecuador_FEEP_TD2000_graphics.pnml"
-#include "src/Dual/Ecuador_FEEP_TD2000_item.pnml"
-#include "src/Dual/Slovakia_ZSSK_HGem_2_2_property.pnml"
-#include "src/Dual/Slovakia_ZSSK_HGem_2_2_graphics.pnml"
-#include "src/Dual/Slovakia_ZSSK_HGem_2_2_item.pnml"
-#include "src/Dual/Spain_FGC_257_property.pnml"
-#include "src/Dual/Spain_FGC_257_graphics.pnml"
-#include "src/Dual/Spain_FGC_257_item.pnml"
+#include "src/Dual/Ecuador_FEEP_TD2000.pnml"
+#include "src/Dual/Slovakia_ZSSK_HGem_2_2.pnml"
+#include "src/Dual/Spain_FGC_257.pnml"
 
 //DMU
 #include "src/_CodeSupport/TypeInitialization/init_type_DMU.pnml"

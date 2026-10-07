@@ -7,21 +7,13 @@
 #define ACTUAL_LENGTH {{ units | map(attribute="length") | sum }}
 
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
-
-{%- if gfx.vfx is defined %}
-{%- set vfx_offset = gfx.vfx.offset if gfx.vfx.offset is defined else 0 %}
-#define VISUAL_FLAG visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ vfx_offset }}, DISABLE_WAGON_POWER)
-{%- else %}
 #define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
-{%- endif %}
 
 {% endblock properties_extra %}
 
-{% block graphics_extra %}
-
-{# Add special definitions for articulated engines #}
-
-{% set n_units = units | length %}
+{% block graphics_default %}
+{% with n_units = units | length %}
+{% block graphics_articulated %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {{ loop.index0 }}: {{ unit.length }};
@@ -31,14 +23,14 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1
     1..{{ n_units - 1 }}: item_{{ item.id }};
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % {{ n_units }}) {
-	{% for unit in units %}
-    {% if unit.sprite is defined %}
-    {{ loop.index0 }}: spriteset_{{ item.id }}_{{ unit.sprite }};
-    {% endif %}
-    {% endfor %}
-	EMPTY_SPRITESET
-}
+{% endblock graphics_articulated %}
+{{ super() }}
+{% endwith %}
+{% endblock graphics_default %}
+
+
+{% block graphics_vfx %}
+{% with n_units = units | length %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {% if unit.vfx is defined %}
@@ -47,44 +39,17 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_
     {% endfor %}
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
 }
+{% endwith %}
+{% endblock graphics_vfx %}
 
-{# Add special definitions for longer vehicles #}
-{#{% if gfx.length is defined and gfx.length > 8 and units is not defined %}
-{% set n_units = (gfx.length + 7) // 8 %}
-switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
-    {% for i in range(gfx.length // 8) %}
-    {{ loop.index0 }}: {{ 8 }};
-    {% endfor %}
-    {{ gfx.length % 8 }};
-}
-switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1) {
-    1..{{ n_units - 1 }}: item_{{ item.id }};
-    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % 2) {
-	0: spriteset_{{ item.id }}_default;
-	EMPTY_SPRITESET
-}
-switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
-    0: return visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ gfx.vfx.offset if gfx.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
-	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
-}
-{% endif %}#}
-
-{{ super() }}
-{% endblock graphics_extra %}
+{# {{ self.graphics_extra() }}
+{% endblock graphics %} #}
 
 {% block item_graphics %}
 {{ super() }}
-
-{% if units is defined or gfx.length > 8 %}
 default: switch_{{ item.id }}_default;
 visual_effect_and_powered: switch_{{ item.id }}_visual_effect;
 articulated_part: switch_{{ item.id }}_articulated;
 length: switch_{{ item.id }}_length;
-{% else %}
-default: spriteset_{{ item.id }}_default;
-{% endif %}
-
 {% endblock item_graphics %}
 
