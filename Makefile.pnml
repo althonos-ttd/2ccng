@@ -41,4 +41,14 @@ src/EMU/%.pnml: nml/templates/mu/emu.pnml.j2 nml/items/EMU/%.yml nml/data/geosch
 YAML_EMU_FILES = $(wildcard nml/items/EMU/*.yml)
 PNML_EMU_FILES = $(foreach x,$(YAML_EMU_FILES),$(patsubst nml/items/EMU/%.yml,src/EMU/%.pnml,$x))
 
-PNML_FILES = $(PNML_DIESEL_FILES) $(PNML_ELEC_FILES) $(PNML_STEAM_FILES) $(PNML_EMU_FILES)
+nml/templates/mu/dmu.pnml.j2: nml/templates/mu/base.pnml.j2
+	$(_V) touch $@
+
+src/DMU/%.pnml: nml/templates/mu/dmu.pnml.j2 nml/items/DMU/%.yml nml/data/geoscheme.yml
+	$(_E) "[J2]" $(@F)
+	$(_V) minijinja-cli --strict -o $@ $^
+
+YAML_DMU_FILES = $(wildcard nml/items/DMU/*.yml)
+PNML_DMU_FILES = $(foreach x,$(YAML_DMU_FILES),$(patsubst nml/items/DMU/%.yml,src/DMU/%.pnml,$x))
+
+PNML_FILES = $(PNML_DIESEL_FILES) $(PNML_ELEC_FILES) $(PNML_STEAM_FILES) $(PNML_EMU_FILES) $(PNML_DMU_FILES)
