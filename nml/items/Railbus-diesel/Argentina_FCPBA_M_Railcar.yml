@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Argentina_FCPBA_M_Railcar.png"
+
+item:
+  id: rbd_Argentina_FCPBA_M_Railcar
+  num: 0
+
+  # Some info from: (1)
+
+  speed: 80                 # ???
+  power: 290                # ???
+  weight: 36                # ???
+  te_coefficient: 0.14      # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: AR
+  builders:
+    - sulzer
+
+  life:
+    start: 1935
+    end: 1980               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 7
+    sprite: default
+    capacity: 62
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

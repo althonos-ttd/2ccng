@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Tunisia_SNCFT_YZ_661.png"
+
+item:
+  id: rbd_Tunisia_SNCFT_YZ_661
+  num: 0
+
+  speed: 130                # ???
+  power: 1045               # ???
+  weight: 60                # ???
+  te_coefficient: 0.38      # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: TN
+  builders:
+    - alsthom
+
+  life:
+    start: 1975
+    end: 2010               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 8
+    sprite: default
+    capacity: 54
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

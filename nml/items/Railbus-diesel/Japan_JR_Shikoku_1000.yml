@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Japan_JR_Shikoku_1000.png"
+
+item:
+  id: rbd_Japan_JR_Shikoku_1000
+  num: 0
+
+  speed: 110                # ???
+  power: 400                # ???
+  weight: 32                # ???
+  te_coefficient: 0.34      # ???
+
+  gauge: cape
+  propulsion: diesel
+  country: JP
+  builders:
+    - niigata
+
+  life:
+    start: 1990
+    end: 2025               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 7
+    sprite: default
+    capacity: 70
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

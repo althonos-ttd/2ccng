@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Eritrea_Eritrean_Railway_A62_70_Littorina.xpm"
+
+item:
+  id: rbd_Eritrea_Eritrean_Railway_A62_70_Littorina
+  num: 0
+
+  # Some info from: (1) https://fr.wikipedia.org/wiki/Fiat_Littorina_A.62-70
+
+  speed: 68                 # (1)
+  power: 236                # (1)
+  weight: 17                # (1)
+  te_coefficient: 0.26      # ???
+
+  gauge: itmetre
+  propulsion: diesel
+  country: ER
+  builders:
+    - fiat
+
+  life:
+    start: 1937
+    end: 2008               # (1)
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 5
+    sprite: default
+    capacity: 32
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Germany_DB_VT_133.png"
+
+item:
+  id: rbd_Germany_DB_VT_133
+  num: 0
+
+  speed: 56                 # ???
+  power: 38                 # ???
+  weight: 6                 # ???
+  te_coefficient: 0.5       # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: DE
+  builders:
+    - wismar
+
+  life:
+    start: 1932
+    end: 1957               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 6
+    sprite: default
+    capacity: 24
+    vfx:
+      offset: -3
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

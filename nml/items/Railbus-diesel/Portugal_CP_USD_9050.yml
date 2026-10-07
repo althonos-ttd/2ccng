@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Portugal_CP_USD_9050.png"
+
+item:
+  id: rbd_Portugal_CP_USD_9050
+  num: 0
+
+  speed: 89                 # ???
+  power: 90                 # ???
+  weight: 8                 # ???
+  te_coefficient: 0.2       # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: PT
+  builders:
+    - vouga
+
+  life:
+    start: 1941
+    end: 1986               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 5
+    sprite: default
+    capacity: 25
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

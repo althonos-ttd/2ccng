@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/New_Zealand_NZR_RM31.png"
+
+item:
+  id: rbd_New_Zealand_NZR_RM31
+  num: 0
+
+  speed: 120                # ???
+  power: 250                # ???
+  weight: 37                # ???
+  te_coefficient: 0.2       # ???
+
+  gauge: cape
+  propulsion: diesel
+  country: NZ
+  builders:
+    - nzr/hutt
+
+  life:
+    start: 1940
+    end: 1975               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 8
+    sprite: default
+    capacity: 50
+    vfx:
+      offset: -3
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

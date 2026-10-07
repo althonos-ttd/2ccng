@@ -1,0 +1,43 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Japan_JR_KiHa_E120.png"
+
+item:
+  id: rbd_Japan_JR_KiHa_E120
+  num: 0
+
+  speed: 56                 # ???
+  power: 38                 # ???
+  weight: 6                 # ???
+  te_coefficient: 0.5       # ???
+
+  gauge: cape
+  propulsion: diesel
+  country: JP
+  builders:
+    - niigata
+
+  life:
+    start: 2008
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 8
+    sprite: default
+    capacity: 39
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

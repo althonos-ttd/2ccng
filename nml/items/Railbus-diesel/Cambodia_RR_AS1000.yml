@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/Cambodia_Royal_Railway_AS1000.xpm"
+
+item:
+  id: rbd_Cambodia_Royal_Railway_AS1000
+  num: 0
+
+  # Some info from: (1)
+
+  speed: 80                 # ???
+  power: 750                # ???
+  weight: 24                # ???
+  te_coefficient: 0.21      # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: KH
+  builders:
+    - fv_del_bajio
+
+  life:
+    start: 1935
+    end: 1980               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 8
+    sprite: default
+    capacity: 54
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

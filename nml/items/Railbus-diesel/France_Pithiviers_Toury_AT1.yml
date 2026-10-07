@@ -1,0 +1,44 @@
+.file: &file
+  filename: "gfx/Railbus-diesel/France_Pithiviers_Toury_AT1.xpm"
+
+item:
+  id: rbd_France_Pithiviers_Toury_AT1
+  num: 0
+
+  speed: 35                 # ???
+  power: 19                 # ???
+  weight: 6                 # ???
+  te_coefficient: 0.26      # ???
+
+  gauge: 600mm
+  propulsion: petrol
+  country: FR
+  builders:
+    - crochat
+
+  life:
+    start: 1922
+    end: 1957               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 4
+    sprite: default
+    capacity: 17
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
