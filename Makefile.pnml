@@ -1,50 +1,50 @@
 
 .DELETE_ON_ERROR:
 
-nml/templates/engine/diesel.pnml.j2: nml/templates/engine/base.pnml.j2
+nml/templates/train/engine/diesel.pnml.j2: nml/templates/train/engine/base.pnml.j2
 	$(_V) touch $@
 
-src/Diesel/%.pnml: nml/templates/engine/diesel.pnml.j2 nml/items/Diesel/%.yml nml/data/geoscheme.yml
+src/Diesel/%.pnml: nml/templates/train/engine/diesel.pnml.j2 nml/items/Diesel/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^ 
 
 YAML_DIESEL_FILES = $(wildcard nml/items/Diesel/*.yml)
 PNML_DIESEL_FILES = $(foreach x,$(YAML_DIESEL_FILES),$(patsubst nml/items/Diesel/%.yml,src/Diesel/%.pnml,$x))
 
-nml/templates/engine/electric.pnml.j2: nml/templates/engine/base.pnml.j2
+nml/templates/train/engine/electric.pnml.j2: nml/templates/train/engine/base.pnml.j2
 	$(_V) touch $@
 
-src/Electric/%.pnml: nml/templates/engine/electric.pnml.j2 nml/items/Electric/%.yml nml/data/geoscheme.yml
+src/Electric/%.pnml: nml/templates/train/engine/electric.pnml.j2 nml/items/Electric/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
 YAML_ELEC_FILES = $(wildcard nml/items/Electric/*.yml)
 PNML_ELEC_FILES = $(foreach x,$(YAML_ELEC_FILES),$(patsubst nml/items/Electric/%.yml,src/Electric/%.pnml,$x))
 
-nml/templates/engine/steam.pnml.j2: nml/templates/engine/base.pnml.j2
+nml/templates/train/engine/steam.pnml.j2: nml/templates/train/engine/base.pnml.j2
 	$(_V) touch $@
 
-src/Steam/%.pnml: nml/templates/engine/diesel.pnml.j2 nml/items/Steam/%.yml nml/data/geoscheme.yml
+src/Steam/%.pnml: nml/templates/train/engine/diesel.pnml.j2 nml/items/Steam/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
 YAML_STEAM_FILES = $(wildcard nml/items/Steam/*.yml)
 PNML_STEAM_FILES = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.yml,src/Steam/%.pnml,$x))
 
-nml/templates/mu/emu.pnml.j2: nml/templates/mu/base.pnml.j2
+nml/templates/train/mu/emu.pnml.j2: nml/templates/train/mu/base.pnml.j2
 	$(_V) touch $@
 
-src/EMU/%.pnml: nml/templates/mu/emu.pnml.j2 nml/items/EMU/%.yml nml/data/geoscheme.yml
+src/EMU/%.pnml: nml/templates/train/mu/emu.pnml.j2 nml/items/EMU/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
 YAML_EMU_FILES = $(wildcard nml/items/EMU/*.yml)
 PNML_EMU_FILES = $(foreach x,$(YAML_EMU_FILES),$(patsubst nml/items/EMU/%.yml,src/EMU/%.pnml,$x))
 
-nml/templates/mu/dmu.pnml.j2: nml/templates/mu/base.pnml.j2
+nml/templates/train/mu/dmu.pnml.j2: nml/templates/train/mu/base.pnml.j2
 	$(_V) touch $@
 
-src/DMU/%.pnml: nml/templates/mu/dmu.pnml.j2 nml/items/DMU/%.yml nml/data/geoscheme.yml
+src/DMU/%.pnml: nml/templates/train/mu/dmu.pnml.j2 nml/items/DMU/%.yml nml/data/geoscheme.yml
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 

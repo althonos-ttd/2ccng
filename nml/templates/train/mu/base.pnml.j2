@@ -26,10 +26,6 @@
 {% endif -%}
 
 #define VEHICLE_REGION  REGION({{ climate }},NOREGION,NOCONCEPT)
-#define VEHICLE_GAUGE   NAR_{{ item.gauge | upper }}
-#define VEHICLE_MAKER   MAKER_{{ item.builders[0] | upper }}
-#define VEHICLE_POWER   {{ item.propulsion | upper }}
-#define VEHICLE_COUNTRY {{ item.country }}
 
 #define VEHICLE_BADGES \
     "flag/{{ item.country }}", \
