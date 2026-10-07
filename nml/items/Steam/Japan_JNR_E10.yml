@@ -23,10 +23,13 @@ item:
     start: 1948          
     end: 1978               # (1) Scrapped 1962, but that's too early!
 
+units:
+  - length: 7
+    sprite: engine
+    vfx:
+      offset: 0
+
 gfx:
-  length: 7
-  vfx:
-    offset: 0
   purchase:
     <<: *file
     x: 1
@@ -43,5 +46,5 @@ gfx:
       x: 1
       y: 32
   animations:
-    - id: default
+    - id: engine
       steps: [engine_s1, engine_s2]

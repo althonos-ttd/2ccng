@@ -25,18 +25,11 @@ units:
   - length: 8
     sprite: engine
     vfx:
-      type: VISUAL_EFFECT_ELECTRIC
       offset: -3
   - length: 8
     sprite: tender
-    vfx:
-      type: VISUAL_EFFECT_DISABLE
-      offset: 0
 
 gfx:
-  length: 16
-  vfx:
-    offset: 0
   purchase:
     <<: *file
     x: 1

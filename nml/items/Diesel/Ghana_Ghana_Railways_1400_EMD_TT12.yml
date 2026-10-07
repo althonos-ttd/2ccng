@@ -1,3 +1,6 @@
+file: &file
+  filename: "gfx/Diesel/Ghana_Ghana_Railways_1400_EMD_TT12.xpm"
+
 item:
   id: diesel_Ghana_Ghana_Railways_1400_EMD_TT12
   speed: 100
@@ -15,19 +18,21 @@ item:
     start: 1959
     end: 2004
 
+units:
+  - length: 8
+    sprite: engine
+    vfx:
+      offset: -1
+  - length: 1
+
 gfx:
-  length: 9
-  vfx:
-    type: VISUAL_EFFECT_DIESEL
-    offset: -1
   purchase:
-    filename: "gfx/Diesel/Ghana_Ghana_Railways_1400_EMD_TT12.xpm"
+    <<: *file
     x: 1
     y: 128
-  
   spritesets:
-    - id: default
-      filename:  "gfx/Diesel/Ghana_Ghana_Railways_1400_EMD_TT12.xpm"
+    - id: engine
+      <<: *file
       template: template_2cc_L12
       x: 1
       y: 1

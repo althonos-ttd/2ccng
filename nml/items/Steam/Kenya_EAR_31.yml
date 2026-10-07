@@ -27,7 +27,6 @@ units:
     length: 7
     vfx:
       offset: -3
-      type: VISUAL_EFFECT_STEAM
   - sprite: tender
     length: 4
 

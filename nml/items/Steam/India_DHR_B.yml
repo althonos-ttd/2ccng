@@ -35,7 +35,6 @@ units:
     sprite: tender
 
 gfx:
-  length: 7
   purchase:
     <<: *file
     x: 1

@@ -20,16 +20,19 @@ item:
     start: 1960
     end: 2000
 
+units:
+  - length: 5
+    sprite: A
+    vfx:
+      offset: 0
+
 gfx:
-  length: 5
-  vfx:
-    offset: 0
   purchase:
     <<: *file
     x: 1
     y: 64
   spritesets:
-    - id: engine
+    - id: A
       <<: *file
       template: template_2cc_engines_general
       x: 1
@@ -41,7 +44,7 @@ gfx:
       y: 32
 
   extra: >
-    switch(FEAT_TRAINS, SELF, spriteset_diesel_Brazil_BF_EMD_GL8_default, position_in_vehid_chain % 2) {
+    switch(FEAT_TRAINS, SELF, spriteset_diesel_Brazil_BF_EMD_GL8_AB, position_in_vehid_chain % 2) {
       1: spriteset_diesel_Brazil_BF_EMD_GL8_B;
-      spriteset_diesel_Brazil_BF_EMD_GL8_engine;
+      spriteset_diesel_Brazil_BF_EMD_GL8_A;
     }

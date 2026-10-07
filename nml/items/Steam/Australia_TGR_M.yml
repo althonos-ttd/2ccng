@@ -27,7 +27,6 @@ units:
   - length: 3
     sprite: front
     vfx:
-      type: VISUAL_EFFECT_STEAM
       offset: -3
   - length: 4
     sprite: middle
@@ -35,7 +34,6 @@ units:
     sprite: back
 
 gfx:
-  length: 12
   purchase:
     <<: *file
     x: 1

@@ -25,16 +25,19 @@ item:
     start: 1936
     end: 1964               # (1), dismantled
 
+units:
+  - length: 8
+    sprite: engine
+    vfx:
+      offset: -3
+
 gfx:
-  length: 8
-  vfx:
-    offset: -3
   purchase:
     <<: *file
     x: 1
     y: 64
   spritesets:
-    - id: default
+    - id: engine
       <<: *file
       template: template_2cc_engines_general
       x: 1

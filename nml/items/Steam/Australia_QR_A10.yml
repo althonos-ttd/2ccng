@@ -24,13 +24,11 @@ units:
   - length: 6
     sprite: engine
     vfx:
-      type: VISUAL_EFFECT_STEAM
       offset: -3
   - length: 2
     sprite: tender
 
 gfx:
-  length: 8
   purchase:
     <<: *file
     x: 1

@@ -28,15 +28,17 @@ item:
     start: 1853
     end: 1871              # (2)
 
+units:
+  - length: 5
+    sprite: engine
+    vfx:
+      offset: -4
+
 gfx:
-  length: 5
   purchase:
     <<: *file
     x: 1
     y: 128
-  vfx:
-    offset: -4
-    type: VISUAL_EFFECT_STEAM
   spritesets:
     - id: engine_s1
       <<: *sprite
@@ -51,5 +53,5 @@ gfx:
       <<: *sprite
       y: 96
   animations:
-    - id: default
+    - id: engine
       steps: [engine_s1, engine_s2, engine_s3, engine_s4]

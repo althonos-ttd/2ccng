@@ -24,16 +24,19 @@ item:
     start: 1964
     end: 2021               # (1) discarded
 
+units:
+  - length: 8
+    sprite: engine
+    vfx:
+      offset: -3
+
 gfx:
-  length: 8
-  vfx:
-    offset: -3
   purchase:
     <<: *file
     x: 1
     y: 64
   spritesets:
-    - id: default
+    - id: engine
       <<: *file
       template: template_2cc_engines_general
       x: 1

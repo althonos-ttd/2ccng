@@ -2,18 +2,9 @@
 
 {% block properties_extra %}
 
-{% if units is defined -%}
 #define ARTICULATED {{ (units | length) - 1 }}
-#define LENGTH {{ units[0].length }}
+#define LENGTH {{ [units[0].length, 8] | min }}
 #define ACTUAL_LENGTH {{ units | map(attribute="length") | sum }}
-{% elif gfx.length > 8 %}
-#define ARTICULATED {{ gfx.length % 8 }}
-#define LENGTH {{ 8 if gfx.length > 8 else gfx.length }}
-#define ACTUAL_LENGTH {{ gfx.length }}
-{% else %}
-#define LENGTH {{ 8 if gfx.length > 8 else gfx.length }}
-#define ACTUAL_LENGTH {{ gfx.length }}
-{%- endif %}
 
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
 
@@ -27,8 +18,9 @@
 {% endblock properties_extra %}
 
 {% block graphics_extra %}
+
 {# Add special definitions for articulated engines #}
-{% if units is defined %}
+
 {% set n_units = units | length %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
@@ -41,20 +33,23 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1
 }
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % {{ n_units }}) {
 	{% for unit in units %}
+    {% if unit.sprite is defined %}
     {{ loop.index0 }}: spriteset_{{ item.id }}_{{ unit.sprite }};
+    {% endif %}
     {% endfor %}
+	EMPTY_SPRITESET
 }
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {% if unit.vfx is defined %}
-    {{ loop.index0 }}: return visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ unit.vfx.offset if unit.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
+    {{ loop.index0 }}: return visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ unit.vfx.offset }}, DISABLE_WAGON_POWER);
     {% endif %}
     {% endfor %}
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
 }
-{% endif %}
+
 {# Add special definitions for longer vehicles #}
-{% if gfx.length is defined and gfx.length > 8 and units is not defined %}
+{#{% if gfx.length is defined and gfx.length > 8 and units is not defined %}
 {% set n_units = (gfx.length + 7) // 8 %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
     {% for i in range(gfx.length // 8) %}
@@ -74,7 +69,8 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_
     0: return visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ gfx.vfx.offset if gfx.vfx.offset is defined else 0 }}, DISABLE_WAGON_POWER);
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
 }
-{% endif %}
+{% endif %}#}
+
 {{ super() }}
 {% endblock graphics_extra %}
 

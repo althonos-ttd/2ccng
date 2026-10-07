@@ -39,7 +39,6 @@ units:
     length: 5
 
 gfx:
-  length: 13
   purchase:
     <<: *file
     x: 1

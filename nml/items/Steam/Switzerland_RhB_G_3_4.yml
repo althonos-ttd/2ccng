@@ -27,15 +27,17 @@ item:
     start: 1889
     end: 1954              # (1) some first batch units served until 1954 in Luxembourg
 
+units:
+  - length: 5
+    sprite: engine
+    vfx:
+      offset: 0
+
 gfx:
-  length: 5
   purchase:
     <<: *file
     x: 1
     y: 96
-  vfx:
-    offset: 0
-    type: VISUAL_EFFECT_STEAM
   spritesets:
     - id: engine_s1
       <<: *sprite
@@ -44,5 +46,5 @@ gfx:
       <<: *sprite
       y: 32
   animations:
-    - id: default
+    - id: engine
       steps: [engine_s1, engine_s2]
