@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-electric/Switzerland_MVR_Beh_2_4.png"
+
+item:
+  id: rbe_Switzerland_MVR_Beh_2_4
+  num: 0
+
+  # Some info from: (1) https://www.trainssuisses.ch/trains/cid/mvr/lcid/beh2-4mvr
+
+  speed: 50                 # ???
+  power: 752                # ???
+  weight: 32                # ???
+  te_coefficient: 0.27      # ???
+
+  gauge: metre
+  propulsion: electric_dc
+  country: CH
+  builders:
+    - swp
+    - secheron
+
+  life:
+    start: 1998
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 8
+    sprite: default
+    capacity: 40
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

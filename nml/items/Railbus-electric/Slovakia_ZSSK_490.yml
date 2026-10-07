@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-electric/Slovakia_ZSSK_490.png"
+
+item:
+  id: rbe_Slovakia_ZSSK_490
+  num: 0
+
+  # Some info from: (1)
+
+  speed: 40                 # ???
+  power: 270                # ???
+  weight: 45                # ???
+  te_coefficient: 0.08      # ???
+
+  gauge: metre
+  propulsion: electric_dc
+  country: SK
+  builders:
+    - ringhoffer
+
+  life:
+    start: 1930
+    end: 1975               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 7
+    sprite: default
+    capacity: 48
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

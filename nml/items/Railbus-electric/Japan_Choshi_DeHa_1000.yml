@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-electric/Japan_Choshi_DeHa_1000.png"
+
+item:
+  id: rbe_Japan_Choshi_DeHa_1000
+  num: 0
+
+  # Some info from: (1)
+
+  speed: 40                 # ???
+  power: 402                # ???
+  weight: 31                # ???
+  te_coefficient: 0.18      # ???
+
+  gauge: cape
+  propulsion: electric_dc
+  country: JP
+  builders:
+    - hitachi
+
+  life:
+    start: 1960
+    end: 2005               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 7
+    sprite: default
+    capacity: 34
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

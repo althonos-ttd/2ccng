@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-electric/Spain_Ferrocarril_de_Soller_1_3.png"
+
+item:
+  id: rbe_Spain_Ferrocarril_de_Soller_1_3
+  num: 0
+
+  # Some info from: (1)
+
+  speed: 60                 # ???
+  power: 350                # ???
+  weight: 38                # ???
+  te_coefficient: 0.05      # ???
+
+  gauge: 3ft
+  propulsion: electric_dc
+  country: ES
+  builders:
+    - ringhoffer
+
+  life:
+    start: 1929
+    end: 1964               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 6
+    sprite: default
+    capacity: 44
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

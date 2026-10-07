@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-electric/Switzerland_AB_CFe_3_3.png"
+
+item:
+  id: rbe_Switzerland_AB_CFe_3_3
+  num: 0
+
+  # Some info from: (1)
+
+  speed: 35                 # ???
+  power: 195                # ???
+  weight: 24                # ???
+  te_coefficient: 0.15      # ???
+
+  gauge: metre
+  propulsion: electric_dc
+  country: CH
+  builders:
+    - slm
+
+  life:
+    start: 1911
+    end: 1956               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 6
+    sprite: default
+    capacity: 24
+    vfx:
+      offset: -3
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
