@@ -85,7 +85,7 @@
 #include "src/Railbus-diesel/Cambodia_RR_AS1000.pnml"
 #include "src/Railbus-diesel/Eritrea_Eritrean_Railway_A62_70.pnml"
 #include "src/Railbus-diesel/France_Pithiviers_Toury_AT1.pnml"
-#include "src/Railbus-diesel/Germany_DB_VT_133.pnml"
+#include "src/Railbus-diesel/Germany_DR_VT_133.pnml"
 #include "src/Railbus-diesel/Japan_JR_KiHa_E120.pnml"
 #include "src/Railbus-diesel/Japan_JR_Shikoku_1000.pnml"
 #include "src/Railbus-diesel/New_Zealand_NZR_RM31.pnml"
