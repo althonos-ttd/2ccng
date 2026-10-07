@@ -17,7 +17,7 @@ item:
   propulsion: steam
   country: ER
   builders:
-    # - ansaldo
+    - ansaldo
 
   life:
     start: 1911     
