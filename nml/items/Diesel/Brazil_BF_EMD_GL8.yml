@@ -22,7 +22,7 @@ item:
 
 units:
   - length: 5
-    sprite: A
+    sprite: AB
     vfx:
       offset: 0
 

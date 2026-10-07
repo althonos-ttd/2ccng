@@ -174,6 +174,15 @@ switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ cargoset.id }}, cargo_class
 {% endif %}
 {% endblock graphics_cargosets %}
 
+{% block graphics_vfx %}
+{% endblock graphics_vfx %}
+
+{% block graphics_extra %}
+{% if gfx.extra is defined %}
+{{ gfx.extra }}
+{% endif %}
+{% endblock graphics_extra %}
+
 {% block graphics_default %}
 {% with n_units = units | length %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % {{ n_units }}) {
@@ -186,15 +195,6 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain 
 }
 {% endwith %}
 {% endblock graphics_default %}
-
-{% block graphics_vfx %}
-{% endblock graphics_vfx %}
-
-{% block graphics_extra %}
-{% if gfx.extra is defined %}
-{{ gfx.extra }}
-{% endif %}
-{% endblock graphics_extra %}
 
 {% endblock graphics %}
 
