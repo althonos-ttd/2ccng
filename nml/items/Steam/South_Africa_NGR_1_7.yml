@@ -18,7 +18,7 @@ item:
   country: ZA
   builders:
     - beyer_peacock
-    - kitson_co
+    - kitson
 
   life:
     start: 1877          

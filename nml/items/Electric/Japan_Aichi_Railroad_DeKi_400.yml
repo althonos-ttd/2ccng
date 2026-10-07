@@ -17,7 +17,7 @@ item:
   country: JP
   builders:
     - nippon_sharyo
-    - westinghouse
+    # - westinghouse # TODO
 
   life:
     start: 1930

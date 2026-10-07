@@ -16,7 +16,7 @@ item:
   propulsion: steam
   country: GB
   builders:
-    - horlock_co
+    - horlock
 
   life:
     start: 1848                  

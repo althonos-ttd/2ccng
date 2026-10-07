@@ -13,7 +13,7 @@ item:
   weight: 35                # (1, 2)
   te: 56                    # (1)
 
-  gauge: itmetre
+  gauge: italian_metre
   propulsion: steam
   country: ER
   builders:

@@ -11,7 +11,7 @@ item:
   te_coefficient: 0.26      # ???
 
   gauge: 600mm
-  propulsion: petrol
+  propulsion: gasoline
   country: FR
   builders:
     - crochat

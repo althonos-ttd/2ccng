@@ -18,7 +18,7 @@ item:
   weight: 6                 # (1)
   te_coefficient: 0.20      # ??? unknown
 
-  gauge: se3ft
+  gauge: swedish_3ft
   propulsion: steam
   country: SE
   builders:

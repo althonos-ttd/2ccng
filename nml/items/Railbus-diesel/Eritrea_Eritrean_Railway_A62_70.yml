@@ -12,7 +12,7 @@ item:
   weight: 17                # (1)
   te_coefficient: 0.26      # ???
 
-  gauge: itmetre
+  gauge: italian_metre
   propulsion: diesel
   country: ER
   builders:

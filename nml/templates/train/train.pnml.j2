@@ -28,23 +28,8 @@
 {% endif -%}
 
 #define VEHICLE_REGION  REGION({{ climate }},NOREGION,NOCONCEPT)
-#define VEHICLE_GAUGE   NAR_{{ item.gauge | upper }}
-#define VEHICLE_MAKER   MAKER_{{ item.builders[0] | upper }}
 #define VEHICLE_POWER   {{ item.propulsion | upper }}
 #define VEHICLE_COUNTRY {{ item.country }}
-
-#define VEHICLE_BADGES \
-    "flag/{{ item.country }}", \
-    {%- if region is defined %}
-    "region/{{ region.region }}", \
-    {% if region.subregion is defined %}"region/{{ region.region }}/{{ region.subregion }}", \{% endif %}
-    {% endif -%}
-    "power/{{ item.propulsion | replace("_", "/") }}", \
-    "railgauge/narrow/{{ item.gauge }}", \
-    {% for builder in item.builders -%}
-    "builder/{{ builder }}"{% if not loop.last %}, \
-    {% endif %}
-    {%- endfor %}
 
 #define INTRODUCTION_YEAR {{ item.life.start }}
 {%- if item.life.end is defined %}
@@ -249,27 +234,27 @@ item(FEAT_TRAINS, ITEM) {
         extra_power_per_wagon: POWER_PER_WAGON;
         bitmask_vehicle_info: BITMASK_VEHICLE_INFO;
         badges: [
-            BADGE_FLAG(VEHICLE_COUNTRY),
-            BADGE_REGION(VEHICLE_COUNTRY),
-            BADGE_GAUGE(VEHICLE_GAUGE),
-            BADGE_POWER(VEHICLE_POWER),
-            EXTRA_BADGES
+            "flag/{{ item.country }}",
+            {%- if region is defined %}
+            "region/{{ region.region }}",
+            {% if region.subregion is defined %}
+            "region/{{ region.region }}/{{ region.subregion }}",
+            {% endif %}
+            {% endif -%}
+            "power/{{ item.propulsion | replace("_", "/") }}",
+            "railgauge/narrow/{{ item.gauge }}",
+            {% for builder in item.builders -%}
+            "builder/{{ builder }}",
+            {%- endfor %}
         ];
-        EXTRAPROPERTIES
-
         {% endblock item_property %}
     }
     graphics {
         {% block item_graphics %}
-
         purchase: spriteset_{{ item.id }}_purchase;
         can_attach_wagon: switch_can_attach_vehicle;
-       
         RUNNINGCOSTENGINESWITCHCALL
         EXPANDEDPURCHASETEXTSWITCHCALL(VEHIDCODE)
-        
-        EXTRAGRAPHICS
-
         {% endblock item_graphics %}
     }
     {% block item_extra %}

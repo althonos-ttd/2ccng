@@ -10,7 +10,7 @@ item:
   weight: 47                # ???
   te_coefficient: 0.33      # ???
 
-  gauge: itmetre
+  gauge: italian_metre
   propulsion: electric_dc
   country: IT
   builders:
@@ -48,7 +48,6 @@ units:
 # See: http://www.fedoa.unina.it/10204/1/Miraglia_Elisabetta_27.pdf, Fig. D6
 
 gfx:
-  length: 8
   purchase:
     <<: *file
     x: 1

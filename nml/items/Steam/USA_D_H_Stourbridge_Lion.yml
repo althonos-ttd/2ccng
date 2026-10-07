@@ -21,7 +21,7 @@ item:
   propulsion: steam
   country: US
   builders:
-    - foster_rastrick_co
+    - foster_rastrick
 
   life:
     start: 1829                  

@@ -16,7 +16,7 @@ item:
   propulsion: steam
   country: ZA
   builders:
-    - nasmyth_wilson_co
+    - nasmyth_wilson
 
   life:
     start: 1887          

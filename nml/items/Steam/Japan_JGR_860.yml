@@ -17,7 +17,7 @@ item:
   propulsion: steam
   country: JP
   builders:
-    - jgr_kobe
+    - jgr/kobe
 
   life:
     start: 1893     

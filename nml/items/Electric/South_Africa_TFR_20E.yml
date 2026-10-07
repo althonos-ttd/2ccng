@@ -16,7 +16,7 @@ item:
   propulsion: electric_ac
   country: ZA
   builders:
-    - crrc_zuzhou
+    - crrc/zuzhou
 
   life:
     start: 2013     

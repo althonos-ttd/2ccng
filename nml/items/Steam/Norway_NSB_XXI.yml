@@ -16,7 +16,7 @@ item:
   propulsion: steam
   country: NO
   builders:
-    - dubs_co
+    - dubs
 
   life:
     start: 1894          

@@ -16,7 +16,7 @@ item:
   propulsion: steam
   country: NZ
   builders:
-    - nzr_addington
+    - nzr/addington
 
   life:
     start: 1908          
