@@ -483,7 +483,7 @@ item_electric_Switzerland_RhB_Ge_6_6_Krokodil, /*Year: 1921*/ \
 item_electric_UK_NER_EE1, /*Year: 1922*/ \
 item_electric_Chile_EFE_Series_E_28, /*Year: 1922*/ \
 item_electric_Australia_Victorian_Railways_E_Class, /*Year: 1923*/ \
-item_electric_New_Zealand_NZR_EO_Class, /*Year: 1923*/ \
+item_electric_New_Zealand_NZR_EO, /*Year: 1923*/ \
 item_electric_Germany_DB_E_919, /*Year: 1925*/ \
 item_electric_Indonesia_ESS_3200, /*Year: 1925*/ \
 item_electric_Chile_FCTC_E_100, /*Year: 1925*/ \
@@ -580,7 +580,7 @@ item_electric_Russia_RZD_VL15, /*Year: 1984*/ \
 item_electric_South_Africa_SAR_11E, /*Year: 1985*/ \
 item_electric_Australia_QR_3500, /*Year: 1986*/ \
 item_electric_Australia_NSW_86, /*Year: 1986*/ \
-item_electric_New_Zealand_TranzRail_EF, /*Year: 1986*/ \
+item_electric_New_Zealand_NZR_EF, /*Year: 1986*/ \
 item_electric_Poland_PKP_EP09, /*Year: 1986*/ \
 item_electric_China_China_Railways_6K, /*Year: 1986*/ \
 item_electric_Australia_SRA_8650, /*Year: 1987*/ \

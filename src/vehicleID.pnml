@@ -593,7 +593,7 @@ item(FEAT_TRAINS, item_electric_Sweden_SJ_O_Class, 6069) {}
 item(FEAT_TRAINS, item_electric_Switzerland_RhB_Ge_6_6_Krokodil, 6070) {}
 item(FEAT_TRAINS, item_electric_UK_NER_EE1, 6071) {}
 item(FEAT_TRAINS, item_electric_Australia_Victorian_Railways_E_Class, 6072) {}
-item(FEAT_TRAINS, item_electric_New_Zealand_NZR_EO_Class, 6073) {}
+item(FEAT_TRAINS, item_electric_New_Zealand_NZR_EO, 6073) {}
 item(FEAT_TRAINS, item_electric_Germany_DB_E_919, 6074) {}
 item(FEAT_TRAINS, item_electric_Japan_Aichi_Railroad_DeKi_400, 6075) {}
 item(FEAT_TRAINS, item_electric_Sweden_SJ_F_Class, 6076) {}
@@ -633,7 +633,7 @@ item(FEAT_TRAINS, item_electric_Mexico_FNM_GE_E60C_2, 6109) {}
 item(FEAT_TRAINS, item_electric_Spain_RENFE_250, 6110) {}
 item(FEAT_TRAINS, item_electric_Canada_BC_Rail_GF6C, 6111) {}
 item(FEAT_TRAINS, item_electric_Ukraine_UZ_ChS7, 6112) {}
-item(FEAT_TRAINS, item_electric_New_Zealand_TranzRail_EF, 6113) {}
+item(FEAT_TRAINS, item_electric_New_Zealand_NZR_EF, 6113) {}
 item(FEAT_TRAINS, item_electric_Poland_PKP_EP09, 6114) {}
 item(FEAT_TRAINS, item_electric_Italy_FS_E491, 6115) {}
 item(FEAT_TRAINS, item_electric_Slovakia_ZSSK_162, 6116) {}
