@@ -1,0 +1,85 @@
+.file: &file
+  filename: "gfx/DMU/Cambodia_Royal_Railway_ZZ_800.xpm"
+
+item:
+  id: dmu_Cambodia_Royal_Railway_ZZ_800
+  num: 0
+
+  # Some info from: (1) https://www.baolau.com/en/transportation/cambodia/trains/
+
+  speed: 60                 # (1)
+  power: 222                # These are unknown, but we can assume similar performance to that of 
+  weight: 47                # the Uerdingen-made DB 624 of 1964 which had a 222hp diesel per engine car
+  te_coefficient: 0.12      # and 112t for a 3-wagon set.
+
+  gauge: metre
+  propulsion: diesel
+  country: KH
+  builders:
+    - uerdingen
+
+  life:
+    start: 1969
+    end: 2009               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 68            # (1) seat count estimate based on pictures
+    vfx:
+      offset: -3
+  middle:
+    length: 7
+    sprite: middle
+    capacity: 48
+  back:
+    length: 8
+    sprite: back
+    capacity: 68
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 1
+        y: 1
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass    

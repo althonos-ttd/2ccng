@@ -1,0 +1,77 @@
+.file: &file
+  filename: "gfx/DMU/Ghana_Ghana_Railways_DEMU.png"
+
+item:
+  id: dmu_Ghana_Ghana_Railways_DEMU  # FIXME: rename to Ghana Railways 1300
+  num: 0
+
+  # Some info from: (1) https://www.cccme.cn/products/detail-8157914.aspx
+  #                 (2) https://en.wikipedia.org/wiki/Ghana_Railways_1301%E2%80%931306_and_1307%E2%80%931312_series
+
+  speed: 80                 # (1) operating speed
+  power: 1656               # (1, 2) 1236 kW
+  weight: 48                # (1, 2) motor car weight w/ all seats taken
+  te: 145                   # (1, 2)
+
+  gauge: cape
+  propulsion: diesel
+  country: GH
+  builders:
+    - crrc/tangshan
+
+  life:
+    start: 2009
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 7
+    sprite: front
+    capacity: 102           # (1) total 668 for 2 motor + 4 trailer cars
+    vfx:
+      offset: -3
+  middle:
+    length: 7
+    sprite: middle
+    capacity: 116           # (1) total 668 for 2 motor + 4 trailer cars
+  back:
+    length: 7
+    sprite: back
+    capacity: 102           # (1) total 668 for 2 motor + 4 trailer cars
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass    

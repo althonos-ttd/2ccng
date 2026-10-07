@@ -1,0 +1,76 @@
+.file: &file
+  filename: "gfx/DMU/Tunisia_SNCFT_AMT_800.png"
+
+item:
+  id: dmu_Tunisia_SNCFT_AMT_800
+  num: 0
+
+  # Some info from: (1) 
+
+  speed: 130                # ???
+  power: 1232               # ???
+  weight: 35                # ???
+  te_coefficient: 0.52      # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: TN
+  builders:
+    - cfd
+
+  life:
+    start: 2008
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 55            # ???
+    vfx:
+      offset: -3
+  middle:
+    length: 8
+    sprite: middle
+    capacity: 55            # ???
+  back:
+    length: 78
+    sprite: back
+    capacity: 55            # ???
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass    

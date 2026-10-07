@@ -1,0 +1,76 @@
+.file: &file
+  filename: "gfx/DMU/Japan_JR_West_KiHa_189.png"
+
+item:
+  id: dmu_Spain_FEVE_2400_Apollos
+  num: 0
+
+  # Some info from: (1) https://es.wikipedia.org/wiki/Serie_524_de_Renfe
+
+  speed: 100                # (1) pre-reform
+  power: 610                # (1) pre-reform 2x MAN D-3256 (305 hp each) per car
+  weight: 33                # (1) 90t for a three car unit with unpowered trailer, 67t for a two car set
+  te_coefficient: 0.2       # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: ES
+  builders:
+    - mtm
+
+  life:
+    start: 2010
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 7
+    sprite: front
+    capacity: 50            # (1) 101 seats int two-car consists
+    vfx:
+      offset: -3
+  middle:
+    length: 7
+    sprite: middle
+    capacity: 50            # (1)
+  back:
+    length: 7
+    sprite: back
+    capacity: 50            # (1)
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass    

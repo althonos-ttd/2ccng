@@ -1,0 +1,88 @@
+.file: &file
+  filename: "gfx/DMU/Japan_JNR_KiHa_181.png"
+
+item:
+  id: dmu_Japan_JNR_KiHa_181
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/KiHa_181_series
+  #                 (2) https://trainspo.com/model/964/
+
+  speed: 120                # (1)
+  power: 500                # (1) 
+  weight: 44                # (1)
+  te_coefficient: 0.34      # ???
+
+  gauge: cape
+  propulsion: diesel
+  country: JP
+  builders:
+    - fuji
+    - nippon_sharyo
+    - niigata
+
+  life:
+    start: 1968
+    end: 2010               # (1) last use in Japan               
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 52            # (2)
+    vfx:
+      offset: -3
+  middle:
+    length: 8
+    sprite: middle
+    capacity: 52            # (2)
+  back:
+    length: 8
+    sprite: back
+    capacity: 52            # (2)
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 1
+        y: 1
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass    

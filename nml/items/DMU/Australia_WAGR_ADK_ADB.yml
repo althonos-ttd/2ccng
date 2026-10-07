@@ -1,0 +1,88 @@
+.file: &file
+  filename: "gfx/DMU/Australia_WAGR_ADK_ADB.png"
+
+item:
+  id: dmu_Australia_WAGR_ADK_ADB
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/ADK/ADB_class_diesel_multiple_unit
+
+  speed: 90                 # (1)
+  power: 416                # (1) 208 hp per power car
+  weight: 33                # ???
+  te_coefficient: 0.44      # ???
+
+  gauge: cape
+  propulsion: diesel
+  country: AU
+  builders:
+    - comeng
+
+  life:
+    start: 1967
+    end: 2014               # (1) withdrawal
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 56
+    vfx:
+      offset: -3
+  middle:
+    length: 7
+    sprite: middle
+    capacity: 56
+  back:
+    length: 8
+    sprite: back
+    capacity: 56
+    vfx:
+      offset: -3
+
+gfx:
+  length: 8
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 1
+        y: 1
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass    

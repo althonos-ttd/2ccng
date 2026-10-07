@@ -1,0 +1,78 @@
+.file: &file
+  filename: "gfx/DMU/Japan_JR_West_KiHa_189.png"
+
+item:
+  id: dmu_Japan_JR_West_KiHa_189
+  num: 0
+
+  # Some info from: (1) https://en.wikipedia.org/wiki/KiHa_189_series
+
+  speed: 130                # (1)
+  power: 900                # (1) 2x engine per car, 450hp each
+  weight: 49                # ???
+  te_coefficient: 0.21      # ???
+
+  gauge: cape
+  propulsion: diesel
+  country: JP
+  builders:
+    - niigata
+
+  life:
+    start: 2010
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 7
+    sprite: front
+    capacity: 52            # ???
+    vfx:
+      offset: 0
+  middle:
+    length: 7
+    sprite: middle
+    capacity: 52            # ???
+  back:
+    length: 7
+    sprite: back
+    capacity: 52            # ???
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
+    - id: middlepass
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middlemail
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  cargosets:
+    - id: middle
+      default:
+        sprite: middlemail
+      options:
+        - bitmask: CC_PASSENGERS
+          sprite: middlepass    

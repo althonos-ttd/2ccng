@@ -1,0 +1,83 @@
+.file: &file
+  filename: "gfx/DMU/France_CFC_X_97050.xpm"
+
+item:
+  id: dmu_France_CFC_X_97050
+  num: 0
+
+  # Some info from: (1) https://fr.wikipedia.org/wiki/X_97050
+
+  speed: 90                 # ???
+  power: 237                # ???
+  weight: 36                # ???
+  te_coefficient: 0.8      # ???
+
+  gauge: metre
+  propulsion: diesel
+  country: FR
+  builders:
+    - soule
+
+  life:
+    start: 1989
+    end: 2017               # (1) renovation date
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  front:
+    length: 8
+    sprite: front
+    capacity: 44            # ???
+    vfx:
+      offset: -3
+  middle:
+    length: 8
+    sprite: middle
+    capacity: 48
+  back:
+    length: 8
+    sprite: back
+    capacity: 44
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: front
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 1
+        y: 32
+    - id: back
+      <<: *file
+      template: template_2cc_engines_general
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 1
+        y: 1
+    - id: middle_forward
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 64
+    - id: middle_backward
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 96
+  extra: >
+    switch(FEAT_TRAINS, SELF, spriteset_dmu_France_CFC_X_97050_middle, position_in_consist % 2){
+      0: spriteset_dmu_France_CFC_X_97050_middle_forward;
+      1: spriteset_dmu_France_CFC_X_97050_middle_backward;
+    }
