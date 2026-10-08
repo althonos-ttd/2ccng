@@ -187,7 +187,6 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain 
 
 {% block switches %}
 RUNNINGCOSTENGINESWITCH
-EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
 {% endblock %}
 
 /*
@@ -203,7 +202,7 @@ EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
 item(FEAT_TRAINS, ITEM) {
 	property {
         {% block item_property %}
-        name: VEHICLE_NAME(VEHIDCODE);
+        name: string(str_{{ item.id }});
         VEHICLE_REGION
         INTRODUCTIONDATEPROPERTY
         model_life: MODEL_LIFE;
@@ -254,7 +253,6 @@ item(FEAT_TRAINS, ITEM) {
         purchase: spriteset_{{ item.id }}_purchase;
         can_attach_wagon: switch_can_attach_vehicle;
         RUNNINGCOSTENGINESWITCHCALL
-        EXPANDEDPURCHASETEXTSWITCHCALL(VEHIDCODE)
         {% endblock item_graphics %}
     }
     {% block item_extra %}
