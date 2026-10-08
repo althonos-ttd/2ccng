@@ -1,0 +1,39 @@
+
+
+item:
+  id: coach_Narrow_Gen1_Bug_Box_Baggage_Coach
+  num: 0
+
+  speed: 25
+  weight: 3
+
+  gauge: 600mm
+  builders:
+    - brown_marshall
+
+  life:
+    start: 1863
+    end: 1913
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_MAIL
+  cargodef: CARGODEF_MAIL_ONLY
+
+units:
+  wagon:
+    length: 3
+    sprite: coach
+    capacity: 12
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen1/Bug_Box_Baggage_Coach_Purchase.png"
+    x: 1
+    y: 1
+  spritesets:
+    - id: coach
+      filename: "gfx/Coaches/Gen1/Bug_Box_Baggage_Coach.png"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+ 

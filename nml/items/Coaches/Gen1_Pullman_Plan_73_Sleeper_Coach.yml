@@ -1,0 +1,42 @@
+
+
+item:
+  id: coach_Narrow_Gen1_Pullman_Plan_73_Sleeper_Coach
+  num: 0
+
+  # Some info from: (1) https://midcontinent.org/rollingstock/CandS/dsp-passenger/bonanza-leadville-sanjuan3.htm
+
+  speed: 50
+  weight: 18
+
+  gauge: metre
+  builders: 
+    - pullman
+
+  life:
+    start: 1880
+    end: 1975
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS_ONLY
+  age_period: CARGO_AGE_PERIOD_SLEEPER
+
+units:
+  wagon:
+    length: 6
+    sprite: coach
+    capacity: 40
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen1/Pullman_Plan_73_Sleeper_Coach_Purchase.png"
+    x: 1
+    y: 1
+  spritesets:
+    - id: coach
+      filename: "gfx/Coaches/Gen1/Pullman_Plan_73_Sleeper_Coach.png"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+  

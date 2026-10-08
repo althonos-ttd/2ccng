@@ -1,0 +1,67 @@
+
+
+item:
+  id: coach_Narrow_Gen6_GoldenPass_Express_Panorama_Coach
+  num: 0
+
+  speed: 100
+  weight: 27
+
+  gauge: metre
+  builders:
+    - stadler
+
+  driving_cab: true
+
+  life:
+    start: 2000
+
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS_ONLY
+
+units:
+  wagon:
+    length: 8
+    sprite: coach
+    capacity: 54
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen6/GoldenPass_Express_Panorama_Coach_Purchase.xpm"
+    x: 1
+    y: 1
+  spritesets:
+    - id: L1
+      filename: "gfx/Coaches/Gen6/GoldenPass_Express_Panorama_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: L2
+      filename: "gfx/Coaches/Gen6/GoldenPass_Express_Panorama_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 179
+      y: 1
+    - id: L3
+      filename: "gfx/Coaches/Gen6/GoldenPass_Express_Panorama_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 357
+      y: 1
+    - id: control
+      filename: "gfx/Coaches/Gen6/GoldenPass_Express_Control_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+  randomize:
+    - id: normal
+      options:
+        L1: 3
+        L2: 1
+        L3: 1
+  extra: >
+    switch(FEAT_TRAINS, SELF, spriteset_coach_Narrow_Gen6_GoldenPass_Express_Panorama_Coach_coach, position_in_consist_from_end) {
+      0: spriteset_coach_Narrow_Gen6_GoldenPass_Express_Panorama_Coach_control;
+      default: spriteset_coach_Narrow_Gen6_GoldenPass_Express_Panorama_Coach_normal;
+    }
+

@@ -1,0 +1,38 @@
+
+
+item:
+  id: coach_Narrow_Gen5_Glacier_Express_Service_Coach
+  num: 0
+
+  speed: 100
+  weight: 23
+
+  gauge: metre
+  builders:
+    - stadler
+
+  life:
+    start: 2000
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_MAIL
+  cargodef: CARGODEF_MAIL_ONLY
+
+units:
+  wagon:
+    length: 8
+    sprite: coach
+    capacity: 40
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen5/Glacier_Express_Service_Coach_Purchase.png"
+    x: 1
+    y: 1
+  spritesets:
+    - id: coach
+      filename: "gfx/Coaches/Gen5/Glacier_Express_Service_Coach.png"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+

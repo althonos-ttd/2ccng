@@ -1,0 +1,52 @@
+
+
+item:
+  id: coach_Narrow_Gen4_Vietnamese_Sleeper_Coach
+  num: 0
+
+  # Some info from: (1) https://web.archive.org/web/20041206133458/http://www.vr.com.vn/English/Congnghiep/Haiphong/haiphong-Congvu%20phatdien.html
+  #                 (2) https://xeluagialam.vn/dich-vu/i3-san-pham-dong-moi-sua-chua-dau-may-toa-xe.html
+
+  speed: 100
+  weight: 36
+
+  gauge: metre
+  builders:
+    - haiphong
+
+  life:
+    start: 1976
+    end: 2036
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS_ONLY
+  age_period: CARGO_AGE_PERIOD_SLEEPER
+
+units:
+  wagon:
+    length: 8
+    sprite: livery
+    capacity: 42
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen4/Vietnamese_Sleeper_Coach_Purchase.xpm"
+    x: 1
+    y: 1
+  spritesets:
+    - id: L1
+      filename: "gfx/Coaches/Gen4/Vietnamese_Sleeper_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: L2
+      filename: "gfx/Coaches/Gen4/Vietnamese_Sleeper_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 179
+      y: 1
+  randomize:
+    - id: livery
+      options:
+        L1: 7
+        L2: 1

@@ -1,0 +1,34 @@
+
+
+item:
+  id: coach_Narrow_Gen4_MetroBlitz_Coach
+  num: 0
+
+  speed: 150
+  weight: 42
+
+  life:
+    start: 1984
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS_ONLY
+
+units:
+  wagon:
+    length: 8
+    sprite: coach
+    capacity: 60
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen4/MetroBlitz_Coach_Purchase.xpm"
+    x: 1
+    y: 1
+  spritesets:
+    - id: coach
+      filename: "gfx/Coaches/Gen4/MetroBlitz_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+

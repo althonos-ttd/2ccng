@@ -1,0 +1,40 @@
+
+
+item:
+  id: coach_Narrow_Gen6_PNR_8300_Coach
+  num: 0
+
+  speed: 120
+  weight: 37
+
+  gauge: cape
+  builders:
+    - inka
+
+  life:
+    start: 2020
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS_ONLY
+
+units:
+  wagon:
+    length: 8
+    sprite: coach
+    capacity: 88            # Crush load is 266 passenger, this is 2/6th of that 
+                            # to only account for actual seats (and stay
+                            # consistent with other coaches)
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen6/PNR_8300_Coach_Purchase.xpm"
+    x: 1
+    y: 1
+  spritesets:
+    - id: coach
+      filename: "gfx/Coaches/Gen6/PNR_8300_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    

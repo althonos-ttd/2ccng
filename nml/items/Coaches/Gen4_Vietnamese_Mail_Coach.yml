@@ -1,0 +1,42 @@
+
+
+item:
+  id: coach_Narrow_Gen4_Vietnamese_Mail_Coach
+  num: 0
+
+  # Some info from: (1) https://web.archive.org/web/20041206133458/http://www.vr.com.vn/English/Congnghiep/Haiphong/haiphong-Congvu%20phatdien.html
+  #                 (2) https://xeluagialam.vn/dich-vu/i3-san-pham-dong-moi-sua-chua-dau-may-toa-xe.html
+
+  speed: 100
+  weight: 28
+
+  gauge: metre
+  builders:
+    - haiphong
+
+  life:
+    start: 1976
+    end: 2036
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_MAIL
+  cargodef: CARGODEF_MAIL_ONLY
+
+units:
+  wagon:
+    length: 8
+    sprite: coach
+    capacity: 42
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen4/Vietnamese_Mail_Coach_Purchase.xpm"
+    x: 1
+    y: 1
+  spritesets:
+    - id: coach
+      filename: "gfx/Coaches/Gen4/Vietnamese_Mail_Coach.xpm"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+

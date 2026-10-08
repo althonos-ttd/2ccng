@@ -1,0 +1,39 @@
+
+
+item:
+  id: coach_Narrow_Gen0_Early_Passenger_Coach
+  num: 0
+
+  speed: 15
+  weight: 4
+
+  gauge: 600mm
+  builders:
+    - brown_marshall
+
+  life:
+    start: 1800
+    end: 1890
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_INTERCITY
+  cargodef: CARGODEF_PASSENGERS_ONLY
+
+units:
+  wagon:
+    length: 4
+    sprite: coach
+    capacity: 10
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen0/Early_Passenger_Coach_Purchase.png"
+    x: 1
+    y: 1
+  spritesets:
+    - id: coach
+      filename: "gfx/Coaches/Gen0/Early_Passenger_Coach.png"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+ 

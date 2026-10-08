@@ -1,0 +1,56 @@
+
+
+item:
+  id: coach_Narrow_Gen3_56_Foot_Suburban_Coach
+  num: 0
+
+  speed: 80
+  weight: 25
+
+  life:
+    start: 1938
+    end: 1988
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS_ONLY
+
+units:
+  wagon:
+    length: 8
+    sprite: livery
+    capacity: 56
+
+gfx:
+  purchase:
+    filename: "gfx/Coaches/Gen3/56_Foot_Suburban_Coach_Purchase.png"
+    x: 1
+    y: 1
+  spritesets:
+    - id: L1
+      filename: "gfx/Coaches/Gen3/56_Foot_Suburban_Coach.png"
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: L2
+      filename: "gfx/Coaches/Gen3/56_Foot_Suburban_Coach.png"
+      template: template_2cc_engines_general
+      x: 179
+      y: 1
+    - id: L3
+      filename: "gfx/Coaches/Gen3/56_Foot_Suburban_Coach.png"
+      template: template_2cc_engines_general
+      x: 357
+      y: 1
+    - id: L4
+      filename: "gfx/Coaches/Gen3/56_Foot_Suburban_Coach.png"
+      template: template_2cc_engines_general
+      x: 535
+      y: 1
+  randomize:
+    - id: livery
+      options:
+        L1: 7
+        L2: 1
+        L3: 1
+        L4: 1
