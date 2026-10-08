@@ -8,6 +8,9 @@
 
 #ifndef NML_DISABLE_BADGES
 badgetable {
+    /* Marker for coaches with control car */
+    "attribute/push_pull",
+
     /* Locomotive builder */
     "builder",
     "builder/23_august",

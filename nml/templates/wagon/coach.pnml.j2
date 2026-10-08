@@ -1,0 +1,15 @@
+{% extends "base.pnml.j2" %}
+
+{% block item_property %}
+{{ super() }}
+{% if item.driving_cab is defined and item.driving_cab %}
+extra_flags: bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+{% endif %}
+{% endblock item_property %}
+
+{% block item_badges %}
+{{ super() }}
+{% if item.driving_cab is defined and item.driving_cab %}
+"attribute/push_pull",
+{% endif %}
+{% endblock item_badges %}
