@@ -88,17 +88,6 @@ switch(FEAT_TRAINS, PARENT, spriteset_{{ item.id }}_{{ spriteset.id }}, train_is
     0: spriteset_{{ item.id }}_{{ spriteset.id }}_fwd;
     spriteset_{{ item.id }}_{{ spriteset.id }}_bwd;
 }
-{% elif spriteset.loading is defined and spriteset.loaded is defined %}
-spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}_loading, {{ spriteset.filename|tojson }}) {
-    {{ spriteset.template }}({{ spriteset.loading.x }}, {{ spriteset.loading.y }})
-}
-spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}_loaded, {{ spriteset.filename|tojson }}) {
-    {{ spriteset.template }}({{ spriteset.loaded.x }}, {{ spriteset.loaded.y }})
-}
-spritegroup spriteset_{{ item.id }}_{{ spriteset.id }} {
-    loading: spriteset_{{ item.id }}_{{ spriteset.id }}_loading;
-    loaded: spriteset_{{ item.id }}_{{ spriteset.id }}_loaded;
-}
 {% else %}
 spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}, {{ spriteset.filename|tojson }}) {
     {{ spriteset.template }}({{ spriteset.x }}, {{ spriteset.y }})
