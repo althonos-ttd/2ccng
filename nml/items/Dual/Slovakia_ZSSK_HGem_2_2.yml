@@ -1,0 +1,53 @@
+.file: &file
+  filename: "gfx/Dual/Slovakia_ZSSK_HGem_2_2.xpm"
+
+item:
+  id: dual_Slovakia_ZSSK_HGem_2_2
+  num: 0
+
+  speed: 
+    diesel: 60
+    electric: 60
+  power: 
+    diesel: 536
+    electric: 938
+  
+  weight: 29
+  te: 75
+
+  gauge: metre
+  propulsion: dual
+  country: SK
+  builders:
+    - stadler
+
+  life:
+    start: 2016
+
+units:
+  - length: 4
+    sprite:
+      powered: pantograph_up
+      unpowered: pantograph_down
+    vfx:
+      powered:
+        offset: 2
+      unpowered:
+        offset: -2
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: pantograph_up
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: pantograph_down
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32

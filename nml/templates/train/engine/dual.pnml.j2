@@ -1,0 +1,64 @@
+{% extends "base.pnml.j2" %}
+
+{% set VISUAL_EFFECT = "VISUAL_EFFECT_DIESEL" %}
+
+{% block properties_power %}
+#define POWER_DIESEL   {{ item.power.diesel }}
+#define POWER_ELECTRIC {{ item.power.electric }}
+#define POWER max(POWER_DIESEL, POWER_ELECTRIC)
+{% endblock properties_power %}
+{% block properties_speed %}
+#define SPEED_DIESEL   {{ item.speed.diesel }}
+#define SPEED_ELECTRIC {{ item.speed.electric }}
+#define SPEED min(SPEED_DIESEL, SPEED_ELECTRIC)
+{% endblock properties_speed %}
+
+{% block graphics_vfx %}
+{% with n_units = units | length %}
+{% for unit in units %}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect_{{ loop.index0 }}, tile_powers_railtype("ELNR")) {
+	0: return visual_effect_and_powered(VISUAL_EFFECT_DIESEL,   {{ unit.vfx.unpowered.offset }}, DISABLE_WAGON_POWER);
+	1: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, {{ unit.vfx.powered.offset }},   DISABLE_WAGON_POWER);
+}
+{% endfor %}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
+    {% for unit in units %}
+    {{ loop.index0 }}: switch_{{ item.id }}_visual_effect_{{ loop.index0 }};
+    {% endfor %}
+}
+{% endwith %}
+{% endblock graphics_vfx %}
+
+{% block graphics_default %}
+{% with n_units = units | length %}
+{{ self.graphics_articulated() }}
+{% for unit in units %}
+switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ loop.index0 }}, tile_powers_railtype("ELNR")) {
+	0: spriteset_{{ item.id }}_{{ unit.sprite.unpowered }};
+	1: spriteset_{{ item.id }}_{{ unit.sprite.powered }};
+}
+{% endfor %}
+{# Dispatch for the whole vehicle #}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % {{ n_units }}) {
+    {% for unit in units %}
+    {{ loop.index0 }}: spriteset_{{ item.id }}_{{ loop.index0 }};
+    {% endfor %}
+}
+{% endwith %}
+{% endblock graphics_default %}
+
+{% block switches %}
+{{ super() }}
+DUALPOWERSWITCH(VEHIDCODE)
+DUALSPEEDSWITCH(VEHIDCODE)
+DUALRUNNINGCOSTSWITCH(VEHIDCODE)
+EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+{% endblock switches %}
+
+{% block item_graphics %}
+{{ super() }}
+power: switch_{{ item.id }}_power;
+speed: switch_{{ item.id }}_speed;
+running_cost_factor: switch_{{ item.id }}_running_cost;
+EXPANDEDPURCHASETEXTSWITCHCALL(VEHIDCODE)
+{% endblock item_graphics %}

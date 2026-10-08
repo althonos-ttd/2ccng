@@ -1,0 +1,54 @@
+.file: &file
+  filename: "gfx/Dual/Ecuador_FEEP_TD2000.xpm"
+
+item:
+  id: dual_Ecuador_FEEP_TD2000
+  num: 0
+
+  speed: 
+    diesel: 80
+    electric: 80
+  power: 
+    diesel: 2011
+    electric: 1609
+  
+  weight: 62
+  te_coefficient: 0.43
+
+  gauge: cape
+  propulsion: dual
+  country: EC
+  builders:
+    - cfd
+
+  life:
+    start: 1970
+    end: 2001
+
+units:
+  - length: 7
+    sprite:
+      powered: pantograph_up
+      unpowered: pantograph_down
+    vfx:
+      powered:
+        offset: 3
+      unpowered:
+        offset: -3
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: pantograph_up
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: pantograph_down
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 27

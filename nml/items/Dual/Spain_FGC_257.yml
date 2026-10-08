@@ -1,0 +1,53 @@
+.file: &file
+  filename: "gfx/Dual/Spain_FGC_257.xpm"
+
+item:
+  id: dual_Spain_FGC_257
+  num: 0
+
+  speed: 
+    diesel: 80
+    electric: 80
+  power: 
+    diesel: 1273
+    electric: 2682
+  
+  weight: 90
+  te_coefficient: 0.448
+
+  gauge: metre
+  propulsion: dual
+  country: ES
+  builders:
+    - stadler
+
+  life:
+    start: 2016
+
+units:
+  - length: 8
+    sprite:
+      powered: pantograph_up
+      unpowered: pantograph_down
+    vfx:
+      powered:
+        offset: 3
+      unpowered:
+        offset: -3
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 64
+  spritesets:
+    - id: pantograph_up
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1
+    - id: pantograph_down
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 32
