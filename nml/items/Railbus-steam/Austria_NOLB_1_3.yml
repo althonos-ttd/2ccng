@@ -1,0 +1,46 @@
+.file: &file
+  filename: "gfx/Railbus-steam/Austria_NOLB_1_3.png"
+
+item:
+  id: rbs_Austria_NOLB_1_3
+  num: 0
+
+  # Some info from: (1)
+
+  speed: 35                 # ???
+  power: 39                 # ???
+  weight: 8                 # ???
+  te_coefficient: 0.18      # ???
+
+  gauge: bosnian
+  propulsion: steam
+  country: AT
+  builders:
+    - komarek
+
+  life:
+    start: 1903
+    end: 1933               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 5
+    sprite: engine
+    capacity: 22
+    vfx:
+      offset: 0
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 32
+  spritesets:
+    - id: engine
+      <<: *file
+      template: template_2cc_engines_general
+      x: 1
+      y: 1

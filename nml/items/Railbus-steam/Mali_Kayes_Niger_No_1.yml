@@ -1,0 +1,68 @@
+.file: &file
+  filename: "gfx/Railbus-steam/Mali_Kayes_Niger_No_1.xpm"
+
+item:
+  id: rbs_Mali_Kayes_Niger_No_1
+  num: 0
+
+  # Some info from: (1) https://fr.wikipedia.org/wiki/Chemin_de_fer_de_Kayes_au_Niger#/media/Fichier:FF_33_-_LES_LOCOMOTIVES_FRANCAISES_(Cies_diverses)_Voiture_automotrice_%C3%A0_vapeur_KNVA_n%C2%B01.jpg
+
+  speed: 50                 # ???
+  power: 86                 # ???
+  weight: 27                # ???
+  te_coefficient: 0.09      # ???
+
+  gauge: cape
+  propulsion: steam
+  country: ZA
+  builders:
+    - kitson
+
+  life:
+    start: 1905
+    end: 1950               # ???
+
+cargo:
+  loading_speed: LOADINGSPEEDDEF_COMMUTER
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  - length: 5
+    sprite: engine
+    capacity: 24
+    vfx:
+      offset: -2
+  - length: 4
+    capacity: 18
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 128
+  spritesets:
+    - id: engine1
+      <<: *file
+      template: template_2cc_L12
+      x: 1
+      y: 1
+    - id: engine2
+      <<: *file
+      template: template_2cc_L12
+      x: 1
+      y: 38
+    - id: loading
+      <<: *file
+      template: template_2cc_L12
+      x: 1
+      y: 75
+  loadsets:
+    - id: engine1_load
+      loading: [loading]
+      loaded: [engine1]
+    - id: engine2_load
+      loading: [loading]
+      loaded: [engine2]
+  animations:
+    - id: engine
+      steps: [engine1_load, engine2_load]
