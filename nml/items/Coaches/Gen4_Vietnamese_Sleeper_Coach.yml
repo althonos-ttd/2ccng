@@ -37,12 +37,12 @@ gfx:
   spritesets:
     - id: L1
       filename: "gfx/Coaches/Gen4/Vietnamese_Sleeper_Coach.xpm"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 1
     - id: L2
       filename: "gfx/Coaches/Gen4/Vietnamese_Sleeper_Coach.xpm"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 179
       y: 1
   randomize:

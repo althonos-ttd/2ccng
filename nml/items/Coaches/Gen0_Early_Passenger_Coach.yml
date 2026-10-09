@@ -1,15 +1,9 @@
-
-
 item:
   id: coach_Narrow_Gen0_Early_Passenger_Coach
   num: 0
 
   speed: 15
   weight: 4
-
-  gauge: 600mm
-  builders:
-    - brown_marshall
 
   life:
     start: 1800
@@ -33,7 +27,7 @@ gfx:
   spritesets:
     - id: coach
       filename: "gfx/Coaches/Gen0/Early_Passenger_Coach.png"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 1
  

@@ -29,12 +29,12 @@ gfx:
   spritesets:
     - id: closed
       filename: "gfx/Coaches/Gen3/56_Foot_Mail_Coach.png"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 1
     - id: open
       filename: "gfx/Coaches/Gen3/56_Foot_Mail_Coach.png"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 32
   loadsets:

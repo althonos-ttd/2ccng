@@ -1,15 +1,9 @@
-
-
 item:
   id: coach_Narrow_Gen0_Early_Baggage_Coach
   num: 0
 
   speed: 15
   weight: 4
-
-  gauge: 600mm
-  builders:
-    - brown_marshall
 
   life:
     start: 1800
@@ -33,17 +27,17 @@ gfx:
   spritesets:
     - id: S1
       filename: "gfx/Coaches/Gen0/Early_Baggage_Coach.png"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 1
     - id: S2
       filename: "gfx/Coaches/Gen0/Early_Baggage_Coach.png"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 32
     - id: S3
       filename: "gfx/Coaches/Gen0/Early_Baggage_Coach.png"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 64
   loadsets:

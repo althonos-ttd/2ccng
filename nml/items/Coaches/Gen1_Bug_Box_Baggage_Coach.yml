@@ -33,7 +33,7 @@ gfx:
   spritesets:
     - id: coach
       filename: "gfx/Coaches/Gen1/Bug_Box_Baggage_Coach.png"
-      template: template_2cc_engines_general
+      template: template_2cc_wagons
       x: 1
       y: 1
  
