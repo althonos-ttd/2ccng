@@ -16,8 +16,8 @@ item:
     end: 1890
 
 cargo:
-  loading_speed: LOADINGSPEEDDEF_INTERCITY
-  cargodef: CARGODEF_PASSENGERS_ONLY
+  loading_speed: LOADINGSPEEDDEF_MAIL
+  cargodef: CARGODEF_MAIL_ONLY
 
 units:
   wagon:
