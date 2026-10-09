@@ -89,8 +89,8 @@ all: $(GENERATE_GRF) $(GENERATE_DOC) bundle_tar
 .SUFFIXES:
 
 # Don't delete intermediate files
-.PRECIOUS: %.nml %.scm %.png
-.SECONDARY: %.nml %.scm %.png
+.PRECIOUS: 
+.SECONDARY: 
 
 ################################################################
 # Programme definitions / search paths
