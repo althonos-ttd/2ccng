@@ -25,8 +25,8 @@
 #define RETIRE_EARLY DEFAULT_RETIRE_EARLY
 #define VEHICLE_LIFE 40
 
-#define LOADINGSPEED LOADINGSPEEDDEF_INTERCITY
-#define CARGODEF CARGODEF_PASSENGERS_ONLY
+#define LOADINGSPEED {{ cargo.loading_speed }}
+#define CARGODEF {{ cargo.cargodef }}
 
 #define SPEED {{ item.speed }}
 #define WEIGHT {{ item.weight }}
@@ -38,7 +38,11 @@
 
 #define DUAL_HEADED 0
 #define PASSENGER 1
+{% if cargo.autorefit is defined and cargo.autorefit %}
+#define MISC_FLAGS bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT)
+{% else %}
 #define MISC_FLAGS bitmask(TRAIN_FLAG_2CC)
+{% endif %}
 #define VISUAL_FLAG visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER)
 
 #define TRACK_TYPE CURRENT_TRACK_TYPE
