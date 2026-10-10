@@ -41,7 +41,7 @@
 #define CARGODEF_TANKER          refittable_cargo_classes: bitmask(CC_LIQUID_BULK, CC_GAS_BULK); non_refittable_cargo_classes: 0; cargo_disallow_refit: [FOOD];
 
 // -- Open and closed wagons --
-#define CARGODEF_OPEN_WAGON      refittable_cargo_classes: bitmask(CC_OPEN_BULK); non_refittable_cargo_classes: 0;
+#define CARGODEF_OPEN_WAGON      refittable_cargo_classes: bitmask(CC_OPEN_BULK); non_refittable_cargo_classes: 0; cargo_allow_refit: [FRUT, FRVG, BEAN];
 #define CARGODEF_CLOSED_WAGON    refittable_cargo_classes: bitmask(CC_COVERED_BULK); non_refittable_cargo_classes: 0;
 
 // -- Gondolas --
