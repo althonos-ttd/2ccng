@@ -1,0 +1,49 @@
+item:
+  id: wagon_Narrow_Gen1_Tanker
+  num: 0
+
+  speed: 35
+  weight: 4
+
+  life:
+    start: 1830
+    end: 1920
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_TANKER
+
+units:
+  wagon:
+    length: 3
+    sprite: standard
+    capacity: 8
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen1/Tanker/Purchase.png"
+    x: 1
+    y: 1
+
+  combine:
+    default: standard
+    loadstages:
+      loading: [S1]
+      loaded: [S1]
+      stages:
+      - id: S1
+        y: 1
+    liveries:
+      - id: L1
+        x: 1
+      - id: L2
+        x: 179
+      - id: L3
+        x: 357
+      - id: L4
+        x: 535
+    cargos:
+      - id: standard
+        filename: "build/gfx/Gen1_Tanker_Standard.png"
+

@@ -258,18 +258,10 @@
 
 //wagons
 #include "src/_CodeSupport/TypeInitialization/init_type_Wagon.pnml"
-#include "src/Wagons/Gen1/Gen1_Flat_Wagon_property.pnml"
-#include "src/Wagons/Gen1/Gen1_Flat_Wagon_graphics.pnml"
-#include "src/Wagons/Gen1/Gen1_Flat_Wagon_item.pnml"
-#include "src/Wagons/Gen1/Gen1_Boxcar_property.pnml"
-#include "src/Wagons/Gen1/Gen1_Boxcar_graphics.pnml"
-#include "src/Wagons/Gen1/Gen1_Boxcar_item.pnml"
-#include "src/Wagons/Gen1/Gen1_Tanker_property.pnml"
-#include "src/Wagons/Gen1/Gen1_Tanker_graphics.pnml"
-#include "src/Wagons/Gen1/Gen1_Tanker_item.pnml"
-#include "src/Wagons/Gen1/Gen1_Open_Wagon_property.pnml"
-#include "src/Wagons/Gen1/Gen1_Open_Wagon_graphics.pnml"
-#include "src/Wagons/Gen1/Gen1_Open_Wagon_item.pnml"
+#include "src/Wagons/Gen1_Flat_Wagon.pnml"
+#include "src/Wagons/Gen1_Boxcar.pnml"
+#include "src/Wagons/Gen1_Tanker.pnml"
+#include "src/Wagons/Gen1_Open_Wagon.pnml"
 #include "src/Wagons/Gen2/Gen2_Flat_Wagon_property.pnml"
 #include "src/Wagons/Gen2/Gen2_Flat_Wagon_graphics.pnml"
 #include "src/Wagons/Gen2/Gen2_Flat_Wagon_item.pnml"
@@ -306,9 +298,7 @@
 #include "src/Wagons/Gen3/Gen3_Tanker_property.pnml"
 #include "src/Wagons/Gen3/Gen3_Tanker_graphics.pnml"
 #include "src/Wagons/Gen3/Gen3_Tanker_item.pnml"
-#include "src/Wagons/Gen4/Gen4_Container_Carrier_property.pnml"
-#include "src/Wagons/Gen4/Gen4_Container_Carrier_graphics.pnml"
-#include "src/Wagons/Gen4/Gen4_Container_Carrier_item.pnml"
+#include "src/Wagons/Gen4_Container_Carrier.pnml"
 
 //obsolete vehicles
 

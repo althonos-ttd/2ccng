@@ -1,0 +1,74 @@
+item:
+  id: wagon_Narrow_Gen1_Flat_Wagon
+  num: 0
+
+  speed: 35
+  weight: 2
+
+  life:
+    start: 1830
+    end: 1920
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_FLAT_WAGON
+
+units:
+  wagon:
+    length: 3
+    sprite: crates
+    capacity: 7
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen1/Flat_Wagon/Purchase.png"
+    x: 1
+    y: 1
+
+  combine:
+    default: crates
+    loadstages:
+      loading: [S1, S2, S3]
+      loaded: [S1, S2, S3]
+      stages:
+        - id: S1
+          y: 1
+        - id: S2
+          y: 27
+        - id: S3
+          y: 53
+    liveries:
+      - id: L1
+        x: 1
+      - id: L2
+        x: 179
+      - id: L3
+        x: 357
+      - id: L4
+        x: 535
+    cargos:
+      - id: planks
+        filename: "build/gfx/Gen1_Flat_Wagon_Planks.png"
+        cargos: [WDPR]
+      - id: crates
+        filename: "build/gfx/Gen1_Flat_Wagon_Crates.png"
+      - id: steel
+        filename: "build/gfx/Gen1_Flat_Wagon_Steel.png"
+        cargos: [STEL]
+      - id: horse
+        filename: "build/gfx/Gen1_Flat_Wagon_Horse.png"
+      - id: wood
+        filename: "build/gfx/Gen1_Flat_Wagon_Wood.png"
+        cargos: [WOOD]
+    random:
+      - id: goods
+        cargos: [GOOD, ENSP]
+        options:
+          crates: 7
+          horse: 3
+      - id: building_materials
+        cargos: [BDMT]
+        options:
+          planks: 1
+          steel: 1

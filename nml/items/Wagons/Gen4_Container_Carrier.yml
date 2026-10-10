@@ -1,0 +1,100 @@
+item:
+  id: wagon_Narrow_Gen4_Container_Carrier
+  num: 0
+
+  speed: 35
+  weight: 2
+
+  life:
+    start: 1830
+    end: 1920
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_BOXCAR
+
+units:
+  wagon:
+    length: 3
+    sprite: standard
+    capacity: 7
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen4/Container_Carrier/Purchase.xpm"
+    x: 1
+    y: 1
+
+  combine:
+    default: container
+    loadstages:
+      loading: [S1, S2, S3, S4]
+      loaded: [S1, S2, S3, S4]
+      stages:
+        - id: S1
+          y: 1
+        - id: S2
+          y: 27
+        - id: S3
+          y: 53
+        - id: S4
+          y: 79
+    liveries:
+      - id: L1
+        x: 1
+      - id: L2
+        x: 179
+    cargos:
+      - id: container_1
+        filename: "build/gfx/Gen4_Container_Carrier_Container_1.png"
+      - id: container_2
+        filename: "build/gfx/Gen4_Container_Carrier_Container_2.png"
+      - id: container_3
+        filename: "build/gfx/Gen4_Container_Carrier_Container_3.png"
+      - id: refrigerated_1
+        filename: "build/gfx/Gen4_Container_Carrier_Refrigerated_1.png"
+      - id: refrigerated_2
+        filename: "build/gfx/Gen4_Container_Carrier_Refrigerated_2.png"
+      - id: refrigerated_3
+        filename: "build/gfx/Gen4_Container_Carrier_Refrigerated_3.png"
+      - id: tanktainer_1
+        filename: "build/gfx/Gen4_Container_Carrier_Tanktainer_1.png"
+      - id: tanktainer_2
+        filename: "build/gfx/Gen4_Container_Carrier_Tanktainer_2.png"
+      - id: tanktainer_3
+        filename: "build/gfx/Gen4_Container_Carrier_Tanktainer_3.png"
+    random:
+      - id: container
+        options:
+          container_1: 4
+          container_2: 4
+          container_3: 4
+      - id: tanktainer
+        cargos: [
+          # Oil & Fuel
+          OIL_, OILI, OILD, PETR, RFPR, 
+          # Chemicals 
+          ACID, CHEM, SULP, NH3_, LYE_, O2__, 
+          # Plastic
+          PLST, PLAS,
+          # Liquid
+          RUBR, WATR, COLA, BEER, DYES, OIL_
+        ]
+        options:
+          tanktainer_1: 4
+          tanktainer_2: 4
+          tanktainer_3: 4
+      - id: refrigerated
+        cargos: [FOOD, FRUT, FRVG, FZDR, FISH, MILK]
+        options:
+          refrigerated_1: 4
+          refrigerated_2: 4
+          refrigerated_3: 4
+      - id: goods
+        cargos: [GOOD]
+        options:
+          container: 7
+          refrigerated: 2
+          tanktainer: 1
+      

@@ -1,0 +1,46 @@
+.sprite: &sprite
+  template: template_2cc_wagons
+  filename: "build/gfx/Gen1_Boxcar_Standard.png"
+
+item:
+  id: wagon_Narrow_Gen1_Boxcar
+  num: 0
+
+  speed: 35
+  weight: 4
+
+  life:
+    start: 1830
+    end: 1920
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_BOXCAR
+
+units:
+  wagon:
+    length: 3
+    sprite: standard
+    capacity: 7
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen1/Boxcar/Purchase.png"
+    x: 1
+    y: 1
+
+  combine:
+    default: standard
+    loadstages:
+      loading: [S1]
+      loaded: [S1]
+      stages:
+        - id: S1
+          y: 1
+    liveries:
+      - id: L1
+        x: 1
+    cargos:
+      - id: standard
+        filename: "build/gfx/Gen1_Boxcar_Standard.png"
