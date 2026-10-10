@@ -48,55 +48,57 @@
 {% block graphics_animations %}
 {% endblock %}
 
-{% set ns = namespace(dependent="")%}
 {% block graphics_cargosets %}
-    {# Generate the random cargo combinations #}
+    {# We need a (useless) random switch to signal which 4 random bits to use for cargo selection  #}
+    random_switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_randomize_cargo) {
+        8: 0;
+        8: 1;
+    }
     {% if gfx.combine.random is defined %}
+    {# Generate the random cargo combinations #}
     {% for livery in gfx.combine.liveries %}
         {% for randomset in gfx.combine.random %}
         random_switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ livery.id }}_{{ randomset.id }}, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
-            {% if ns.dependent %}
-            dependent: {{ ns.dependent }};
-            {% endif %}
-            {# dependent: switch_{{ item.id }}_randomize_cargo; #}
+            dependent: switch_{{ item.id }}_randomize_cargo;
             {%- for option, proba  in randomset.options | items %}
             {{ proba }}: spriteset_{{ item.id }}_{{ livery.id }}_{{ option }};
             {%- endfor %}
         }
-        {% set ns.dependent = "spriteset_%s_%s_%s" | format(item.id, livery.id, randomset.id) %}
         {% endfor %}
     {% endfor %}
     {% endif %}
 {% endblock graphics_cargosets %}
 
 {% block graphics_randomize %}
-{# Generate the cargo switch per livery #}
-{% for livery in gfx.combine.liveries %}
-switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_{{ livery.id }}_cargo_selection, cargo_type_in_veh) {
-    {%- for spriteset in gfx.combine.cargos | chain(gfx.combine.random) %}
-    {%- if spriteset.cargos is defined -%}
-    {%- for cargo in spriteset.cargos -%}
-    {{ cargo }}: spriteset_{{ item.id }}_{{ livery.id }}_{{ spriteset.id }};
-    {% endfor -%}
-    {%- endif %}
-    {%- endfor -%}
-    default: spriteset_{{ item.id }}_{{ livery.id }}_{{ gfx.combine.default }};
-}
-{% endfor %}
+    {# Generate the cargo switch per livery #}
+    {% for livery in gfx.combine.liveries %}
+    switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_{{ livery.id }}_cargo_selection, cargo_type_in_veh) {
+        {%- for spriteset in gfx.combine.cargos | chain(gfx.combine.random) %}
+            {%- if spriteset.cargos is defined -%}
+                {%- for cargo in spriteset.cargos -%}
+                {{ cargo }}: spriteset_{{ item.id }}_{{ livery.id }}_{{ spriteset.id }};
+                {% endfor -%}
+            {%- endif %}
+        {%- endfor -%}
+        default: spriteset_{{ item.id }}_{{ livery.id }}_{{ gfx.combine.default }};
+    }
+    {% endfor %}
 {% endblock graphics_randomize %}
 
 {# {{ self.graphics_extra() }} #}
 
 {% block graphics_default %}
 {# Randomize the liveries #}
-random_switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default) {
-    {% if ns.dependent %}
-    {# independent: switch_{{ item.id }}_randomize_cargo; #}
-    independent: {{ ns.dependent }};
-    {% endif %}
+random_switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_livery_selection) {
+    independent: switch_{{ item.id }}_randomize_cargo;
     {% for livery in gfx.combine.liveries %}
     1: switch_{{ item.id }}_{{ livery.id }}_cargo_selection;
     {%- endfor %}
+}
+{# Use a switch with unreachable features to ensure the random cargo selection is not optimized out #}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, vehicle_type_id) {
+    item_{{ item.id }}: switch_{{ item.id }}_livery_selection;
+    default: switch_{{ item.id }}_randomize_cargo;
 }
 {% endblock graphics_default %}
 {# {% endset %} #}
