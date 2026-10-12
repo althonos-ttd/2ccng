@@ -1,10 +1,12 @@
 
 .DELETE_ON_ERROR:
 
+DATA_FILES = $(wildcard nml/data/*.yml)
+
 nml/templates/train/engine/diesel.pnml.j2: nml/templates/train/engine/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/Diesel/%.pnml: nml/templates/train/engine/diesel.pnml.j2 nml/items/Diesel/%.yml nml/data/geoscheme.yml
+src/Diesel/%.pnml: nml/templates/train/engine/diesel.pnml.j2 nml/items/Diesel/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^ 
 
@@ -14,7 +16,7 @@ PNML_DIESEL_FILES = $(foreach x,$(YAML_DIESEL_FILES),$(patsubst nml/items/Diesel
 nml/templates/train/engine/electric.pnml.j2: nml/templates/train/engine/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/Electric/%.pnml: nml/templates/train/engine/electric.pnml.j2 nml/items/Electric/%.yml nml/data/geoscheme.yml
+src/Electric/%.pnml: nml/templates/train/engine/electric.pnml.j2 nml/items/Electric/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -24,7 +26,7 @@ PNML_ELEC_FILES = $(foreach x,$(YAML_ELEC_FILES),$(patsubst nml/items/Electric/%
 nml/templates/train/engine/steam.pnml.j2: nml/templates/train/engine/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/Steam/%.pnml: nml/templates/train/engine/diesel.pnml.j2 nml/items/Steam/%.yml nml/data/geoscheme.yml
+src/Steam/%.pnml: nml/templates/train/engine/diesel.pnml.j2 nml/items/Steam/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -34,7 +36,7 @@ PNML_STEAM_FILES = $(foreach x,$(YAML_STEAM_FILES),$(patsubst nml/items/Steam/%.
 nml/templates/train/mu/emu.pnml.j2: nml/templates/train/mu/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/EMU/%.pnml: nml/templates/train/mu/emu.pnml.j2 nml/items/EMU/%.yml nml/data/geoscheme.yml
+src/EMU/%.pnml: nml/templates/train/mu/emu.pnml.j2 nml/items/EMU/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -44,7 +46,7 @@ PNML_EMU_FILES = $(foreach x,$(YAML_EMU_FILES),$(patsubst nml/items/EMU/%.yml,sr
 nml/templates/train/mu/dmu.pnml.j2: nml/templates/train/mu/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/DMU/%.pnml: nml/templates/train/mu/dmu.pnml.j2 nml/items/DMU/%.yml nml/data/geoscheme.yml
+src/DMU/%.pnml: nml/templates/train/mu/dmu.pnml.j2 nml/items/DMU/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -54,7 +56,7 @@ PNML_DMU_FILES = $(foreach x,$(YAML_DMU_FILES),$(patsubst nml/items/DMU/%.yml,sr
 nml/templates/train/railbus/steam.pnml.j2: nml/templates/train/railbus/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/Railbus-steam/%.pnml: nml/templates/train/railbus/steam.pnml.j2 nml/items/Railbus-steam/%.yml nml/data/geoscheme.yml
+src/Railbus-steam/%.pnml: nml/templates/train/railbus/steam.pnml.j2 nml/items/Railbus-steam/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -64,7 +66,7 @@ PNML_RBS_FILES = $(foreach x,$(YAML_RBS_FILES),$(patsubst nml/items/Railbus-stea
 nml/templates/train/railbus/diesel.pnml.j2: nml/templates/train/railbus/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/Railbus-diesel/%.pnml: nml/templates/train/railbus/diesel.pnml.j2 nml/items/Railbus-diesel/%.yml nml/data/geoscheme.yml
+src/Railbus-diesel/%.pnml: nml/templates/train/railbus/diesel.pnml.j2 nml/items/Railbus-diesel/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -74,7 +76,7 @@ PNML_RBD_FILES = $(foreach x,$(YAML_RBD_FILES),$(patsubst nml/items/Railbus-dies
 nml/templates/train/railbus/electric.pnml.j2: nml/templates/train/railbus/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/Railbus-electric/%.pnml: nml/templates/train/railbus/electric.pnml.j2 nml/items/Railbus-electric/%.yml nml/data/geoscheme.yml
+src/Railbus-electric/%.pnml: nml/templates/train/railbus/electric.pnml.j2 nml/items/Railbus-electric/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -84,7 +86,7 @@ PNML_RBE_FILES = $(foreach x,$(YAML_RBE_FILES),$(patsubst nml/items/Railbus-elec
 nml/templates/train/engine/dual.pnml.j2: nml/templates/train/engine/base.pnml.j2 nml/templates/train/train.pnml.j2
 	$(_V) touch $@
 
-src/Dual/%.pnml: nml/templates/train/engine/dual.pnml.j2 nml/items/Dual/%.yml nml/data/geoscheme.yml
+src/Dual/%.pnml: nml/templates/train/engine/dual.pnml.j2 nml/items/Dual/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -101,7 +103,7 @@ PNML_DUAL_FILES = $(foreach x,$(YAML_DUAL_FILES),$(patsubst nml/items/Dual/%.yml
 nml/templates/wagon/coach.pnml.j2: nml/templates/wagon/base.pnml.j2
 	$(_V) touch $@
 
-src/Coaches/%.pnml: nml/templates/wagon/coach.pnml.j2 nml/items/Coaches/%.yml nml/data/geoscheme.yml
+src/Coaches/%.pnml: nml/templates/wagon/coach.pnml.j2 nml/items/Coaches/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 
@@ -114,7 +116,7 @@ PNML_COACHES_FILES = $(foreach x,$(YAML_COACHES_FILES),$(patsubst nml/items/Coac
 nml/templates/wagon/wagon.pnml.j2: nml/templates/wagon/base.pnml.j2
 	$(_V) touch $@
 
-src/Wagons/%.pnml: nml/templates/wagon/wagon.pnml.j2 nml/items/Wagons/%.yml nml/data/geoscheme.yml
+src/Wagons/%.pnml: nml/templates/wagon/wagon.pnml.j2 nml/items/Wagons/%.yml $(DATA_FILES)
 	$(_E) "[J2]" $(@F)
 	$(_V) minijinja-cli --strict -o $@ $^
 

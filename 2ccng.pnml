@@ -24,8 +24,6 @@
 #include "src/templates.pnml"
 //cargo translation table
 #include "src/cargotable.pnml"
-//cargo refit definitions
-#include "src/cargorefits.pnml"
 //cargo aging definitions
 #include "src/cargoage.pnml"
 //loading speeds

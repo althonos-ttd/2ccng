@@ -1,0 +1,16 @@
+{% block item_property_cargodef %}
+{% with cargodef = CARGODEFS[cargo.cargodef] if cargo is defined and cargo.cargodef is defined else CARGODEFS["CARGODEF_NONE"] %}
+{% if cargodef.refittable is defined -%}
+refittable_cargo_classes: bitmask({% for cargo in cargodef.refittable %} {{ cargo }}, {% endfor %});
+{%- endif %}
+{% if cargodef.non_refittable is defined -%}
+non_refittable_cargo_classes: bitmask({% for cargo in cargodef.non_refittable %} {{ cargo }}, {% endfor %});
+{%- endif %}
+{% if cargodef.allow is defined -%}
+cargo_allow_refit: [ {% for cargo in cargodef.allow %} {{ cargo }}, {% endfor %} ];
+{%- endif %}
+{% if cargodef.disallow is defined -%}
+cargo_disallow_refit: [ {% for cargo in cargodef.disallow %} {{ cargo }}, {% endfor %} ];
+{%- endif %}
+{% endwith %}
+{% endblock %}
