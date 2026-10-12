@@ -6,7 +6,6 @@
  *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef NML_DISABLE_BADGES
 badgetable {
     /* Marker for coaches with control car */
     "attribute/push_pull",
@@ -240,11 +239,5 @@ badgetable {
 #define BADGESPROPERTY badges: [VEHICLE_BADGES];
 
 #include "_Badges/builder.pnml"
-#include "_Badges/flag.pnml"
 #include "_Badges/power.pnml"
 #include "_Badges/railgauge.pnml"
-#include "_Badges/region.pnml"
-
-#else
-#define BADGESPROPERTY
-#endif

@@ -1,13 +1,3 @@
-#define BADGE_POWER_DIESEL      "power/diesel"
-#define BADGE_POWER_DUAL        "power/dual"
-#define BADGE_POWER_ELECTRIC    "power/electric"
-#define BADGE_POWER_ELECTRIC_AC "power/electric/ac", "power/electric"
-#define BADGE_POWER_ELECTRIC_DC "power/electric/dc", "power/electric"
-#define BADGE_POWER_PETROL      "power/gasoline"
-#define BADGE_POWER_STEAM       "power/steam"
-#define BADGE_POWER_TURBINE     "power/diesel"
-#define BADGE_POWER_METRO       "power/metro"
-
 item(FEAT_BADGES, badge_power) {
     property {
         label: "power";
