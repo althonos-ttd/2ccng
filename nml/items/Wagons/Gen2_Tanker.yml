@@ -1,0 +1,95 @@
+item:
+  id: wagon_Narrow_Gen2_Tanker
+  num: 0
+
+  speed: 55
+  weight: 6
+
+  life:
+    start: 1890
+    end: 1950
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_TANKER
+
+units:
+  wagon:
+    length: 4
+    sprite: standard
+    capacity: 10
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen2/Tanker/Purchase.png"
+    x: 1
+    y: 1
+  combine:
+    default: oil
+    rerandomize_cargos: false
+    loadstages:
+      loading: [S1]
+      loaded: [S1]
+      stages:
+      - id: S1
+        y: 1
+    liveries:
+      - id: L1
+        x: 1
+      - id: L2
+        x: 179
+      - id: L3
+        x: 357
+      - id: L4
+        x: 535
+    cargos:
+      - id: cc1
+        filename: "build/gfx/Gen2_Tanker_CC1.png"
+      - id: cc2
+        filename: "build/gfx/Gen2_Tanker_CC2.png"
+      - id: metal_cc1
+        filename: "build/gfx/Gen2_Tanker_Metal_CC1.png"
+      - id: metal_cc2
+        filename: "build/gfx/Gen2_Tanker_Metal_CC2.png"
+      - id: milk
+        cargos: [MILK]
+        filename: "build/gfx/Gen2_Tanker_Milk.png"
+      - id: oil
+        cargos: [OIL_, OILI, OILD, PETR]
+        filename: "build/gfx/Gen2_Tanker_Oil.png"
+      - id: wine
+        cargos: [EOIL, WATR, BEER, CHSE, COLA]
+        filename: "build/gfx/Gen2_Tanker_Wine.png"
+      - id: white_cc1
+        filename: "build/gfx/Gen2_Tanker_White_CC1.png"
+      - id: white_cc2
+        filename: "build/gfx/Gen2_Tanker_White_CC2.png"
+    random:
+      - id: rubber
+        cargos: [RUBR]
+        options:
+          cc1: 3
+          cc2: 1
+      - id: goods
+        cargos: [GOOD]
+        options:
+          oil: 1
+          rubber: 1
+          wine: 1
+      - id: chemicals
+        cargos: [ACID, CHEM, SULP, NH3_, LYE_, O2__]
+        options:
+          white_cc1: 3
+          white_cc2: 1
+      - id: products
+        cargos: [DYES, RFPR, CTAR, KAOL, COAT, MOLS, SOAP]
+        options:
+          metal_cc1: 3
+          metal_cc2: 1
+      - id: plastic
+        cargos: [PLST, PLAS]
+        options:
+          oil: 1
+          rubber: 1
+      

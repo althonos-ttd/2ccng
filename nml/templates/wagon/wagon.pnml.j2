@@ -58,7 +58,7 @@
     {# Generate the random cargo combinations #}
     {% for livery in gfx.combine.liveries %}
         {% for randomset in gfx.combine.random %}
-        random_switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ livery.id }}_{{ randomset.id }}, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+        random_switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ livery.id }}_{{ randomset.id }}, {% if gfx.combine.rerandomize_cargos %} bitmask(TRIGGER_VEHICLE_NEW_LOAD) {% endif %}) {
             dependent: switch_{{ item.id }}_randomize_cargo;
             {%- for option, proba  in randomset.options | items %}
             {{ proba }}: spriteset_{{ item.id }}_{{ livery.id }}_{{ option }};

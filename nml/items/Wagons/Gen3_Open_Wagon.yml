@@ -1,0 +1,111 @@
+item:
+  id: wagon_Narrow_Gen3_Open_Wagon
+  num: 0
+
+  speed: 70
+  weight: 12
+
+  life:
+    start: 1930
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_OPEN_WAGON
+
+units:
+  wagon:
+    length: 5
+    sprite: ore
+    capacity: 26
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen3/Open_Wagon/Purchase.png"
+    x: 1
+    y: 1
+
+  combine:
+    default: ore
+    rerandomize_cargos: true
+    loadstages:
+      loading: [S1, S2, S3]
+      loaded: [S1, S2, S3]
+      stages:
+        - id: S1
+          y: 1
+        - id: S2
+          y: 27
+        - id: S3
+          y: 53
+    liveries:
+      - id: L1
+        x: 1
+      - id: L2
+        x: 179
+      - id: L3
+        x: 357
+      - id: L4
+        x: 535
+    cargos:
+      - id: bauxite
+        filename: "build/gfx/Gen3_Open_Wagon_Bauxite.png"
+        cargos: [AORE]
+      - id: beans
+        filename: "build/gfx/Gen3_Open_Wagon_Beans.png"
+        cargos: [BEAN]
+      - id: biomass
+        filename: "build/gfx/Gen3_Open_Wagon_Biomass.png"
+        cargos: [BIOM, WSTE, FERT]
+      - id: coal
+        filename: "build/gfx/Gen3_Open_Wagon_Coal.png"
+        cargos: [COAL, SLAG, COKE]
+      - id: copper_ore
+        cargos: [CORE, PORE]
+        filename: "build/gfx/Gen3_Open_Wagon_Copper_Ore.png"
+      # - id: crates
+      #   filename: "build/gfx/Gen3_Open_Wagon_Crates.png"
+      #   cargos: [SUGR, CTCD, FURN]
+      - id: gravel
+        filename: "build/gfx/Gen3_Open_Wagon_Gravel.png"
+        cargos: [GRVL]
+      - id: lemons
+        filename: "build/gfx/Gen3_Open_Wagon_Lemons.png"
+        cargods: []
+      - id: maize
+        filename: "build/gfx/Gen3_Open_Wagon_Maize.png"
+        cargos: [MAIZ, SULP]
+      - id: nickel
+        filename: "build/gfx/Gen3_Open_Wagon_Nickel.png"
+        cargos: [NKOR, URAN]
+      - id: ore
+        filename: "build/gfx/Gen3_Open_Wagon_Ore.png"
+        cargos: [IORE, MNO2, FECR]
+      # - id: peat
+      #   filename: "build/gfx/Gen3_Open_Wagon_Peat.png"
+      #   cargos: [PEAT, TBCO, TOFF]
+      - id: salt
+        filename: "build/gfx/Gen3_Open_Wagon_Salt.png"
+        cargos: [SALT, NITR, NHNO]
+      - id: sand
+        filename: "build/gfx/Gen3_Open_Wagon_Sand.png"
+        cargos: [PHOS, SAND, LIME]
+      - id: scrap_metal
+        filename: "build/gfx/Gen3_Open_Wagon_Scrap_Metal.png"
+        cargos: [SCRP, SCMT]
+      - id: wood
+        filename: "build/gfx/Gen3_Open_Wagon_Wood.png"
+        cargos: [WOOD]
+    random:
+      - id: fruit
+        cargos: [FRUT, FRVG]
+        options:
+          lemons: 2
+          beans: 1
+      - id: recyclables
+        cargos: [RCYC]
+        options:
+          scrap_metal: 2
+          biomass: 2
+          # peat: 1
+      

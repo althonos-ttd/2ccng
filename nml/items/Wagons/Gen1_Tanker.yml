@@ -28,6 +28,7 @@ gfx:
 
   combine:
     default: standard
+    rerandomize_cargos: false
     loadstages:
       loading: [S1]
       loaded: [S1]

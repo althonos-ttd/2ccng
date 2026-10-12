@@ -28,6 +28,7 @@ gfx:
 
   combine:
     default: crates
+    rerandomize_cargos: true
     loadstages:
       loading: [S1, S2, S3]
       loaded: [S1, S2, S3]

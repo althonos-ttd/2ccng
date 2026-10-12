@@ -1,0 +1,101 @@
+item:
+  id: wagon_Narrow_Gen2_Flat_Wagon
+  num: 0
+
+  speed: 55
+  weight: 4
+
+  life:
+    start: 1890
+    end: 1950
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_FLAT_WAGON
+
+units:
+  wagon:
+    length: 4
+    sprite: crates
+    capacity: 16
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen2/Flat_Wagon/Purchase.png"
+    x: 1
+    y: 1
+
+  combine:
+    default: crates
+    rerandomize_cargos: true
+    loadstages:
+      loading: [S1, S2, S3]
+      loaded: [S1, S2, S3]
+      stages:
+        - id: S1
+          y: 1
+        - id: S2
+          y: 27
+        - id: S3
+          y: 53
+    liveries:
+      - id: L1
+        x: 1
+      - id: L2
+        x: 179
+      - id: L3
+        x: 357
+      - id: L4
+        x: 535
+    cargos:
+      - id: barrels
+        filename: "build/gfx/Gen2_Flat_Wagon_Barrels.png"
+        bitmask: CC_LIQUID
+      - id: crates
+        filename: "build/gfx/Gen2_Flat_Wagon_Crates.png"
+        cargos: [GOOD]
+      - id: copper
+        filename: "build/gfx/Gen2_Flat_Wagon_Copper.png"
+        cargos: [COPR]
+      - id: planks
+        filename: "build/gfx/Gen2_Flat_Wagon_Planks.png"
+        cargos: [WDPR]
+      - id: machinery
+        filename: "build/gfx/Gen2_Flat_Wagon_Machinery.png"
+      - id: wood
+        filename: "build/gfx/Gen2_Flat_Wagon_Wood.png"
+        cargos: [WOOD]
+      - id: paper
+        filename: "build/gfx/Gen2_Flat_Wagon_Paper.png"
+        cargos: [PAPR, PACK]
+      - id: steel_coil
+        filename: "build/gfx/Gen2_Flat_Wagon_Steel_Coil.png"
+      - id: steel_wire
+        filename: "build/gfx/Gen2_Flat_Wagon_Steel_Wire.png"
+        cargos: [STWR]
+      - id: steel_sheets
+        filename: "build/gfx/Gen2_Flat_Wagon_Steel_Sheets.png"
+        cargos: [STSH]
+      - id: tyres
+        filename: "build/gfx/Gen2_Flat_Wagon_Tyres.png"
+        cargos: [TYRE]
+    random:
+      - id: steel
+        cargos: [STEL, STAL]
+        options:
+          steel_coil: 2
+          steel_wire: 2
+          steel_sheets: 2
+      - id: supplies
+        cargos: [ENSP, FMSP]
+        options: 
+          crates: 7
+          machinery: 3
+      - id: building_materials
+        cargos: [BDMT]
+        options:
+          planks: 2
+          steel: 2
+          copper: 1
+      

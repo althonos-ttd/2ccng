@@ -1,0 +1,47 @@
+item:
+  id: wagon_Narrow_Gen2_Boxcar
+  num: 0
+
+  speed: 55
+  weight: 6
+
+  life:
+    start: 1890
+    end: 1950
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_BOXCAR
+
+units:
+  wagon:
+    length: 4
+    sprite: standard
+    capacity: 14
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen2/Boxcar/Purchase.png"
+    x: 1
+    y: 1
+
+  combine:
+    default: standard
+    rerandomize_cargos: false
+    loadstages:
+      loading: [S3]
+      loaded: [S1, S2]
+      stages:
+        - id: S1
+          y: 1
+        - id: S2
+          y: 27
+        - id: S3
+          y: 53
+    liveries:
+      - id: L1
+        x: 1
+    cargos:
+      - id: standard
+        filename: "build/gfx/Gen2_Boxcar_Standard.png"
