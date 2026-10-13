@@ -2,23 +2,22 @@ item:
   id: wagon_Narrow_Gen4_Container_Carrier
   num: 0
 
-  speed: 35
-  weight: 2
+  speed: 85
+  weight: 15
 
   life:
-    start: 1830
-    end: 1920
+    start: 1965
 
 cargo:
   autorefit: true
   loading_speed: LOADINGSPEEDDEF_CARGO
-  cargodef: CARGODEF_BOXCAR
+  cargodef: CARGODEF_CONTAINER
 
 units:
   wagon:
-    length: 3
+    length: 6
     sprite: standard
-    capacity: 7
+    capacity: 30
 
 gfx:
   purchase:

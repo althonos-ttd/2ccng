@@ -174,11 +174,6 @@ if(grf_future_status("VN\01\01") == 1) {
 	engine_override("TN\01\01", "VN\01\01");
 }
 
-//override 2ccNML - Revival patch if loaded
-if(grf_future_status("VN+W") == 1) {
-	engine_override("TN\01\01", "VN+W");
-}
-
 if(grf_future_status("TM\01\01") == 1) {
 	engine_override("TN\01\01", "TM\01\01");
 }
