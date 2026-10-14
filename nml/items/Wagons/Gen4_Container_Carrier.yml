@@ -70,7 +70,15 @@ gfx:
           container_1: 4
           container_2: 4
           container_3: 4
+      - id: refrigerated
+        cargos: [FOOD, FRUT, FRVG, FZDR, FISH, MILK]
+        bitmask: CC_REFRIGERATED
+        options:
+          refrigerated_1: 4
+          refrigerated_2: 4
+          refrigerated_3: 4
       - id: tanktainer
+        bitmask: CC_LIQUID
         cargos: [
           # Oil & Fuel
           OIL_, OILI, OILD, PETR, RFPR, 
@@ -79,18 +87,12 @@ gfx:
           # Plastic
           PLST, PLAS,
           # Liquid
-          RUBR, WATR, COLA, BEER, DYES, OIL_
+          RUBR, WATR, COLA, BEER, DYES,
         ]
         options:
           tanktainer_1: 4
           tanktainer_2: 4
           tanktainer_3: 4
-      - id: refrigerated
-        cargos: [FOOD, FRUT, FRVG, FZDR, FISH, MILK]
-        options:
-          refrigerated_1: 4
-          refrigerated_2: 4
-          refrigerated_3: 4
       - id: goods
         cargos: [GOOD]
         options:

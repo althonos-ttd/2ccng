@@ -41,6 +41,7 @@ gfx:
         filename: "build/gfx/Gen3_Tanker_Standard.png"
       - id: milk
         cargos: [MILK]
+        bitmask: CC_REFRIGERATED
         filename: "build/gfx/Gen3_Tanker_Milk.png"
       - id: oil
         cargos: [OIL_, OILI, OILD, PETR]
