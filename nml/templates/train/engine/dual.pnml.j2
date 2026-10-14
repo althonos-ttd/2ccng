@@ -55,6 +55,15 @@ DUALRUNNINGCOSTSWITCH(VEHIDCODE)
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
 {% endblock switches %}
 
+{% block item_property %}
+{{ super() }}
+{% with n_units = units | length %}
+{% if n_units == 1 %}
+length: {{ units[0].length }};
+{% endif %}
+{% endwith %}
+{% endblock %}
+
 {% block item_graphics %}
 {{ super() }}
 power: switch_{{ item.id }}_power;

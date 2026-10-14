@@ -27,6 +27,7 @@
 {% block graphics_default %}
 {% with n_units = units | length %}
 {% block graphics_articulated %}
+{% if n_units > 1 %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {{ loop.index0 }}: {{ unit.length }};
@@ -36,6 +37,7 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1
     1..{{ n_units - 1 }}: item_{{ item.id }};
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
+{% endif %}
 {% endblock graphics_articulated %}
 {{ super() }}
 {% endwith %}
@@ -60,11 +62,25 @@ ENGINECAPACITYSWITCH(VEHIDCODE)
 {# WAGONCAPACITYSWITCH(VEHIDCODE) #}
 {% endblock switches %}
 
+{% block item_property %}
+{% with n_units = units | length %}
+{{ super() }}
+{% if n_units == 1 %}
+length: {{ units[0].length }};
+visual_effect_and_powered: visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ units[0].vfx.offset }}, DISABLE_WAGON_POWER);
+{% endif %}
+{% endwith %}
+{% endblock item_property %}
+
 {% block item_graphics %}
+{% with n_units = units | length %}
 {{ super() }}
 ENGINECAPACITYSWITCHCALL(VEHIDCODE)
 default: switch_{{ item.id }}_default;
+{% if n_units > 1 %}
 articulated_part: switch_{{ item.id }}_articulated;
 length: switch_{{ item.id }}_length;
 visual_effect_and_powered: switch_{{ item.id }}_visual_effect;
+{% endif %}
+{% endwith %}
 {% endblock item_graphics %}

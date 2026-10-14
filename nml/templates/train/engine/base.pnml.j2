@@ -14,6 +14,7 @@
 {% block graphics_default %}
 {% with n_units = units | length %}
 {% block graphics_articulated %}
+{% if n_units > 1 %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_length, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {{ loop.index0 }}: {{ unit.length }};
@@ -23,11 +24,11 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1
     1..{{ n_units - 1 }}: item_{{ item.id }};
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
+{% endif %}
 {% endblock graphics_articulated %}
 {{ super() }}
 {% endwith %}
 {% endblock graphics_default %}
-
 
 {% block graphics_vfx %}
 {% with n_units = units | length %}
@@ -41,15 +42,25 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_
 }
 {% endwith %}
 {% endblock graphics_vfx %}
-
-{# {{ self.graphics_extra() }}
-{% endblock graphics %} #}
+ 
+{% block item_property %}
+{{ super() }}
+{% with n_units = units | length %}
+{% if n_units == 1 %}
+length: {{ units[0].length }};
+{% endif %}
+{% endwith %}
+{% endblock %}
 
 {% block item_graphics %}
+{% with n_units = units | length %}
 {{ super() }}
 default: switch_{{ item.id }}_default;
 visual_effect_and_powered: switch_{{ item.id }}_visual_effect;
+{% if n_units > 1 %}
 articulated_part: switch_{{ item.id }}_articulated;
 length: switch_{{ item.id }}_length;
+{% endif %}
+{% endwith %}
 {% endblock item_graphics %}
 
