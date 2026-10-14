@@ -9,7 +9,8 @@
 item(FEAT_TRAINS, ITEM ) {
 	property {
 		name: NAME;
-		VEHICLE_REGION
+		climates_available: ALL_CLIMATES;
+
 		INTRODUCTIONDATEPROPERTY
 		model_life: MODEL_LIFE;
 		vehicle_life: VEHICLE_LIFE; 
@@ -30,10 +31,10 @@ item(FEAT_TRAINS, ITEM ) {
 		cargo_age_period: CARGO_AGE_PERIOD;
 		misc_flags: MISC_FLAGS;
 		refit_cost: REFIT_COST;
-		track_type: TRACK_TYPE;
+		track_type: NARR;
 		AIFLAGPROPERTY
-		running_cost_base: RUNNING_COST_BASE;
-		engine_class: ENGINE_CLASS;
+		running_cost_base: RUNNING_COST_DIESEL;
+		engine_class: ENGINE_CLASS_DIESEL;
 		visual_effect_and_powered: VISUAL_FLAG;
 		
 		sprite_id: SPRITE_ID;

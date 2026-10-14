@@ -26,7 +26,11 @@ if (dynamic_engines == 0) {
 }
 
 //check if at least one region is set to available
-if (ALLREGION == 0) {
+if (!(param_region_africa || param_region_northamerica || param_region_southamerica 
+        || param_region_asia || param_region_northerneurope || param_region_easterneurope 
+        || param_region_westerneurope || param_region_southerneurope || param_region_oceania
+    )
+) {
 	//No region = no vehicles
 	//Continue loading to allow changing parameters to fix problem
 	error(FATAL, string(str_error_region));

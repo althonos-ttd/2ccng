@@ -57,7 +57,7 @@ grf {
         }
     }
 	param {
-		ISCONCEPT {
+		param_concept {
 			type:	bool;
 			name:	string(STR_PARAM_CONCEPT);
 			desc:	string(STR_PARAM_CONCEPT_DESC);
@@ -65,7 +65,7 @@ grf {
 		}
 	}
 	param {
-		AFRICA {
+		param_region_africa {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_AFRICA);
 			desc:	string(STR_PARAM_REGION_AFRICA_DESC);
@@ -73,7 +73,7 @@ grf {
 		}
 	}
 	param {
-		NORTHAMERICA {
+		param_region_northamerica {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_NORTHAMERICA);
 			desc:	string(STR_PARAM_REGION_NORTHAMERICA_DESC);
@@ -81,7 +81,7 @@ grf {
 		}
 	}
 	param {
-		SOUTHAMERICA {
+		param_region_southamerica {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_SOUTHAMERICA);
 			desc:	string(STR_PARAM_REGION_SOUTHAMERICA_DESC);
@@ -89,7 +89,7 @@ grf {
 		}
 	}	
 	param {
-		ASIA {
+		param_region_asia {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_ASIA);
 			desc:	string(STR_PARAM_REGION_ASIA_DESC);
@@ -97,7 +97,7 @@ grf {
 		}
 	}	
 	param {
-		NORTHERNEUROPE {
+		param_region_northerneurope {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_NORTHERNEUROPE);
 			desc:	string(STR_PARAM_REGION_NORTHERNEUROPE_DESC);
@@ -105,7 +105,7 @@ grf {
 		}
 	}
 	param {
-		EASTERNEUROPE {
+		param_region_easterneurope {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_EASTERNEUROPE);
 			desc:	string(STR_PARAM_REGION_EASTERNEUROPE_DESC);
@@ -113,7 +113,7 @@ grf {
 		}
 	}	
 	param {
-		SOUTHERNEUROPE {
+		param_region_southerneurope {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_SOUTHERNEUROPE);
 			desc:	string(STR_PARAM_REGION_SOUTHERNEUROPE_DESC);
@@ -121,7 +121,7 @@ grf {
 		}
 	}
 	param {
-		WESTERNEUROPE {
+		param_region_westerneurope {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_WESTERNEUROPE);
 			desc:	string(STR_PARAM_REGION_WESTERNEUROPE_DESC);
@@ -129,7 +129,7 @@ grf {
 		}
 	}
 	param {
-		OCEANIA {
+		param_region_oceania {
 			type:	bool;
 			name:	string(STR_PARAM_REGION_OCEANIA);
 			desc:	string(STR_PARAM_REGION_OCEANIA_DESC);
