@@ -1,0 +1,121 @@
+# 
+#   Copyright (C) 2026 althonos
+#   Copyright (C) 2017 Transportman
+#   This file is part of the 2cc Trains In NML - Narrow Gauge edition
+#   This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+#   This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#   You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+# 
+#  This file follows the FRAX cargo schemes, with a few modifications to prevent
+#    - Boxcars cannot carry CC_FLATBED: this is not recommended in the FRAX 
+#      documentation but this prevents "heavy" cargoes (i.e. logs or steel) 
+#      from being carried in boxcars and goods railbuses. Since goods (GOOD)
+#      are also CC_FLATBED they need to be added manually to CARGODEF_BOXCAR
+#    - Tankers cannot carry FOOD: there is usually a milk or alcohol wagon,
+#      and food should be carried by reefers.
+
+CARGODEFS:
+
+  CARGODEF_NONE:
+    refittable: [0]
+
+  CARGODEF_PASSENGERS:
+    refittable: [CC_PASSENGERS, CC_MAIL]
+    non_refittable: [0]
+    allow: [PASS, MAIL]
+
+  CARGODEF_PASSENGERS_ONLY:
+    refittable: [CC_PASSENGERS]
+    non_refittable: [0]
+    allow: [PASS]
+
+  CARGODEF_EXPRESS:
+    refittable: [CC_MAIL, CC_EXPRESS]
+    non_refittable: [0]
+    allow: [MAIL]
+
+  CARGODEF_MAIL_ONLY:
+    refittable: [CC_MAIL]
+    non_refittable: [0]
+    allow: [MAIL]
+
+  # Boxcars carry everything that is properly packaged (crates, barrels, bottles)
+  CARGODEF_BOXCAR: &CARGODEF_BOXCAR
+    refittable: [CC_PIECE_GOODS, CC_EXPRESS]
+    non_refittable: [CC_FLATBED]
+    allow: [GOOD, FRUT, FRVG]
+    disallow: [BATT, WOOD, STEL, STAL, GRAI, CMNT, WDPR]
+
+  # Goods railbus can carry the same as boxcars
+  CARGODEF_GOODS_RAILBUS:
+    <<: *CARGODEF_BOXCAR
+
+  # Flat wagons carry flatbed cargoes
+  CARGODEF_FLAT_WAGON: &CARGODEF_FLAT_WAGON
+    refittable: [CC_FLATBED]
+    non_refittable: [0]
+    allow: [GOOD, STEL, STAL, WOOD, PAPR, BATT, TOYS, BDMT, CMNT, ENSP, FMSP, WDPR, ALUM, TYRE]
+    disallow: [CMNT]
+
+  CARGODEF_CENTERBEAM:
+    <<: *CARGODEF_FLAT_WAGON
+
+  CARGODEF_HEAVYFLAT: &CARGODEF_HEAVYFLAT
+    refittable: [CC_PIECE_GOODS, CC_FLATBED]
+    non_refittable: [0]
+    allow: [GOOD, STEL, STAL, WOOD, PAPR, BATT, TOYS, BDMT, CMNT, ENSP, FMSP, WDPR, ALUM, TYRE]
+
+  CARGODEF_SUPERHEAVY:
+    <<: *CARGODEF_HEAVYFLAT
+
+  # Tankers carry liquid and gas 
+  CARGODEF_TANKER:
+    refittable: [CC_LIQUID_BULK, CC_GAS_BULK]
+    non_refittable: [0]
+    disallow: [FOOD]
+    allow: [PLAS]
+
+  # Open and closed wagons carry bulk
+  CARGODEF_OPEN_WAGON:
+    refittable: [CC_OPEN_BULK] 
+    non_refittable: [0] 
+    allow: [FRUT, FRVG, GRAI]
+    disallow: [CTCD, SUGR, KAOL, NITR, BEAN, QLME, BDMT, CMNT, FERT, POTA, WDPR, PLAS]
+
+  CARGODEF_CLOSED_WAGON:
+    refittable: [CC_COVERED_BULK]
+    non_refittable: [0]
+    allow: [FRUT, FRVG, BEAN, GRAI, MAIZ, NITR, CTCD, SUGR, QLME, FERT, POTA, RCYC, PLAS]
+    disallow: [FOOD, BDMT, WDPR]
+
+  # Gondolas are top-loaded, flat wagons with solid walls. Contrary to hoppers, 
+  # they don't have bottom doors for gravity unloading, so they can be used for
+  # more general cargo unloaded by crane/magnets/machinery.
+
+  CARGODEF_GONDOLA:
+    refittable: [CC_OPEN_BULK]
+    non_refittable: [0]
+
+  # Silo wagons
+  CARGODEF_SILO:
+    refittable: [CC_POWDER_BULK]
+    non_refittable: [0]
+
+  # -- Hopper wagons --
+  CARGODEF_HOPPER:
+    refittable: [CC_OPEN_BULK]
+    non_refittable: [0]
+
+  # Car transporters can only carry vehicles
+  CARGODEF_CARTRANSPORTER:
+    refittable: [0]
+    non_refittable: [0]
+    allow: [VEHI]
+
+  # Intermodal container wagons can carry (almost) everything
+  CARGODEF_CONTAINER: &CARGODEF_CONTAINER
+    refittable: [CC_PIECE_GOODS, CC_OPEN_BULK, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_FLATBED, CC_EXPRESS, CC_REFRIGERATED, CC_WEIRD]
+    disallow: [PASS, MAIL, LVST, VEHI]
+
+  CARGODEF_DOUBLECONTAINER:
+    <<: *CARGODEF_CONTAINER
