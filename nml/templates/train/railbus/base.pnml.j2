@@ -45,6 +45,7 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_articulated, extra_callback_info1
 
 {% block graphics_vfx %}
 {% with n_units = units | length %}
+{% if n_units > 1%}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_chain % {{ n_units }}) {
     {% for unit in units %}
     {% if unit.vfx is defined %}
@@ -53,6 +54,7 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_
     {% endfor %}
 	return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
 }
+{% endif %}
 {% endwith %}
 {% endblock graphics_vfx %}
 

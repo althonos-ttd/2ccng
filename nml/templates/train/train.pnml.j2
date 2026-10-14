@@ -174,11 +174,9 @@ switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_{{ cargoset.id }}, cargo_class
 {% with n_units = units | length %}
 switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain % {{ n_units }}) {
 	{% for unit in units %}
-    {% if unit.sprite is defined %}
-    {{ loop.index0 }}: spriteset_{{ item.id }}_{{ unit.sprite }};
-    {% endif %}
+    {% if not loop.last %} {{ loop.index0 }}: {% endif %} 
+    {% if unit.sprite is defined %} spriteset_{{ item.id }}_{{ unit.sprite }} {% else %} spriteset_empty {% endif %};
     {% endfor %}
-	default: spriteset_empty;
 }
 {% endwith %}
 {% endblock graphics_default %}
