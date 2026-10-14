@@ -1,5 +1,5 @@
 .file: &file
-  filename: "gfx/Diesel/Australia_Queensland_Railways_DL_Class.png"
+  filename: "gfx/Diesel/Australia_QR_DL.xpm"
 
 item:
   id: diesel_Australia_Queensland_Railways_DL_Class
@@ -35,13 +35,21 @@ gfx:
     - id: engine1
       <<: *file
       template: template_2cc_engines_general
-      x: 1
-      y: 1
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
     - id: engine2
       <<: *file
       template: template_2cc_engines_general
-      x: 1
-      y: 32
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 179
+        y: 32
   animations:
     - id: engine
       steps: [engine1, engine2]
