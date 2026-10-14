@@ -54,7 +54,7 @@ CARGODEFS:
   CARGODEF_FLAT_WAGON: &CARGODEF_FLAT_WAGON
     refittable: [CC_FLATBED]
     non_refittable: [0]
-    allow: [GOOD, STEL, STAL, WOOD, PAPR, BATT, TOYS, BDMT, CMNT, ENSP, FMSP, WDPR, ALUM, TYRE]
+    allow: [GOOD, STEL, STAL, WOOD, PAPR, BATT, TOYS, BDMT, CMNT, ENSP, FMSP, WDPR, ALUM, TYRE, COPR, STWR]
     disallow: [CMNT]
 
   CARGODEF_CENTERBEAM:
@@ -63,7 +63,7 @@ CARGODEFS:
   CARGODEF_HEAVYFLAT: &CARGODEF_HEAVYFLAT
     refittable: [CC_PIECE_GOODS, CC_FLATBED]
     non_refittable: [0]
-    allow: [GOOD, STEL, STAL, WOOD, PAPR, BATT, TOYS, BDMT, CMNT, ENSP, FMSP, WDPR, ALUM, TYRE]
+    allow: [GOOD, STEL, STAL, WOOD, PAPR, BATT, TOYS, BDMT, CMNT, ENSP, FMSP, WDPR, ALUM, TYRE, COPR, STWR]
 
   CARGODEF_SUPERHEAVY:
     <<: *CARGODEF_HEAVYFLAT
@@ -72,7 +72,7 @@ CARGODEFS:
   CARGODEF_TANKER:
     refittable: [CC_LIQUID_BULK, CC_GAS_BULK]
     non_refittable: [0]
-    disallow: [FOOD]
+    disallow: [FOOD, BOOM]
     allow: [PLAS]
 
   # Open and closed wagons carry bulk
@@ -80,13 +80,13 @@ CARGODEFS:
     refittable: [CC_OPEN_BULK] 
     non_refittable: [0] 
     allow: [FRUT, FRVG, GRAI]
-    disallow: [CTCD, SUGR, KAOL, NITR, BEAN, QLME, BDMT, CMNT, FERT, POTA, WDPR, PLAS]
+    disallow: [CTCD, SUGR, KAOL, NITR, BEAN, QLME, BDMT, CMNT, FERT, POTA, WDPR, PLAS, NHNO, CBLK]
 
   CARGODEF_CLOSED_WAGON:
     refittable: [CC_COVERED_BULK]
     non_refittable: [0]
-    allow: [FRUT, FRVG, BEAN, GRAI, MAIZ, NITR, CTCD, SUGR, QLME, FERT, POTA, RCYC, PLAS]
-    disallow: [FOOD, BDMT, WDPR]
+    allow: [FRUT, FRVG, BEAN, GRAI, MAIZ, NITR, CTCD, SUGR, QLME, FERT, POTA, RCYC, PLAS, NHNO, CBLK, LYE_]
+    disallow: [FOOD, BDMT, WDPR, TEXT, WOOL]
 
   # Gondolas are top-loaded, flat wagons with solid walls. Contrary to hoppers, 
   # they don't have bottom doors for gravity unloading, so they can be used for
