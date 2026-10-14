@@ -68,7 +68,20 @@
 */
 
 {% block graphics_purchase %}
-PURCHASE_SPRITESET({{ item.id }}, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+spriteset(spriteset_{{ item.id }}_purchase_flag_and_power, "{{ gfx.purchase.filename }}") {
+    template_purchase_flag_and_power({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+spriteset(spriteset_{{ item.id }}_purchase_flag_only, "{{ gfx.purchase.filename }}") {
+    template_purchase_flag_only({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+spriteset(spriteset_{{ item.id }}_purchase_none, "{{ gfx.purchase.filename }}") {
+    template_purchase_none({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_purchase, param_purchaseinfo) {
+    0: spriteset_{{ item.id }}_purchase_none;
+    1: spriteset_{{ item.id }}_purchase_flag_only;
+    2: spriteset_{{ item.id }}_purchase_flag_and_power;
+}
 {% endblock graphics_purchase %}
 
 /*
@@ -165,7 +178,7 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain 
     {{ loop.index0 }}: spriteset_{{ item.id }}_{{ unit.sprite }};
     {% endif %}
     {% endfor %}
-	EMPTY_SPRITESET
+	default: spriteset_empty;
 }
 {% endwith %}
 {% endblock graphics_default %}

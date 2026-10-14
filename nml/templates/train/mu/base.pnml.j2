@@ -28,7 +28,20 @@
 
 {% block graphics_purchase %}
 {% if units.back is defined %}
-PURCHASE_SPRITESET_DUALHEADED(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+spriteset(spriteset_{{ item.id }}_purchase_dualheaded_flag_and_power, "{{ gfx.purchase.filename }}") {
+	template_purchase_dualheaded_flag_and_power({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+spriteset(spriteset_{{ item.id }}_purchase_dualheaded_flag_only, "{{ gfx.purchase.filename }}") {
+	template_purchase_dualheaded_flag_only({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+spriteset(spriteset_{{ item.id }}_purchase_dualheaded_none, "{{ gfx.purchase.filename }}") {
+	template_purchase_dualheaded_none({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_purchase, param_purchaseinfo) {
+	0: spriteset_{{ item.id }}_purchase_dualheaded_none;
+	1: spriteset_{{ item.id }}_purchase_dualheaded_flag_only;
+	2: spriteset_{{ item.id }}_purchase_dualheaded_flag_and_power;
+}
 {% else %}
 {{ super() }}
 {% endif %}
@@ -93,7 +106,7 @@ default: switch_{{ item.id }}_default;
 
 {% block item_extra %}
 	livery_override (item_mu_narrow_wagon_unpowered ) {
-		
+
 		{% include "../../_common/loadingspeeddef.pnml.j2" %}
 
 		RUNNINGCOSTMUWAGONUNPOWEREDSWITCHCALL

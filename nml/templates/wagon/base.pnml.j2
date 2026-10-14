@@ -69,7 +69,17 @@
 */
 
 {% block graphics_purchase %}
-PURCHASE_SPRITESET_WAGON(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+spriteset(spriteset_{{ item.id }}_purchase_wagon_flag_only, "{{ gfx.purchase.filename }}") {
+    template_purchase_wagon_flag_only({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+spriteset(spriteset_{{ item.id }}_purchase_wagon_none, "{{ gfx.purchase.filename }}") {
+    template_purchase_wagon_none({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+switch(FEAT_TRAINS, SELF, spriteset_{{ item.id }}_purchase, param_purchaseinfo) {
+    0: spriteset_{{ item.id }}_purchase_wagon_none;
+    1: spriteset_{{ item.id }}_purchase_wagon_flag_only;
+    2: spriteset_{{ item.id }}_purchase_wagon_flag_only;
+}
 {% endblock graphics_purchase %}
 
 /*
