@@ -90,6 +90,7 @@ gfx:
         sprite: middlemail_position
       options:
         - bitmask: CC_PASSENGERS
+          cargos: [PASS]
           sprite: middlepass_position
 
   extra: >

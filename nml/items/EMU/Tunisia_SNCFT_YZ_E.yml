@@ -86,6 +86,7 @@ gfx:
         sprite: middlemail_position
       options:
         - bitmask: CC_PASSENGERS
+          cargos: [PASS]
           sprite: middlepass_position
         - cargos: [MAIL]
           sprite: middlemail_position

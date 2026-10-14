@@ -124,6 +124,7 @@ gfx:
         sprite: middlemail_unpowered
       options:
         - bitmask: CC_PASSENGERS
+          cargos: [PASS]
           sprite: middlepass_unpowered
 
   extra: >
