@@ -43,8 +43,10 @@ gfx:
     liveries:
       - id: L1
         x: 1
+        proba: 9
       - id: L2
         x: 179
+        proba: 2
     cargos:
       - id: container_1
         filename: "build/gfx/Gen4_Container_Carrier_Container_1.png"

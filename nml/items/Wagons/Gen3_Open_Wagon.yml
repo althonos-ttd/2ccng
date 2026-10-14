@@ -41,6 +41,7 @@ gfx:
     liveries:
       - id: L1
         x: 1
+        proba: 7
       - id: L2
         x: 179
       - id: L3

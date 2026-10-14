@@ -57,8 +57,8 @@
     {# We need a (useless) random switch to signal which 4 random bits to use for cargo selection  #}
     random_switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_randomize_livery) {
         independent: switch_{{ item.id }}_randomize_cargo;
-        2: 0;
-        2: 1;
+        8: 0;
+        8: 1;
     }
     {% if gfx.combine.random is defined %}
     {# Generate the random cargo combinations #}
@@ -76,19 +76,17 @@
 {% endblock graphics_cargosets %}
 
 {% block graphics_randomize %}
-
     {%- for spriteset in gfx.combine.cargos | chain(gfx.combine.random) %}
         {%- if spriteset.cargos is defined -%}
         random_switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_{{ spriteset.id }}) {
             dependent: switch_{{ item.id }}_randomize_livery;
             {% for livery in gfx.combine.liveries %}
-            1: spriteset_{{ item.id }}_{{ livery.id }}_{{ spriteset.id }};
+            {% if livery.proba is defined -%} {{ livery.proba }} {% else %} 1 {% endif -%}:
+            spriteset_{{ item.id }}_{{ livery.id }}_{{ spriteset.id }};
             {% endfor %}
         }
         {% endif %}
     {% endfor %}
-
-
     {# Generate the cargo switch per livery #}
     {% for livery in gfx.combine.liveries %}
     switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_{{ livery.id }}_cargo_selection, cargo_classes) {
@@ -101,8 +99,6 @@
     }
     {% endfor %}
 {% endblock graphics_randomize %}
-
-{# {{ self.graphics_extra() }} #}
 
 {% block graphics_default %}
 {# Randomize the liveries #}
@@ -119,25 +115,15 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, vehicle_type_id) {
     -2: switch_{{ item.id }}_randomize_livery;
 }
 {% endblock graphics_default %}
-{# {% endset %} #}
 
-{# {% endblock graphics %} #}
 {% block item_graphics %}
 {{ super() }}
-
-
-
-        {# {% if gfx.combine is defined and gfx.combine.cargos is defined %} #}
-        {%- for spriteset in gfx.combine.cargos | chain(gfx.combine.random) %}
-            {%- if spriteset.cargos is defined -%}
-            {%- for cargo in spriteset.cargos -%}
-            {{ cargo }}: switch_{{ item.id }}_{{ spriteset.id }};
-            {% endfor -%}
-            {% endif %}
-        {% endfor %}
-        {# {% endif %} #}
-
-		{# default: switch_{{ item.id }}_default; #}
-
-
+    {# Directly add cargo ID callbacks #}
+    {%- for spriteset in gfx.combine.cargos | chain(gfx.combine.random) %}
+    {%- if spriteset.cargos is defined -%}
+    {%- for cargo in spriteset.cargos -%}
+    {{ cargo }}: switch_{{ item.id }}_{{ spriteset.id }};
+    {% endfor -%}
+    {% endif %}
+    {% endfor %}
 {% endblock item_graphics %}
