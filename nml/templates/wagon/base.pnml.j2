@@ -58,7 +58,7 @@
 {% endif %}
 #define POWER_PER_WAGON DEFAULT_POWER_PER_WAGON
 #define BITMASK_VEHICLE_INFO DEFAULT_BITMASK
-#define SPRITE_ID DEFAULT_SPRITE_ID 
+#define SPRITE_ID DEFAULT_SPRITE_ID
 
 {% endblock properties %}
 
@@ -88,7 +88,7 @@ spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}, {{ spriteset.filename|tojs
 {% if gfx.loadsets is defined %}
 {% for loadset in gfx.loadsets %}
 spritegroup spriteset_{{ item.id }}_{{ loadset.id }} {
-    loading: [ 
+    loading: [
         {% for stage in loadset.loading %}spriteset_{{ item.id }}_{{ stage }}{% if not loop.last %},{% endif %}{% endfor %}
     ];
     loaded: [
@@ -182,15 +182,17 @@ item(FEAT_TRAINS, ITEM ) {
         VEHICLE_REGION
 		INTRODUCTIONDATEPROPERTY
 		model_life: MODEL_LIFE;
-		vehicle_life: VEHICLE_LIFE; 
+		vehicle_life: VEHICLE_LIFE;
 		retire_early: RETIRE_EARLY;
-		LOADINGSPEEDPROPERTY
+
+        {% include "../_common/loadingspeeddef.pnml.j2" %}
+
 		PURCHASECOSTPROPERTY
 		RUNNINGCOSTPROPERTY
 		speed: SPEED km/h;
 		cargo_capacity: HEAD_CAPACITY;
 		weight: WEIGHT ton;
-		
+
 		reliability_decay: RELIABILITY_DECAY;
 
         {% include "../_common/cargodef.pnml.j2" %}
@@ -203,7 +205,7 @@ item(FEAT_TRAINS, ITEM ) {
 		running_cost_base: RUNNING_COST_BASE;
 		engine_class: ENGINE_CLASS;
 		visual_effect_and_powered: VISUAL_FLAG;
-		
+
 		sprite_id: SPRITE_ID;
 		dual_headed: DUAL_HEADED;
 		length: LENGTH;

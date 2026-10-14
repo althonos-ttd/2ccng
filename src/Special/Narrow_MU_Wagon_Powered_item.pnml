@@ -14,7 +14,6 @@ item(FEAT_TRAINS, ITEM ) {
 		model_life: MODEL_LIFE;
 		vehicle_life: VEHICLE_LIFE; 
 		retire_early: RETIRE_EARLY;
-		LOADINGSPEEDPROPERTY
 		PURCHASECOSTMUPOWERED
 		RUNNINGCOSTMU
 		speed: SPEED km/h;

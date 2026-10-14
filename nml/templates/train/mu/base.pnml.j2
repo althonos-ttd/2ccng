@@ -93,7 +93,9 @@ default: switch_{{ item.id }}_default;
 
 {% block item_extra %}
 	livery_override (item_mu_narrow_wagon_unpowered ) {
-		LOADINGSPEEDPROPERTY
+		
+		{% include "../../_common/loadingspeeddef.pnml.j2" %}
+
 		RUNNINGCOSTMUWAGONUNPOWEREDSWITCHCALL
 		weight: WEIGHTMUWAGONUNPOWERED
 		WAGONCAPACITYSWITCHCALL(VEHIDCODE)
@@ -108,7 +110,9 @@ default: switch_{{ item.id }}_default;
         {% endif %}
 	}
 	livery_override (item_mu_narrow_wagon_powered ) {
-		LOADINGSPEEDPROPERTY
+
+		{% include "../../_common/loadingspeeddef.pnml.j2" %}
+
 		RUNNINGCOSTMUWAGONPOWEREDSWITCHCALL
 		power: POWERMUWAGONPOWERED
 		weight: WEIGHTMUWAGONPOWERED

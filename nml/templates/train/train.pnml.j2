@@ -100,7 +100,7 @@ spriteset(spriteset_{{ item.id }}_{{ spriteset.id }}, {{ spriteset.filename|tojs
 {% if gfx.loadsets is defined %}
 {% for loadset in gfx.loadsets %}
 spritegroup spriteset_{{ item.id }}_{{ loadset.id }} {
-    loading: [ 
+    loading: [
         {% for stage in loadset.loading %}spriteset_{{ item.id }}_{{ stage }}{% if not loop.last %},{% endif %}{% endfor %}
     ];
     loaded: [
@@ -197,7 +197,9 @@ item(FEAT_TRAINS, ITEM) {
         model_life: MODEL_LIFE;
         vehicle_life: VEHICLE_LIFE;
         retire_early: RETIRE_EARLY;
-        LOADINGSPEEDPROPERTY
+
+        {% include "../_common/loadingspeeddef.pnml.j2" %}
+
         PURCHASECOSTPROPERTY
         RUNNINGCOSTPROPERTY
         speed: SPEED km/h;
@@ -207,7 +209,7 @@ item(FEAT_TRAINS, ITEM) {
         tractive_effort_coefficient: TE_COEFFICIENT;
         air_drag_coefficient: AIR_DRAG_COEFFICIENT;
         reliability_decay: RELIABILITY_DECAY;
-        
+
         {% include "../_common/cargodef.pnml.j2" %}
 
         cargo_age_period: CARGO_AGE_PERIOD;

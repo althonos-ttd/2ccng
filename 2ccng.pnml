@@ -26,8 +26,6 @@
 #include "src/cargotable.pnml"
 //cargo aging definitions
 #include "src/cargoage.pnml"
-//loading speeds
-#include "src/loadingspeeds.pnml"
 //railtype translation table
 #include "src/railtypetable.pnml"
 //give unique IDs to vehicles

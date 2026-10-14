@@ -1,0 +1,23 @@
+# 
+#   Copyright (C) 2026 althonos
+#   Copyright (C) 2017 Transportman
+#   This file is part of the 2cc Trains In NML - Narrow Gauge edition
+#   This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+#   This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#   You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+# 
+#  This file follows the FRAX cargo schemes, with a few modifications to prevent
+#    - Boxcars cannot carry CC_FLATBED: this is not recommended in the FRAX 
+#      documentation but this prevents "heavy" cargoes (i.e. logs or steel) 
+#      from being carried in boxcars and goods railbuses. Since goods (GOOD)
+#      are also CC_FLATBED they need to be added manually to CARGODEF_BOXCAR
+#    - Tankers cannot carry FOOD: there is usually a milk or alcohol wagon,
+#      and food should be carried by reefers.
+
+LOADINGSPEEDDEFS:
+  LOADINGSPEEDDEF_NONE: 0
+  LOADINGSPEEDDEF_INTERCITY: 16
+  LOADINGSPEEDDEF_COMMUTER: 40
+  LOADINGSPEEDDEF_METRO: 120
+  LOADINGSPEEDDEF_CARGO: 20
+  LOADINGSPEEDDEF_MAIL: 15
