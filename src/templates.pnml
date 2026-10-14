@@ -199,21 +199,3 @@ spriteset(spriteset_empty) {
         1: _PASTE3(spriteset_, ITEM, _purchase_dualheaded_flag_only);                     \
         2: _PASTE3(spriteset_, ITEM, _purchase_dualheaded_flag_and_power);                \
     }
-
-#define FORWARD_SPRITESET(ITEM, filename, x, y) \
-    spriteset(_PASTE3(spriteset_, ITEM, _front), filename) { \
-        template_2cc_engines_general(x, y)              \
-    }                                                   \
-    switch(FEAT_TRAINS, PARENT, _PASTE3(switch_, ITEM, _fwd), vehicle_is_reversed) { \
-        1: _PASTE3(spriteset_, ITEM, _back);                                    \
-        0: _PASTE3(spriteset_, ITEM, _front);                                   \
-    }
-
-#define BACKWARD_SPRITESET(ITEM, filename, x, y) \
-    spriteset(_PASTE3(spriteset_, ITEM, _back), filename) { \
-        template_2cc_engines_general(x, y)              \
-    }                                                   \
-    switch(FEAT_TRAINS, PARENT, _PASTE3(switch_, ITEM, _bwd), vehicle_is_reversed) { \
-        1: _PASTE3(spriteset_, ITEM, _front);                                        \
-        0: _PASTE3(spriteset_, ITEM, _back);                                         \
-    }

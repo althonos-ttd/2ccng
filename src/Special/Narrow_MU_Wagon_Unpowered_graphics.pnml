@@ -26,5 +26,3 @@ spriteset(spriteset_mu_narrow_wagon_unpowered, "gfx/Special/Multiple_Unit_Wagon_
 //Add defined switches
 
 RUNNINGCOSTENGINESWITCH
-
-PURCHASETEXTSWITCH

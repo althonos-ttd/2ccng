@@ -40,8 +40,6 @@
 #include "src/costs.pnml"
 //Capacities
 #include "src/capacities.pnml"
-//Purchase text switch
-#include "src/purchasetext.pnml"
 // MU wagon calculations
 #include "src/_CodeSupport/muwagoncalculations.pnml"
 // Cleanup

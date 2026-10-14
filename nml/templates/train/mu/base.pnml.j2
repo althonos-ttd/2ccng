@@ -30,7 +30,7 @@
 {% if units.back is defined %}
 PURCHASE_SPRITESET_DUALHEADED(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
 {% else %}
-PURCHASE_SPRITESET(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+{{ super() }}
 {% endif %}
 {% endblock graphics_purchase %}
 

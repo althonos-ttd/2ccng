@@ -68,7 +68,7 @@
 */
 
 {% block graphics_purchase %}
-PURCHASE_SPRITESET(VEHIDCODE, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+PURCHASE_SPRITESET({{ item.id }}, "{{ gfx.purchase.filename }}", {{ gfx.purchase.x }}, {{ gfx.purchase.y }})
 {% endblock graphics_purchase %}
 
 /*
@@ -188,7 +188,7 @@ RUNNINGCOSTENGINESWITCH
 
 {% block item %}
 
-item(FEAT_TRAINS, ITEM) {
+item(FEAT_TRAINS, item_{{ item.id }}) {
 	property {
         {% block item_property %}
         name: string(str_{{ item.id }});
