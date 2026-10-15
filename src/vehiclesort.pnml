@@ -997,10 +997,11 @@ item_wagon_Gen6_silo_type2, /*Year: 2030*/ \
 item_wagon_Gen6_hopper_type2, /*Year: 2030*/ \
 item_wagon_Service_Car_Type1, /*Year: 1660*/ \
 item_wagon_Service_Car_Type2, /*Year: 1660*/ \
-item_wagon_Narrow_Gen1_Boxcar, /*Year: 1660*/ \
-item_wagon_Narrow_Gen1_Flat_Wagon, /*Year: 1660*/ \
-item_wagon_Narrow_Gen1_Open_Wagon, /*Year: 1660*/ \
-item_wagon_Narrow_Gen1_Tanker, /*Year: 1660*/ \
+item_wagon_Narrow_Gen1_Boxcar, /*Year: 1830*/ \
+item_wagon_Narrow_Gen1_Flat_Wagon, /*Year: 1830*/ \
+item_wagon_Narrow_Gen1_Open_Wagon, /*Year: 1830*/ \
+item_wagon_Narrow_Gen1_Lidded_Wagon, /*Year: 1830*/ \
+item_wagon_Narrow_Gen1_Tanker, /*Year: 1830*/ \
 item_wagon_Narrow_Gen2_Boxcar, /*Year: 1890*/ \
 item_wagon_Narrow_Gen2_Flat_Wagon, /*Year: 1890*/ \
 item_wagon_Narrow_Gen2_Open_Wagon, /*Year: 1890*/ \

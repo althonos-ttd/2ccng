@@ -1139,6 +1139,7 @@ item(FEAT_TRAINS, item_wagon_Narrow_Gen1_Tanker, 12800) {}
 item(FEAT_TRAINS, item_wagon_Narrow_Gen1_Flat_Wagon, 12801) {}
 item(FEAT_TRAINS, item_wagon_Narrow_Gen1_Open_Wagon, 12802) {}
 item(FEAT_TRAINS, item_wagon_Narrow_Gen1_Boxcar, 12803) {}
+item(FEAT_TRAINS, item_wagon_Narrow_Gen1_Lidded_Wagon, 12804) {}
 item(FEAT_TRAINS, item_wagon_Narrow_Gen2_Tanker, 12810) {}
 item(FEAT_TRAINS, item_wagon_Narrow_Gen2_Flat_Wagon, 12811) {}
 item(FEAT_TRAINS, item_wagon_Narrow_Gen2_Open_Wagon, 12812) {}

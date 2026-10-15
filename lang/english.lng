@@ -969,6 +969,7 @@ str_wagon_Service_Car_Type2				:Service Car (Type 2)
 str_wagon_Narrow_Gen1_Tanker 		    :1st Gen Tanker (Narrow)
 str_wagon_Narrow_Gen1_Flat_Wagon 		:1st Gen Flat Wagon (Narrow)
 str_wagon_Narrow_Gen1_Open_Wagon 		:1st Gen Open Wagon (Narrow)
+str_wagon_Narrow_Gen1_Lidded_Wagon 		:1st Gen Lidded Wagon (Narrow)
 str_wagon_Narrow_Gen1_Boxcar     		:1st Gen Boxcar (Narrow)
 
 str_wagon_Narrow_Gen2_Tanker 		    :2nd Gen Tanker (Narrow)

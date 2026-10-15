@@ -44,6 +44,23 @@ $(BUILD_DIR)/gfx/Gen1_Open_Wagon_%.png: $(BUILD_DIR)/gfx/Gen1/Open_Wagon/Layer1_
 	@echo [GFX] $@
 	@$(PYTHON) tools/stack.py --output $@ $^
 
+# --- Gen1 Lidded Wagon --------------------------------------------------------
+
+GEN1_LIDDED_WAGON_FILES = \
+	$(BUILD_DIR)/gfx/Gen1_Lidded_Wagon_Grain.png \
+	$(BUILD_DIR)/gfx/Gen1_Lidded_Wagon_Carbon.png
+
+$(BUILD_DIR)/gfx/Gen1/Lidded_Wagon/Layer1.png: gfx/Wagons/Gen1/Lidded_Wagon/Open.xpm gfx/Wagons/Gen1/Lidded_Wagon/Closed.xpm
+	@echo [GFX] $@
+	@$(PYTHON) tools/concat.py --output $@ --axis 1 $< $< $^
+
+$(BUILD_DIR)/gfx/Gen1/Lidded_Wagon/%_4x1.png: gfx/Wagons/Gen1/Lidded_Wagon/Cargo/%.png
+	@echo [GFX] $@
+	@$(PYTHON) tools/concat.py --output $@ --axis 0 $< $< $< $<
+
+$(BUILD_DIR)/gfx/Gen1_Lidded_Wagon_%.png: $(BUILD_DIR)/gfx/Gen1/Lidded_Wagon/Layer1.png gfx/Wagons/Gen1/Lidded_Wagon/Cargo/%.png
+	@echo [GFX] $@
+	@$(PYTHON) tools/stack.py --output $@ $^
 
 # --- Gen1 Boxcar --------------------------------------------------------------
 
@@ -327,6 +344,7 @@ $(BUILD_DIR)/gfx/Gen4_Container_Carrier_%.png: $(BUILD_DIR)/gfx/Gen4/Container_C
 GFX_FILES = \
 	$(GEN1_FLAT_WAGON_FILES) \
 	$(GEN1_OPEN_WAGON_FILES) \
+	$(GEN1_LIDDED_WAGON_FILES) \
 	$(GEN1_BOXCAR_FILES) \
 	$(GEN1_TANKER_FILES) \
 	$(GEN2_FLAT_WAGON_FILES) \

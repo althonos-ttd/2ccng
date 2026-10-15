@@ -1,0 +1,53 @@
+item:
+  id: wagon_Narrow_Gen1_Lidded_Wagon
+  num: 0
+
+  speed: 35
+  weight: 3
+
+  life:
+    start: 1830
+    end: 1920
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_CARGO
+  cargodef: CARGODEF_CLOSED_WAGON
+
+units:
+  wagon:
+    length: 3
+    sprite: grain
+    capacity: 7
+
+gfx:
+  purchase:
+    filename: "gfx/Wagons/Gen1/Lidded_Wagon/Purchase.xpm"
+    x: 1
+    y: 1
+
+  combine:
+    default: grain
+    rerandomize_cargos: true
+    loadstages:
+      loading: [S1, S2, S3]
+      loaded: [S4]
+      stages:
+        - id: S1
+          y: 1
+        - id: S2
+          y: 27
+        - id: S3
+          y: 53
+        - id: S4
+          y: 79
+    liveries:
+      - id: L1
+        x: 1
+    cargos:
+      - id: grain
+        filename: "build/gfx/Gen1_Lidded_Wagon_Grain.png"
+        cargos: [GRAI, WHEA, SEED, CERE]
+      - id: carbon
+        filename: "build/gfx/Gen1_Lidded_Wagon_Carbon.png"
+        cargos: [COAL, SLAG, COKE, CBLK]

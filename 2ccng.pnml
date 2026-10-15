@@ -252,6 +252,7 @@
 #include "src/Wagons/Gen1_Boxcar.pnml"
 #include "src/Wagons/Gen1_Tanker.pnml"
 #include "src/Wagons/Gen1_Open_Wagon.pnml"
+#include "src/Wagons/Gen1_Lidded_Wagon.pnml"
 #include "src/Wagons/Gen2_Flat_Wagon.pnml"
 #include "src/Wagons/Gen2_Boxcar.pnml"
 #include "src/Wagons/Gen2_Tanker.pnml"
