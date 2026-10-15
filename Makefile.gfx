@@ -334,7 +334,11 @@ $(BUILD_DIR)/gfx/Gen4/Container_Carrier_1x4.png: gfx/Wagons/Gen4/Container_Carri
 	@echo [GFX] $@
 	@$(PYTHON) tools/concat.py --output $@ --axis 1 $< $< $< $<
 
-$(BUILD_DIR)/gfx/Gen4_Container_Carrier_%.png: $(BUILD_DIR)/gfx/Gen4/Container_Carrier_1x4.png gfx/Wagons/Gen4/Container_Carrier/Cargo/%.xpm
+$(BUILD_DIR)/gfx/Gen4/%_2x1.png: gfx/Wagons/Gen4/Container_Carrier/Cargo/%.xpm
+	@echo [GFX] $@
+	@$(PYTHON) tools/concat.py --output $@ --axis 0 $< $<
+
+$(BUILD_DIR)/gfx/Gen4_Container_Carrier_%.png: $(BUILD_DIR)/gfx/Gen4/Container_Carrier_1x4.png $(BUILD_DIR)/gfx/Gen4/%_2x1.png
 	@echo [GFX] $@
 	@$(PYTHON) tools/stack.py --alpha 0 --output $@ $^
 
