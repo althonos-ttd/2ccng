@@ -92,14 +92,22 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_wagon_powered_visual_effect_and_p
 
 {% block switches %}
 {{ super() }}
-ENGINECAPACITYSWITCH(VEHIDCODE)
-WAGONCAPACITYSWITCH(VEHIDCODE)
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_capacity_engine, cargo_classes) {
+	bitmask(CC_MAIL): HEAD_CAPACITY/2;
+	bitmask(CC_ARMOURED): HEAD_CAPACITY/4;
+	HEAD_CAPACITY;
+}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_capacity_wagon, cargo_classes) {
+	bitmask(CC_MAIL): WAGON_CAPACITY/2;
+	bitmask(CC_ARMOURED): WAGON_CAPACITY/4;
+	WAGON_CAPACITY;
+}
 RUNNINGCOSTMUWAGONSWITCH
 {% endblock switches %}
 
 {% block item_graphics %}
 {{ super() }}
-ENGINECAPACITYSWITCHCALL(VEHIDCODE)
+cargo_capacity: switch_{{ item.id }}_capacity_engine;
 visual_effect_and_powered: switch_{{ item.id }}_visual_effect_and_powered;
 default: switch_{{ item.id }}_default;
 {% endblock item_graphics %}
@@ -111,7 +119,7 @@ default: switch_{{ item.id }}_default;
 
 		RUNNINGCOSTMUWAGONUNPOWEREDSWITCHCALL
 		weight: WEIGHTMUWAGONUNPOWERED
-		WAGONCAPACITYSWITCHCALL(VEHIDCODE)
+		cargo_capacity: switch_{{ item.id }}_capacity_wagon;
 		length: WAGON_LENGTH;
 		{% if units.middle.vfx is defined and units.middle.vfx %}
 		visual_effect_and_powered: switch_{{ item.id }}_wagon_visual_effect_and_powered;
@@ -134,7 +142,7 @@ default: switch_{{ item.id }}_default;
 		{% elif units.middle.vfx is defined and units.middle.vfx %}
 		visual_effect_and_powered: switch_{{ item.id }}_wagon_visual_effect_and_powered;
 		{% endif %}
-		WAGONCAPACITYSWITCHCALL(VEHIDCODE)
+		cargo_capacity: switch_{{ item.id }}_capacity_wagon;
 		tractive_effort_coefficient: TEMUWAGONPOWERED
 		length: WAGON_LENGTH;
 		{% if units.middle.powered is defined %}

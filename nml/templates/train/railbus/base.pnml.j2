@@ -60,8 +60,11 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_visual_effect, position_in_vehid_
 
 {% block switches %}
 {{ super() }}
-ENGINECAPACITYSWITCH(VEHIDCODE)
-{# WAGONCAPACITYSWITCH(VEHIDCODE) #}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_capacity_engine, cargo_classes) {
+    bitmask(CC_MAIL): HEAD_CAPACITY/2;
+    bitmask(CC_ARMOURED): HEAD_CAPACITY/4;
+    HEAD_CAPACITY;
+}
 {% endblock switches %}
 
 {% block item_property %}
@@ -77,7 +80,7 @@ visual_effect_and_powered: visual_effect_and_powered({{ VISUAL_EFFECT }}, {{ uni
 {% block item_graphics %}
 {% with n_units = units | length %}
 {{ super() }}
-ENGINECAPACITYSWITCHCALL(VEHIDCODE)
+cargo_capacity: switch_{{ item.id }}_capacity_engine;
 default: switch_{{ item.id }}_default;
 {% if n_units > 1 %}
 articulated_part: switch_{{ item.id }}_articulated;

@@ -34,8 +34,6 @@
 #include "src/_CodeSupport/default_properties.pnml"
 //Costs
 #include "src/costs.pnml"
-//Capacities
-#include "src/capacities.pnml"
 // MU wagon calculations
 #include "src/_CodeSupport/muwagoncalculations.pnml"
 // Cleanup

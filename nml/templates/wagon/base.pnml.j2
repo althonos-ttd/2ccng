@@ -181,6 +181,12 @@ random_switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default) {
 {% block switches %}
 RUNNINGCOSTENGINESWITCH
 EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_capacity_wagon, cargo_classes) {
+    bitmask(CC_MAIL): HEAD_CAPACITY/2;
+    bitmask(CC_ARMOURED): HEAD_CAPACITY/4;
+    HEAD_CAPACITY;
+}
 {% endblock %}
 
 {% block item %}
@@ -238,6 +244,7 @@ item(FEAT_TRAINS, ITEM ) {
 	graphics {
         {% block item_graphics %}
 		purchase: spriteset_{{ item.id }}_purchase;
+        cargo_capacity: switch_{{ item.id }}_capacity_wagon;
 		RUNNINGCOSTENGINESWITCHCALL
 		EXPANDEDPURCHASETEXTSWITCHCALL(VEHIDCODE)
 		default: switch_{{ item.id }}_default;
