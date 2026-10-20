@@ -1,5 +1,5 @@
 .file: &file
-  filename: "gfx/DMU/Ghana_Ghana_Railways_DEMU.png"
+  filename: "gfx/DMU/Ghana_Ghana_Railways_DEMU.xpm"
 
 item:
   id: dmu_Ghana_Ghana_Railways_DEMU  # FIXME: rename to Ghana Railways 1300
@@ -51,13 +51,21 @@ gfx:
     - id: front
       <<: *file
       template: template_2cc_engines_general
-      x: 1
-      y: 1
+      forward:
+        x: 1
+        y: 1
+      backward:
+        x: 179
+        y: 1
     - id: back
       <<: *file
       template: template_2cc_engines_general
-      x: 1
-      y: 32
+      forward:
+        x: 1
+        y: 32
+      backward:
+        x: 179
+        y: 32
     - id: middlepass
       <<: *file
       template: template_2cc_engines_general
