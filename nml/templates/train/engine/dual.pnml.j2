@@ -52,10 +52,24 @@ switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_default, position_in_vehid_chain 
 
 {% block switches %}
 {{ super() }}
-DUALPOWERSWITCH(VEHIDCODE)
-DUALSPEEDSWITCH(VEHIDCODE)
-DUALRUNNINGCOSTSWITCH(VEHIDCODE)
-EXPANDEDPURCHASETEXTSWITCH(VEHIDCODE)
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_power, tile_powers_railtype("ELNR")) {                                                                                       \
+    0: POWER_DIESEL;
+    1: POWER_ELECTRIC;
+}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_speed, tile_powers_railtype("ELNR")) {                                                                                       \
+    0: SPEED_DIESEL;
+    1: SPEED_ELECTRIC;
+}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_running_cost, tile_powers_railtype("ELNR")) {
+    0: int(RUNNINGCOSTDUALENGINEVALUE(SPEED_DIESEL, POWER_DIESEL, TE_COEFFICIENT));
+    1: int(0.92*RUNNINGCOSTDUALENGINEVALUE(SPEED_ELECTRIC, POWER_ELECTRIC, TE_COEFFICIENT));
+}
+switch(FEAT_TRAINS, SELF, switch_{{ item.id }}_purchase_text, [
+    STORE_TEMP(POWER_DIESEL << 0 | POWER_ELECTRIC << 16, 256),
+    STORE_TEMP(SPEED_DIESEL << 0 | SPEED_ELECTRIC << 16, 257)
+]) {
+    return string(STR_DUAL_INFO);
+}
 {% endblock switches %}
 
 {% block item_property %}
@@ -72,5 +86,5 @@ length: {{ units[0].length }};
 power: switch_{{ item.id }}_power;
 speed: switch_{{ item.id }}_speed;
 running_cost_factor: switch_{{ item.id }}_running_cost;
-EXPANDEDPURCHASETEXTSWITCHCALL(VEHIDCODE)
+additional_text: switch_{{ item.id }}_purchase_text;
 {% endblock item_graphics %}
