@@ -125,8 +125,21 @@ PNML_WAGONS_FILES = $(foreach x,$(YAML_WAGONS_FILES),$(patsubst nml/items/Wagons
 
 
 
+nml/templates/wagon/special.pnml.j2: nml/templates/wagon/base.pnml.j2
+	$(_V) touch $@
+
+src/Special/%.pnml: nml/templates/wagon/special.pnml.j2 nml/items/Special/%.yml $(DATA_FILES)
+	$(_E) "[J2]" $(@F)
+	$(_V) minijinja-cli --strict -o $@ $^
+
+YAML_SPECIAL_FILES = $(wildcard nml/items/Special/*.yml)
+PNML_SPECIAL_FILES = $(foreach x,$(YAML_SPECIAL_FILES),$(patsubst nml/items/Special/%.yml,src/Special/%.pnml,$x))
+
+
+
+
 
 PNML_FILES = $(PNML_STEAM_FILES) $(PNML_DIESEL_FILES) $(PNML_ELEC_FILES) \
 			$(PNML_DMU_FILES) $(PNML_EMU_FILES) $(PNML_RBS_FILES) \
 			$(PNML_RBD_FILES) $(PNML_RBE_FILES) $(PNML_DUAL_FILES) \
-			$(PNML_COACHES_FILES) $(PNML_WAGONS_FILES)
+			$(PNML_COACHES_FILES) $(PNML_WAGONS_FILES) $(PNML_SPECIAL_FILES)

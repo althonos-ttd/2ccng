@@ -1,0 +1,36 @@
+.file: &file
+  filename: "gfx/Special/Multiple_Unit_Wagon_Unpowered.png"
+
+item:
+  id: mu_narrow_wagon_unpowered
+  num: 0
+
+  power: 0
+  speed: 0
+  weight: 0
+
+  life:
+    start: 1925
+
+cargo:
+  autorefit: true
+  loading_speed: LOADINGSPEEDDEF_NONE
+  cargodef: CARGODEF_PASSENGERS
+
+units:
+  wagon:
+    length: 8
+    sprite: default
+    capacity: 1
+
+gfx:
+  purchase:
+    <<: *file
+    x: 1
+    y: 1
+  spritesets:
+    - id: default
+      <<: *file
+      template: template_wagon_special
+      x: 21
+      y: 1

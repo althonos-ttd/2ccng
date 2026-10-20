@@ -1,0 +1,19 @@
+{% extends "base.pnml.j2" %}
+
+{% block properties %}
+#define POWER 0
+#define WAGON_CAPACITY 1
+#define TE_COEFFICIENT 0.3
+{{ super () }}
+{% endblock properties %}
+
+{% block graphics_purchase %}
+spriteset(spriteset_{{ item.id }}_purchase, "{{ gfx.purchase.filename }}") {
+	template_purchase_wagon_special({{ gfx.purchase.x }}, {{ gfx.purchase.y }})
+}
+{% endblock graphics_purchase %}
+
+{% block item_graphics %}
+{{ super() }}
+additional_text: string(str_unit_wagon_passenger);
+{% endblock item_graphics %}
