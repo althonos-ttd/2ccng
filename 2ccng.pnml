@@ -20,8 +20,6 @@
 #include "src/templates.pnml"
 //cargo translation table
 #include "src/cargotable.pnml"
-//cargo aging definitions
-#include "src/cargoage.pnml"
 //railtype translation table
 #include "src/railtypetable.pnml"
 //give unique IDs to vehicles

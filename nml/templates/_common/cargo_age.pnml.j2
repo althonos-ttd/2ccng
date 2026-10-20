@@ -1,0 +1,5 @@
+{% block item_property_cargo_age %}
+{% with cargo_age = CARGO_AGE_PERIODS[cargo.age_period] if cargo is defined and cargo.age_period is defined else CARGO_AGE_PERIODS["CARGO_AGE_PERIOD_DEFAULT"] %}
+cargo_age_period: {{ cargo_age }};
+{% endwith %}
+{% endblock %}
