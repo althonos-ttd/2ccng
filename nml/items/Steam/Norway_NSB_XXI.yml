@@ -14,7 +14,7 @@ item:
 
   gauge: cape
   propulsion: steam
-  country: NO
+  country: "NO"
   builders:
     - dubs
 

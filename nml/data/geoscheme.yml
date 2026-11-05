@@ -494,7 +494,7 @@ REGIONS:
   NL:
     region: europe
     subregion: western
-  NO:
+  "NO":
     region: europe
     subregion: northern
   NP:

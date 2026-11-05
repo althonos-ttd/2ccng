@@ -10,7 +10,7 @@ item:
   speed: 110                # (1)
   power: 5364               # (1) 4,000 kW
   weight: 134.4             # (1)
-  te:	411.9                 # (1)          
+  te: 411.9                 # (1)          
 
   gauge: cape
   propulsion: electric_dc

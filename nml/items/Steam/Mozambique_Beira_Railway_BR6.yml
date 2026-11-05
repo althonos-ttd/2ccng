@@ -11,11 +11,11 @@ item:
   speed: 40                 # ???
   power: 140                # ???
   weight: 20                # (1)
-  te:	13                    # (1)
+  te: 13                    # (1)
 
   gauge: 2ft
   propulsion: steam
-  country: MZ               
+  country: MZ
   builders:
     - falcon
 

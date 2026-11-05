@@ -10,7 +10,7 @@ item:
   speed: 65                 # ???
   power: 900                # ???
   weight: 94                # ???
-  te:	108                   # (1)
+  te: 108                   # (1)
 
   gauge: metre
   propulsion: steam

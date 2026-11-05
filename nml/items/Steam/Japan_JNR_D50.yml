@@ -10,7 +10,7 @@ item:
   speed: 70                 # (1)
   power: 1520               # ???
   weight: 127               # (1)
-  te:	165.98                # (1)
+  te: 165.98                # (1)
 
   gauge: cape
   propulsion: steam
@@ -22,8 +22,8 @@ item:
     - hitachi
 
   life:
-    start: 1923              
-    end: 1956               # (1) rebuild date 
+    start: 1923
+    end: 1956               # (1) rebuild date
 
 units:
   - sprite: engine
@@ -54,7 +54,7 @@ gfx:
       template: template_2cc_engines_general
       x: 1
       y: 64
-      
+
   animations:
     - id: engine
       steps: [engine_s1, engine_s2]
