@@ -1,6 +1,46 @@
 2cc Narrow-Gauge in NML changelog
 =================================
 
+v0.8.0 (2026-11-06)
+-------------------
+
+Added
+^^^^^
+- 1st generation lidded wagon to ensure all cargos can be transported.
+- 4th generation container wagon with near-universal refit capabilities.
+- Support for cargo randomization on every new cargo load cycle.
+- Explicit cargo definitions for wagons to support base game, FIRS, AXIS, AIRS and GIS cargo sets.
+- Backward driving sprites for several EMUs, DMUs and locomotives.
+- ``TR R200`` 2023 diesel locomotive of Taiwan (same family as ``SALi`` by Stadler).
+- ``SNCF X 74500`` 2002 articulated diesel-railbus of France.
+
+Changed
+^^^^^^^
+- Move compatibility layer for ``2ccts`` and ``2ccts_revival`` to new NewGRF ("2cc Trains in NML (World Patch)").
+- Use Jinja (through minijinja) for template generation where applicable.
+- Recalculate TE coefficients from raw TE values from literature.
+- Record IDs of more items also provided in ``2ccts_revival``.
+- Mark more modern locomotives as never-expiring.
+- Improve sprites of ``CNR NF110``.
+- Improve sprites of ``SQM 600``.
+- Use original name and operator for later ``RhB De 2/2``.
+- Reassign ``EAR 21`` and ``EAR 23`` to Tanganyika Railway of Tanzania, their original operator.
+- Reassign several German engines to the appropriate operator.
+- Allow transport of fruits in open wagons in addition to lidded wagons.
+
+Fixed
+^^^^^
+- Ensure multiple-unit wagons are introduced earlier than first MU, even with intro date jitter.
+- Incorrect road numbers of ``EFC 3300`` for narrow gauge variants (previous ``EFC 4300`` refers to the standard gauge series).
+- Make ``ZSSK 485.9`` (Stadler ``HGem 2/2``) beahave properly as a dual locomotive.
+- Record badges for superclasses as well as subclasses to facilitate filtering in GUI.
+- Incorrect placement of reverse lights on ``QR 2100`` locomotive.
+- Incorrect alignment of 1st generation wagons in diagonal sprites.
+
+Removed
+^^^^^^^
+- Unneeded/unused GFX files from distribution bundle.
+
 
 v0.7.0 (2026-08-03)
 -------------------
