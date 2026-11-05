@@ -1,0 +1,5 @@
+numpy
+ply
+Pillow >=3.4
+minijinja ~=2.0
+https://github.com/OpenTTD/nml/archive/master.zip

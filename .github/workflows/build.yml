@@ -18,9 +18,7 @@ jobs:
       - name: Install requirements
         run: sudo apt-get install -y dos2unix
       - name: Install Python requirements
-        run: python -m pip install -U setuptools wheel ply Pillow>=3.4
-      - name: Install NML
-        run: python -m pip install --no-build-isolation -U https://github.com/OpenTTD/nml/archive/master.zip
+        run: python -m pip install -r tools/requirements.txt
       - name: Show GRF version
         run: sh -x findversion.sh
       - name: Build GRF

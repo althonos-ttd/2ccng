@@ -121,6 +121,12 @@ GIT            ?= git
 
 PYTHON         ?= python
 
+ifeq (, $(shell which minijinja-cli))
+J2			   ?= $(PYTHON) tools/j2.py
+else
+J2			   ?= minijinja-cli --strict
+endif
+
 UNIX2DOS       ?= unix2dos
 UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>&1 >/dev/null && echo "-q" || echo "")
 

@@ -12,9 +12,22 @@ parser.add_argument("data", nargs="+")
 args = parser.parse_args()
 
 template_dir = os.path.dirname(args.template)
+search_path = [template_dir]
 
 def loader(filename):
-    with open(os.path.join(template_dir, filename)) as f:
+    global search_path
+
+    for folder in search_path:
+        path = os.path.realpath(os.path.join(folder, filename))
+        if not os.path.exists(path):
+            continue
+        base = os.path.dirname(path)
+        if path not in search_path:
+            search_path.append(base)
+        break
+    else:
+        path = filename
+    with open(path) as f:
         return f.read()
 
 env = Environment(loader=loader, undefined_behavior="strict", reload_before_render=True)
