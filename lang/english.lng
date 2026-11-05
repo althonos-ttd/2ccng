@@ -266,6 +266,7 @@ str_rbd_Italy_FS_ALn_668 :FS ALn 668 (Diesel railbus)
 str_rbd_France_CdN_OC1 :CdN OC1 (Diesel railbus)
 str_rbd_France_Pithiviers_Toury_AT1     :Pithiviers-Toury AT1 (Diesel railbus)
 str_rbd_Cambodia_Royal_Railway_AS1000   :Royal Railway AS1000 (Diesel railbus)
+str_rbd_France_SNCF_X_74500             :SNCF X 74500 (Diesel railbus)
 
 #Railbus-electric
 str_rbe_Switzerland_AB_CFe_3_3		:AB CFe 3/3 (Electric Railbus)

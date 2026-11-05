@@ -80,6 +80,7 @@ item(FEAT_TRAINS, item_rbd_Hungary_MAV_Ikarus_260, 2047) {}
 item(FEAT_TRAINS, item_rbd_Tunisia_SNCFT_YZ_661, 2401) {}
 item(FEAT_TRAINS, item_rbd_France_Pithiviers_Toury_AT1, 2402) {}
 item(FEAT_TRAINS, item_rbd_Cambodia_Royal_Railway_AS1000, 2403) {}
+item(FEAT_TRAINS, item_rbd_France_SNCF_X_74500, 2404) {}
 
 //Railbus-Electric, available ID range: 3000-3499 (hex 0x0BB8..0x0DAB)
 #define ID_RANGE_RBE 0x0BB8..0x0DAB
