@@ -11,7 +11,7 @@ item:
   te_coefficient: 0.24      # ???
 
   gauge: swedish_3ft
-  propulsion: electric_ac
+  propulsion: electric_dc
   country: SE
   builders:
     - stadler
