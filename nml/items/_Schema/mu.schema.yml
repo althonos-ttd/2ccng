@@ -1,0 +1,241 @@
+type: object
+properties:
+  item:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+        required: true
+      num:
+        type: integer
+        required: true
+      power:
+        type: integer
+        required: true
+      weight:
+        type: number
+        required: true
+      speed:
+        type: integer
+        required: true
+      te:
+        type: number
+        optional: true
+      te_coefficient:
+        type: number
+        optional: true
+        minimum: 0.0
+        maximum: 1.0
+      propulsion:
+        enum: [steam, diesel, dual, electric_dc, electric_ac]
+        required: true
+      country:
+        type: string
+        pattern: "[A-Z]{2}"
+        required: true
+      gauge:
+        type: string
+        required: true
+      builders:
+        type: array
+        required: true
+        items:
+          type: string
+      life:
+        type: object
+        properties:
+          start:
+            type: integer
+            required: true
+          end:
+            type: integer
+            required: false
+  cargo:
+    type: object
+    additionalProperties: false
+    properties:
+      loading_speed:
+        enum: 
+          - LOADINGSPEEDDEF_NONE
+          - LOADINGSPEEDDEF_INTERCITY
+          - LOADINGSPEEDDEF_COMMUTER
+          - LOADINGSPEEDDEF_METRO
+          - LOADINGSPEEDDEF_CARGO
+          - LOADINGSPEEDDEF_MAIL
+      cargodef:
+        enum:
+          - CARGODEF_NONE
+          - CARGODEF_PASSENGERS
+          - CARGODEF_PASSENGERS_ONLY
+          - CARGODEF_EXPRESS
+          - CARGODEF_MAIL_ONLY
+          - CARGODEF_BOXCAR
+          - CARGODEF_GOODS_RAILBUS
+          - CARGODEF_FLAT_WAGON
+          - CARGODEF_CENTERBEAM
+          - CARGODEF_HEAVYFLAT
+          - CARGODEF_SUPERHEAVY
+          - CARGODEF_OPEN_WAGON
+          - CARGODEF_CLOSED_WAGON
+          - CARGODEF_GONDOLA
+          - CARGODEF_SILO
+          - CARGODEF_HOPPER
+          - CARGODEF_CARTRANSPORTER
+          - CARGODEF_CONTAINER
+          - CARGODEF_DOUBLECONTAINER
+  units:
+    type: object
+    additionalProperties: false
+    required:
+      - front
+      - middle
+    properties:
+      front:
+        type: object
+        properties:
+          length:
+            type: integer
+            required: true
+          sprite:
+            type: string
+            required: true
+          vfx:
+            type: object
+            properties:
+              offset: 
+                type: integer
+      middle:
+        type: object
+        properties:
+          length:
+            type: integer
+            required: true
+          sprite:
+            type: string
+            required: true
+          vfx:
+            type: object
+            properties:
+              offset: 
+                type: integer
+      back:
+        type: object
+        properties:
+          length:
+            type: integer
+            required: true
+          sprite:
+            type: string
+            required: true
+          vfx:
+            type: object
+            properties:
+              offset: 
+                type: integer
+  gfx:
+    type: object
+    additionalProperties: false
+    properties:
+      length:
+        type: integer
+      extra:
+        type: string        
+      purchase:
+        type: object
+        properties:
+          filename: 
+            type: string
+            required: true
+          x:
+            type: integer
+            required: true
+          y: 
+            type: integer
+            required: true
+      spritesets:
+        type: array
+        items:
+          anyOf:
+          - type: object
+            properties:
+              filename: 
+                type: string
+                required: true
+              template:
+                type: string
+                required: true
+              x: 
+                type: integer
+                required: true
+              y:
+                type: integer
+                required: true
+          - type: object
+            properties:
+              filename:
+                type: string
+                required: true
+              template:
+                type: string
+                required: true
+              forward:
+                type: object
+                properties:
+                  x:
+                    type: integer
+                    required: true
+                  y:
+                    type: integer
+                    required: true
+              backward:
+                type: object
+                properties:
+                  x: 
+                    type: integer
+                    required: true
+                  y:
+                    type: integer
+                    required: true
+      animations:
+        type: array
+        items:
+          type: object
+          properties:
+            id: 
+              type: string
+              required: true
+            steps:
+              type: array
+              required: true
+              items:
+                type: string
+      cargosets:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              required: true
+            default:
+              type: object
+              properties:
+                sprite:
+                  type: string
+                  required: true
+            options:
+              type: array
+              required: true
+              items:
+                type: object
+                properties:
+                  bitmask:
+                    enum: [CC_PASSENGERS]
+                  cargos:
+                    type: array
+                    items:
+                      type: string
+                      pattern: "[A-Z0-9]{4}"
+                  sprite:
+                    type: string

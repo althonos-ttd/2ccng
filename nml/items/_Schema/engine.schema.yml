@@ -1,0 +1,144 @@
+type: object
+properties:
+  item:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+        required: true
+      num:
+        type: integer
+        required: true
+      power:
+        type: integer
+        required: true
+      weight:
+        type: number
+        required: true
+      speed:
+        type: integer
+        required: true
+      te:
+        type: number
+        optional: true
+      te_coefficient:
+        type: number
+        optional: true
+        minimum: 0.0
+        maximum: 1.0
+      propulsion:
+        enum: [steam, diesel, dual, electric_dc, electric_ac]
+        required: true
+      country:
+        type: string
+        pattern: "[A-Z]{2}"
+        required: true
+      gauge:
+        type: string
+        required: true
+      builders:
+        type: array
+        required: true
+        items:
+          type: string
+      life:
+        type: object
+        properties:
+          start:
+            type: integer
+            required: true
+          end:
+            type: integer
+            required: false
+  units:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        length:
+          type: integer
+          required: true
+        sprite:
+          type: string
+          required: true
+        vfx:
+          type: object
+          properties:
+            offset: 
+              type: integer
+  gfx:
+    type: object
+    additionalProperties: false
+    properties:
+      length:
+        type: integer
+      extra:
+        type: string        
+      purchase:
+        type: object
+        properties:
+          filename: 
+            type: string
+          x:
+            type: integer
+          y: 
+            type: integer
+      spritesets:
+        type: array
+        items:
+          anyOf:
+          - type: object
+            properties:
+              filename: 
+                type: string
+                required: true
+              template:
+                type: string
+                required: true
+              x: 
+                type: integer
+                required: true
+              y:
+                type: integer
+                required: true
+          - type: object
+            properties:
+              filename:
+                type: string
+                required: true
+              template:
+                type: string
+                required: true
+              forward:
+                type: object
+                properties:
+                  x:
+                    type: integer
+                    required: true
+                  y:
+                    type: integer
+                    required: true
+              backward:
+                type: object
+                properties:
+                  x: 
+                    type: integer
+                    required: true
+                  y:
+                    type: integer
+                    required: true
+      animations:
+        type: array
+        items:
+          type: object
+          properties:
+            id: 
+              type: string
+            steps:
+              type: array
+              items:
+                type: string
+    additionalProperties: false
+#additionalProperties: true
