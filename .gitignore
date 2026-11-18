@@ -17,6 +17,10 @@ Makefile.fordist
 2ccng-v*
 2ccng-v*.tar
 
+#
+build/
+bundle/
+
 # The local makefile should be ignored:
 Makefile.local
 
