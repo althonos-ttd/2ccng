@@ -30,8 +30,6 @@ units:
 
 gfx:
   length: 7
-  vfx:
-    offset: -3
   purchase:
     <<: *file
     x: 1
