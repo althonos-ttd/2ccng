@@ -1,6 +1,15 @@
 2cc Narrow-Gauge in NML changelog
 =================================
 
+v0.8.1 (2026-11-21)
+-------------------
+
+Fixed
+^^^^^
+- Incorrect default retirement parameter for all vehicles causing vehicles to disappear.
+- Incorrect electric mode of ``SL X15p`` EMU.
+
+
 v0.8.0 (2026-11-06)
 -------------------
 
